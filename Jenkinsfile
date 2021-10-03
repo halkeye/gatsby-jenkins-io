@@ -21,6 +21,12 @@ pipeline {
   }
 
   stages {
+    stage('Install Submodules') {
+      steps {
+        sh 'git submodule update --remote'
+      }
+    }
+
     stage('Install') {
       steps {
         sh 'npm install'
