@@ -117,6 +117,14 @@ exports.onCreateNode = async ({
         });
         return;
       }
+      if (node.frontmatter.layout === 'redirect' && node.frontmatter.refresh_to_post_id) {
+        createRedirect({
+          fromPath: blogNode.slug,
+          toPath: node.frontmatter.refresh_to_post_id,
+          isPermanent: true,
+        });
+        return;
+      }
       Object.entries(node.frontmatter).forEach(([key, value]) => { blogNode[key.replace(/^:/, '').trim()] = value; });
       if (!blogNode) {
         blogNode.tags = [];
