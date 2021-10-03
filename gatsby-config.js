@@ -1,0 +1,158 @@
+/* eslint-disable no-restricted-syntax, no-console */
+try {
+  // eslint-disable-next-line import/no-extraneous-dependencies, global-require
+  require('dotenv').config();
+} catch (e) {
+  console.warn('problem loading .env', e);// expected in production
+}
+
+const asciidoctor = require('asciidoctor')();
+
+asciidoctor.Extensions.register(function Extensions() {
+  this.inlineMacro(function PluginMacro() {
+    const self = this;
+    self.named('plugin');
+    self.positionalAttributes('label');
+    self.process((parent, target, attrs) => self.createAnchor(
+      parent,
+      attrs.label,
+      {
+        type: 'link',
+        target: `https://plugins.jenkins.io/${target}`,
+      },
+    ));
+  });
+});
+
+module.exports = {
+  siteMetadata: {
+    title: 'Jenkins',
+    description: 'Jenkins - an open source automation server which enables developers around the world to reliably build, test, and deploy their software',
+    author: '@jenkinsci',
+    siteUrl: 'https://www.jenkins.io/',
+    url: 'https://plugins.jenkins.io/',
+    titleTemplate: '%s | Jenkins',
+    image: 'https://jenkins.io/images/logo-title-opengraph.png',
+    twitterUsername: '@JenkinsCI',
+  },
+  plugins: [
+    'gatsby-plugin-react-helmet',
+    /*
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: 'https://www.jenkins.io',
+      },
+    },
+    */
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        output: '/',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-postcss',
+    },
+    'gatsby-plugin-image',
+    {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: 'tomato',
+        showSpinner: false,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'blog',
+        // path: `${__dirname}/content/blog`,
+        path: `${__dirname}/junk/blog`,
+        ignore: ['**/_includes', '**/CHANGELOG.adoc', '**/README.adoc'],
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'author',
+        path: `${__dirname}/content/_data/authors`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/content/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-asciidoc',
+      options: {
+        attributes: {
+          'skip-front-matter': true,
+
+          imagesdir: '/images@',
+          'attribute-missing': 'warn',
+          relfileprefix: '../',
+          outfilesuffix: '/',
+          idprefix: '',
+          idseparator: '-',
+          icons: 'font',
+          sectanchors: '',
+          linkattrs: '',
+          'source-highlighter': 'coderay',
+          'coderay-css': 'style',
+          prewrap: null,
+          fragment: '',
+          notitle: '',
+        },
+      },
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-transformer-yaml',
+    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'gatsby-starter-default',
+        short_name: 'starter',
+        start_url: '/',
+        background_color: '#663399',
+        // This will impact how browsers show your PWA/website
+        // https://css-tricks.com/meta-theme-color-and-trickery/
+        // theme_color: `#663399`,
+        display: 'minimal-ui',
+        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+      },
+    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
+  ],
+  mapping: {
+    'Blog.authors': 'Author',
+    'Author.avatar': 'File.absolutePath',
+  },
+};
+
+// fancy little script to take any ENV variables starting with GATSBY_CONFIG_ and
+// replace the existing export
+Object.keys(process.env).forEach((key) => {
+  const PREFIX = 'GATSBY_CONFIG_';
+  if (!key.startsWith(PREFIX)) { return; }
+  // take the env key, less the prefix, split by __ to get the section,
+  // then lowercase, and replace _[letter] to be [upper]
+  // so GATSBY_CONFIG_SITE_METADATA__URL => siteMetadata.url = value
+  const splits = key.substr(PREFIX.length).split('__').map((k) => k.toLowerCase().replace(/_(.)/, (_, val) => val.toUpperCase()));
+  let element = module.exports;
+  for (const keyPart of splits.slice(0, -1)) {
+    element = element[keyPart];
+    if (!element) {
+      console.log(`cant find ${keyPart} of ${key}`);
+      return;
+    }
+  }
+  element[splits.slice(-1)[0]] = process.env[key];
+});
+
+console.log(module.exports);
