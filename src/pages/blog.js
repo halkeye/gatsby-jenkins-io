@@ -2,17 +2,17 @@ import * as React from 'react';
 import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/layout';
+import TagList from '../components/TagList';
 
-const SHORT_MONTH_NAMES = [
-  'Jan', 'Feb', 'March', 'April', 'May', 'Jun',
-  'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec',
-];
+import { reactJoin, SHORT_MONTH_NAMES } from '../utils';
 
-const Post = ({ slug, date, title }) => {
+const Post = ({
+  slug, date, title, strippedHtml, authors, tags,
+}) => {
   const dateObj = new Date(date);
   return (
     <li className="post">
-      <Link to={slug}>
+      <Link to={slug} className="body">
         <div className="header">
           <div className="date">
             <div className="month">
@@ -27,17 +27,13 @@ const Post = ({ slug, date, title }) => {
           </h5>
         </div>
         <p className="teaser">
-          TODO -- excerpt of html
+          {strippedHtml}
+          <span className="more" />
         </p>
-        <span className="more" />
       </Link>
       <div className="attrs">
-        TODO - authorsfor
-        <ul>
-          <li>
-            tag
-          </li>
-        </ul>
+        {reactJoin(authors.map((a) => <Link to={a.slug}>{a.name}</Link>), ', ')}
+        <TagList tags={tags || []} />
       </div>
     </li>
   );
@@ -72,11 +68,12 @@ export const pageQuery = graphql`
     allBlog(limit: 1000) {
       edges {
         node {
-          html
-          id
-          title
           date
+          id
           slug
+          strippedHtml
+          title
+          tags
           authors {
             ...AuthorFragment
           }

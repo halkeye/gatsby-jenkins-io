@@ -7,6 +7,7 @@
   "dependencies": {
     "asciidoctor": "*",
     "bootstrap": "^4.3.1",
+    "esm": "^3.2.25",
     "gatsby": "^3.13.1",
     "gatsby-core-utils": "^2.14.0",
     "gatsby-plugin-canonical-urls": "^3.14.0",
@@ -22,6 +23,7 @@
     "gatsby-source-filesystem": "^3.13.0",
     "gatsby-transformer-sharp": "^3.13.0",
     "gatsby-transformer-yaml": "^3.14.0",
+    "gray-matter": "^4.0.3",
     "postcss-calc": "^8.0.0",
     "postcss-css-variables": "^0.18.0",
     "postcss-extend": "^1.0.5",
@@ -35,7 +37,8 @@
     "react": "^17.0.1",
     "react-bootstrap": "^1.6.4",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "string-strip-html": "^8.3.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

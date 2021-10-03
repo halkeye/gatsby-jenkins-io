@@ -3,7 +3,9 @@
  *
  * See: https://www.gatsbyjs.com/docs/node-apis/
  */
+const requireEsm = require('esm')(module);
 
+const { stripHtml } = requireEsm('string-strip-html');
 const path = require('path');
 const fs = require('fs');
 const { slash } = require('gatsby-core-utils');
@@ -85,12 +87,14 @@ exports.onCreateNode = async ({
       node,
       value: slug,
     });
+    // TODO - - next if post.layout != 'post'
     if (parent.sourceInstanceName === 'blog') {
       const date = new Date(Date.parse(parent.name.match(/^(\d+-\d+-\d+)/)[0]));
       const blogNode = {
         id: createNodeId(node.id),
         parent: node.id,
         html: node.html,
+        strippedHtml: stripHtml(node.html).result,
         slug: [
           '', // initial slash
           'blog',
@@ -113,8 +117,6 @@ exports.onCreateNode = async ({
         });
         return;
       }
-      // TODO - - next if post.layout != 'post'
-
       Object.entries(node.frontmatter).forEach(([key, value]) => { blogNode[key.replace(/^:/, '').trim()] = value; });
       if (!blogNode) {
         blogNode.tags = [];

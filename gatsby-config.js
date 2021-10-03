@@ -155,5 +155,3 @@ Object.keys(process.env).forEach((key) => {
   }
   element[splits.slice(-1)[0]] = process.env[key];
 });
-
-console.log(module.exports);

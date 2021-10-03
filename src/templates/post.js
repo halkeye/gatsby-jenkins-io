@@ -6,6 +6,7 @@ import Avatar from '../components/Avatar';
 import SocialMediaButtons from '../components/SocialMediaButtons';
 import TagList from '../components/TagList';
 import TwitterShareButton from '../components/TwitterShareButton';
+import { reactJoin } from '../utils';
 
 const Author = ({
   name,
@@ -59,10 +60,7 @@ const Authors = ({ authors, blogroll }) => (
   </div>
 );
 
-// TODO - utils?
-const reactJoin = (elements, joiner) => (elements.length ? elements.reduce((prev, curr) => [prev, joiner, curr]) : []);
-
-const Post = ({ path, data }) => {
+const Post = ({ data }) => {
   const {
     title, date, authors, html, tags, slug,
   } = data.blog;
