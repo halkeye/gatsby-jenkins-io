@@ -6,9 +6,14 @@
 
 const path = require('path');
 const fs = require('fs');
-const { promisify } = require('util');
 const { slash } = require('gatsby-core-utils');
 const { createFilePath } = require('gatsby-source-filesystem');
+
+const avatarBaseDir = path.resolve(path.join('.', 'content', 'images', 'avatars'));
+const avatars = fs.readdirSync(avatarBaseDir)
+  .filter((file) => !file.startsWith('.'))
+  // fancy code that converts an array (of files) to map of filename => full path
+  .reduce((prev, curr) => ({ ...prev, [path.parse(curr).name.toLowerCase()]: path.resolve(path.join(avatarBaseDir, curr)) }), {});
 
 // Implement the Gatsby API “createPages”. This is
 // called after the Gatsby bootstrap is finished so you have
@@ -132,6 +137,7 @@ exports.onCreateNode = async ({
         parent: node.id,
         html: node.html,
         slug: `/blog/authors/${parent.name.toLowerCase()}/`,
+        avatar: avatars[parent.name.toLowerCase()],
         internal: {
           type: 'Author',
         },
