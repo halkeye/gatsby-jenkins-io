@@ -20,7 +20,6 @@
     "gatsby-plugin-sharp": "^3.13.0",
     "gatsby-plugin-sitemap": "^4.10.0",
     "gatsby-source-filesystem": "^3.13.0",
-    "gatsby-transformer-asciidoc": "file:../../../../../git/gatsbyjs/gatsby/packages/gatsby-transformer-asciidoc/gatsby-transformer-asciidoc-2.9.0.tgz",
     "gatsby-transformer-sharp": "^3.13.0",
     "gatsby-transformer-yaml": "^3.14.0",
     "postcss-calc": "^8.0.0",
