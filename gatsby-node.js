@@ -127,6 +127,10 @@ exports.onCreateNode = async ({
         reporter.warn(`${parent.name} is authorless`);
         blogNode.authors = [];
       }
+      if (blogNode.opengraph && blogNode.opengraph.image) {
+        // :fingerscrossed: that normalize will make this work in windows, TODO - test later
+        blogNode.opengraph.image = path.normalize(blogNode.opengraph.image.replace(/^\/images\//, `${path.resolve('./content/images/')}/`));
+      }
       blogNode.internal.contentDigest = createContentDigest(blogNode);
 
       createNode(blogNode);

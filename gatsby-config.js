@@ -131,6 +131,7 @@ module.exports = {
   ],
   mapping: {
     'Blog.authors': 'Author',
+    'Blog.opengraph.image': 'File.absolutePath',
     'Author.avatar': 'File.absolutePath',
   },
 };
