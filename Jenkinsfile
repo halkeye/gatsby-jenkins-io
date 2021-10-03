@@ -23,7 +23,9 @@ pipeline {
   stages {
     stage('Install Submodules') {
       steps {
-        sh 'git submodule update --remote'
+        dir('jenkins.io') {
+          git poll: false, url: 'https://github.com/jenkins-infra/jenkins.io.git'
+        }
       }
     }
 
