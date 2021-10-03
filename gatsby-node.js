@@ -143,9 +143,6 @@ exports.onCreateNode = async ({
         },
       };
       Object.entries(node.frontmatter).forEach(([key, value]) => { authorNode[key.replace(/^:/, '').trim()] = value; });
-      if (node.frontmatter.avatar) {
-        authorNode.avatar = path.resolve(`./content/images/avatars/${node.frontmatter.avatar}`);
-      }
       authorNode.internal.contentDigest = createContentDigest(authorNode);
       createNode(authorNode);
     }
