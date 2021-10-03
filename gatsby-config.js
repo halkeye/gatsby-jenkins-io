@@ -65,17 +65,17 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'blog',
-        // path: `${__dirname}/content/blog`,
-        path: `${__dirname}/junk/blog`,
-        ignore: ['**/_includes', '**/CHANGELOG.adoc', '**/README.adoc'],
+        name: 'author',
+        path: `${__dirname}/content/_data/authors`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'author',
-        path: `${__dirname}/content/_data/authors`,
+        name: 'blog',
+        // escape hatch for when restarting gatsby a lot (debugging gatsby configs)
+        path: process.env.USE_JUNK ? `${__dirname}/junk/blog` : `${__dirname}/content/blog`,
+        ignore: ['**/_includes', '**/CHANGELOG.adoc', '**/README.adoc'],
       },
     },
     {
