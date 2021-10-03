@@ -65,7 +65,7 @@ pipeline {
           git config --global user.name "jenkins.gavinmogan.com"
 
           git remote set-url origin "${DEPLOY_URL}"
-          gh-pages -d public
+          npx gh-pages -d public
         '''
       }
     }
