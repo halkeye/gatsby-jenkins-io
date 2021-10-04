@@ -6,6 +6,7 @@ import Avatar from '../components/Avatar';
 import SocialMediaButtons from '../components/SocialMediaButtons';
 import TagList from '../components/TagList';
 import TwitterShareButton from '../components/TwitterShareButton';
+import Discourse from '../components/Discourse';
 import { reactJoin } from '../utils';
 
 const Author = ({
@@ -62,7 +63,7 @@ const Authors = ({ authors, blogroll }) => (
 
 const Post = ({ data }) => {
   const {
-    title, date, authors, html, tags, slug,
+    title, date, authors, html, tags, slug, links,
   } = data.blog;
   return (
     <Layout>
@@ -90,7 +91,7 @@ const Post = ({ data }) => {
                 <div dangerouslySetInnerHTML={{ __html: html }} />
                 <Authors authors={authors} blogroll />
               </div>
-              TODO-partial(&apos;discuss.html&apos;)
+              <Discourse topicId={links.discourse} />
             </div>
           </div>
         </div>
@@ -109,6 +110,9 @@ export const pageQuery = graphql`
       title
       date
       slug
+      links {
+        discourse
+      }
       authors {
         ...AuthorFragment
       }
