@@ -156,7 +156,12 @@ exports.onCreateNode = async ({
         delete blogNode.author;
       }
       // some default values for links
-      blogNode.links = { discourse: false, ...(blogNode.links || {}) };
+      blogNode.links = { discourse: '', ...(blogNode.links || {}) };
+      // it needs to be the same type
+      if (blogNode.links.discourse === true) {
+        blogNode.links.discourse = '*';
+      }
+
       if (!blogNode.authors) {
         console.log(frontmatter);
         reporter.warn(`${parent.name} is authorless`);

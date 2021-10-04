@@ -4,7 +4,7 @@ const Discourse = ({ topicId }) => {
   React.useEffect(() => {
     if (!topicId) { return; }
     const embedOptions = { discourseUrl: 'https://community.jenkins.io/' };
-    if (topicId !== true) {
+    if (topicId !== '*') {
       // Support both topic IDs and full URLs
       // TODO: Check number validity
       embedOptions.topicId = topicId.replace(/\/\s*$/, '').replace(/.*\//, '');
