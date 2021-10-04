@@ -17,6 +17,28 @@ const avatars = fs.readdirSync(avatarBaseDir)
   // fancy code that converts an array (of files) to map of filename => full path
   .reduce((prev, curr) => ({ ...prev, [path.parse(curr).name.toLowerCase()]: path.resolve(path.join(avatarBaseDir, curr)) }), {});
 
+const dateFromFilename = (parent) => {
+  const date = new Date(Date.parse(parent.name.substring(0, 10).replace(/-$/g, '')));
+  if (!date || Number.isNaN(date.getTime())) {
+    console.log(parent);
+    return null; // parent.relativeDirectory + parent.name
+  }
+  return date;
+};
+
+const datedFileSlug = (date, name) => {
+  if (!date) {
+    return name.replace(/^index$/, '');
+  }
+  return [
+    date.getUTCFullYear().toString().padStart(4, 0),
+    (date.getUTCMonth() + 1).toString().padStart(2, 0),
+    date.getUTCDate().toString().padStart(2, 0),
+    name.replace(/^\d+-\d+-\d+-/, ''),
+    '', // trailing slash
+  ].join('/');
+};
+
 // Implement the Gatsby API “createPages”. This is
 // called after the Gatsby bootstrap is finished so you have
 // access to any information necessary to programmatically
@@ -69,7 +91,7 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateNode = async ({
   node, actions, getNode, createNodeId, createContentDigest, reporter,
 }) => {
-  const { createNodeField, createNode, createRedirect } = actions;
+  const { createNode, createRedirect } = actions;
   if (node.internal.type === 'File') {
     if (node.sourceInstanceName === 'images') {
       const dir = path.join(__dirname, 'public', 'images', node.relativeDirectory);
@@ -80,52 +102,52 @@ exports.onCreateNode = async ({
 
   if (node.internal.type === 'Asciidoc') {
     const parent = getNode(node.parent);
+    const frontmatter = Object.entries(node.frontmatter || {}).reduce((prev, [key, value]) => ({ ...prev, [key.replace(/^:/, '').trim()]: value }), {});
+    if (parent.name === 'index') {
+      console.log('ignoring', parent.absolutePath, node);
+      // TODO - maybe do something with this eventually?
+      return;
+    }
+    if (frontmatter?.layout === 'redirect' && frontmatter?.redirect_url) {
+      // FIXME - drop blog
+      createRedirect({
+        fromPath: path.join('/blog', parent.relativeDirectory.replace(/^\/blog/, '')),
+        toPath: frontmatter.redirect_url,
+        isPermanent: true,
+      });
+      return;
+    }
+    if (frontmatter?.layout === 'refresh' && frontmatter?.refresh_to_post_id) {
+      // FIXME - drop blog
+      createRedirect({
+        fromPath: path.join('/blog', parent.relativeDirectory.replace(/^\/blog/, '')),
+        toPath: frontmatter.refresh_to_post_id,
+        isPermanent: true,
+      });
+      return;
+    }
     // probably isn't needed, but just in case for non blog/author
-    const slug = createFilePath({ node, getNode });
-    createNodeField({
-      name: 'slug',
-      node,
-      value: slug,
-    });
+    // const slug = createFilePath({ node, getNode });
+    // createNodeField({
+    //  name: 'slug',
+    //  node,
+    //  value: slug,
+    // });
     // TODO - - next if post.layout != 'post'
     if (parent.sourceInstanceName === 'blog') {
-      const date = new Date(Date.parse(parent.name.match(/^(\d+-\d+-\d+)/)[0]));
+      const date = dateFromFilename(parent);
       const blogNode = {
+        ...frontmatter,
         id: createNodeId(node.id),
         parent: node.id,
         html: node.html,
         strippedHtml: stripHtml(node.html).result,
-        slug: [
-          '', // initial slash
-          'blog',
-          date.getUTCFullYear().toString().padStart(4, 0),
-          (date.getUTCMonth() + 1).toString().padStart(2, 0),
-          date.getUTCDate().toString().padStart(2, 0),
-          parent.name.replace(/^\d+-\d+-\d+-/, ''),
-          '', // trailing slash
-        ].join('/'),
+        slug: path.join('/blog', datedFileSlug(date, parent.name)),
         date,
         internal: {
           type: 'Blog',
         },
       };
-      if (node.frontmatter.layout === 'redirect' && node.frontmatter.redirect_url) {
-        createRedirect({
-          fromPath: blogNode.slug,
-          toPath: node.frontmatter.redirect_url,
-          isPermanent: true,
-        });
-        return;
-      }
-      if (node.frontmatter.layout === 'redirect' && node.frontmatter.refresh_to_post_id) {
-        createRedirect({
-          fromPath: blogNode.slug,
-          toPath: node.frontmatter.refresh_to_post_id,
-          isPermanent: true,
-        });
-        return;
-      }
-      Object.entries(node.frontmatter).forEach(([key, value]) => { blogNode[key.replace(/^:/, '').trim()] = value; });
       if (!blogNode) {
         blogNode.tags = [];
       }
@@ -134,6 +156,7 @@ exports.onCreateNode = async ({
         delete blogNode.author;
       }
       if (!blogNode.authors) {
+        console.log(frontmatter);
         reporter.warn(`${parent.name} is authorless`);
         blogNode.authors = [];
       }
@@ -142,11 +165,11 @@ exports.onCreateNode = async ({
         blogNode.opengraph.image = path.normalize(blogNode.opengraph.image.replace(/^\/images\//, `${path.resolve('./content/images/')}/`));
       }
       blogNode.internal.contentDigest = createContentDigest(blogNode);
-
       createNode(blogNode);
     }
     if (parent.sourceInstanceName === 'author') {
       const authorNode = {
+        ...frontmatter,
         id: parent.name,
         parent: node.id,
         html: node.html,
@@ -156,7 +179,6 @@ exports.onCreateNode = async ({
           type: 'Author',
         },
       };
-      Object.entries(node.frontmatter).forEach(([key, value]) => { authorNode[key.replace(/^:/, '').trim()] = value; });
       authorNode.internal.contentDigest = createContentDigest(authorNode);
       createNode(authorNode);
     }
