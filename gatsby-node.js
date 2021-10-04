@@ -265,7 +265,7 @@ exports.onCreateNode = async ({
         id: createNodeId(node.id),
         parent: node.id,
         html: node.html,
-        slug: path.join('/blog', datedFileSlug(date, parent.name)),
+        slug: path.join('/blog', datedFileSlug(date, parent.name)).trim(),
         date,
         internal: {
           type: 'Blog',
@@ -303,7 +303,7 @@ exports.onCreateNode = async ({
         id: parent.name,
         parent: node.id,
         html: node.html,
-        slug: `/blog/authors/${parent.name.toLowerCase()}`,
+        slug: `/blog/authors/${parent.name.toLowerCase()}`.trim(),
         avatar: avatars[parent.name.toLowerCase()],
         internal: {
           type: 'Author',
