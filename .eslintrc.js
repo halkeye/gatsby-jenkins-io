@@ -6,6 +6,7 @@ module.exports = {
   rules: {
     'react/no-danger': 'off', // gatsby uses it everywhere
 
+    'react/display-name': ['error', { ignoreTranspilerName: true }],
     'max-len': 'off',
     'react/prop-types': 'off',
     'react/jsx-filename-extension': 'off',

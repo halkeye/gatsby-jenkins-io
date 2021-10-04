@@ -3,6 +3,20 @@ import { Link } from 'gatsby';
 import Avatar from './Avatar';
 import SocialMediaButtons from './SocialMediaButtons';
 
+const AuthorBio = ({ html }) => {
+  if (!html) {
+    return (
+      <p>
+        {`This author has no biography defined.
+            See social media links referenced below.`}
+      </p>
+    );
+  }
+
+  return <div dangerouslySetInnerHTML={{ __html: html }} />;
+};
+AuthorBio.displayName = 'AuthorBio';
+
 const Author = ({
   name,
   html,
@@ -30,13 +44,7 @@ const Author = ({
               </Link>
             </b>
             )}
-            {html && (<div dangerouslySetInnerHTML={{ __html: html }} />)}
-            {!html && (
-            <p>
-              {`This author has no biography defined.
-            See social media links referenced below.`}
-            </p>
-            )}
+            <AuthorBio html={html} />
             <SocialMediaButtons twitter={twitter} github={github} linkedin={linkedin} blog={blog} />
           </td>
         </tr>
@@ -44,5 +52,6 @@ const Author = ({
     </table>
   </div>
 );
+Author.displayName = 'Author';
 
 export default Author;

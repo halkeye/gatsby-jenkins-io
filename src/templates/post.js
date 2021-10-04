@@ -17,6 +17,7 @@ const Authors = ({ authors, blogroll }) => (
     {authors.map((author) => <Author key={author.id} blogroll={blogroll} {...author} />)}
   </div>
 );
+Authors.displayName = 'Author';
 
 const Post = ({ data }) => {
   const {
@@ -56,6 +57,7 @@ const Post = ({ data }) => {
     </Layout>
   );
 };
+Post.displayName = 'Post';
 
 export default Post;
 

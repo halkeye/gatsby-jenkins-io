@@ -12,5 +12,6 @@ const TagList = ({ tags }) => (
     ))}
   </ul>
 );
+TagList.displayName = 'TagList';
 
 export default TagList;
