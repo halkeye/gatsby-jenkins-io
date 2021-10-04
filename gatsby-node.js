@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax, no-await-in-loop */
 /**
  * Implement Gatsby's Node APIs in this file.
  *
@@ -9,7 +10,6 @@ const { stripHtml } = requireEsm('string-strip-html');
 const path = require('path');
 const fs = require('fs');
 const { slash } = require('gatsby-core-utils');
-const { createFilePath } = require('gatsby-source-filesystem');
 
 const avatarBaseDir = path.resolve(path.join('.', 'content', 'images', 'avatars'));
 const avatars = fs.readdirSync(avatarBaseDir)
@@ -39,13 +39,8 @@ const datedFileSlug = (date, name) => {
   ].join('/');
 };
 
-// Implement the Gatsby API “createPages”. This is
-// called after the Gatsby bootstrap is finished so you have
-// access to any information necessary to programmatically
-// create pages.
-exports.createPages = async ({ graphql, actions }) => {
+const createAllBlogPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-
   const allBlogResults = await graphql(`
     {
       allBlog(
@@ -79,6 +74,54 @@ exports.createPages = async ({ graphql, actions }) => {
       });
     });
   }
+};
+
+const createAllAuthorPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  const eachAuthorResults = await graphql('{ allAuthor { edges { node { id, slug } } } }');
+  if (eachAuthorResults.errors) {
+    throw eachAuthorResults.errors;
+  }
+  for (const { node: author } of eachAuthorResults.data.allAuthor.edges) {
+    const allBlogResults = await graphql(`
+      {
+        allBlog(
+          filter: {authors: {elemMatch: {id: {in: ["${author.id}"]}}}}
+          sort: { fields: [date], order: DESC }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `);
+    if (allBlogResults.errors) {
+      throw allBlogResults.errors;
+    }
+    const posts = allBlogResults.data.allBlog.edges;
+    const postsPerPage = 8;
+    const numPages = Math.ceil(posts.length / postsPerPage);
+    (Array.from({ length: numPages }) || [0]).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? author.slug : `${author.slug}/page/${i + 1}`,
+        component: path.resolve('./src/templates/author-blog-list-template.js'),
+        context: {
+          author: author.id,
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      });
+    });
+  }
+};
+
+const createIndividualBlogPosts = async ({ graphql, actions }) => {
+  const { createPage } = actions;
   const individualPostResults = await graphql(`
    {
      allBlog(limit: 1000) {
@@ -93,26 +136,37 @@ exports.createPages = async ({ graphql, actions }) => {
  `);
   if (individualPostResults.errors) {
     throw individualPostResults.errors;
-  } else {
-    // Create Asciidoc pages.
-    const postTemplate = path.resolve('./src/templates/post.js');
-    individualPostResults.data.allBlog.edges.forEach((edge) => {
-      // Gatsby uses Redux to manage its internal state.
-      // Plugins and sites can use functions like "createPage"
-      // to interact with Gatsby.
-      createPage({
-        // Each page is required to have a `path` as well
-        // as a template component. The `context` is
-        // optional but is often necessary so the template
-        // can query data specific to each page.
-        path: edge.node.slug,
-        component: slash(postTemplate),
-        context: {
-          id: edge.node.id,
-        },
-      });
-    });
   }
+  // Create Asciidoc pages.
+  const postTemplate = path.resolve('./src/templates/post.js');
+  individualPostResults.data.allBlog.edges.forEach((edge) => {
+    // Gatsby uses Redux to manage its internal state.
+    // Plugins and sites can use functions like "createPage"
+    // to interact with Gatsby.
+    createPage({
+      // Each page is required to have a `path` as well
+      // as a template component. The `context` is
+      // optional but is often necessary so the template
+      // can query data specific to each page.
+      path: edge.node.slug,
+      component: slash(postTemplate),
+      context: {
+        id: edge.node.id,
+      },
+    });
+  });
+};
+
+// Implement the Gatsby API “createPages”. This is
+// called after the Gatsby bootstrap is finished so you have
+// access to any information necessary to programmatically
+// create pages.
+exports.createPages = async ({ graphql, actions }) => {
+  await Promise.all([
+    createAllBlogPages({ graphql, actions }),
+    createAllAuthorPages({ graphql, actions }),
+    createIndividualBlogPosts({ graphql, actions }),
+  ]);
 };
 
 exports.onCreateNode = async ({
@@ -138,17 +192,16 @@ exports.onCreateNode = async ({
     if (frontmatter?.layout === 'redirect' && frontmatter?.redirect_url) {
       // FIXME - drop blog
       createRedirect({
-        fromPath: path.join('/blog', parent.relativeDirectory.replace(/^\/blog/, '')),
+        fromPath: path.join('/blog', parent.relativeDirectory.replace(/^\/blog/, ''), parent.name.replace(/^\d+-\d+-\d+-/, '')),
         toPath: frontmatter.redirect_url,
         isPermanent: true,
       });
       return;
     }
     if (frontmatter?.layout === 'refresh' && frontmatter?.refresh_to_post_id) {
-      console.log(parent, frontmatter);
       // FIXME - drop blog
       createRedirect({
-        fromPath: path.join('/blog', parent.relativeDirectory.replace(/^\/blog/, '')),
+        fromPath: path.join('/blog', parent.relativeDirectory.replace(/^\/blog/, ''), parent.name.replace(/^\d+-\d+-\d+-/, '')),
         toPath: frontmatter.refresh_to_post_id,
         isPermanent: true,
       });

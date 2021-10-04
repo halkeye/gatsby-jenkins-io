@@ -10,7 +10,7 @@ const BlogPage = ({ pageContext, data }) => (
       <div id="block-block-15" className="block block-block even blog-posts">
         <h3 className="title">Recent Blog Posts</h3>
       </div>
-      <BlogPosts pageContext={pageContext} data={data} prefix="/blog" />
+      <BlogPosts pageContext={pageContext} data={data} prefix={`/blog/tags/${pageContext.tag}`} />
     </div>
   </Layout>
 );
@@ -18,8 +18,9 @@ const BlogPage = ({ pageContext, data }) => (
 export default BlogPage;
 
 export const pageQuery = graphql`
-  query blogPage($skip: Int!, $limit: Int!) {
+  query tagAndBlogsPage($skip: Int!, $limit: Int!, $tag: String!) {
     allBlog(
+      filter: {tags: {in: [$tag]}}
       sort: { fields: [date], order: DESC }
       limit: $limit
       skip: $skip

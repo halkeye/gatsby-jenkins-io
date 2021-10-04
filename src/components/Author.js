@@ -23,7 +23,7 @@ const Author = ({
             <Avatar avatar={avatar} name={name} />
           </td>
           <td>
-            {!blogroll && (
+            {blogroll && (
             <b className="author name">
               <Link to={slug}>
                 {name}

@@ -3,14 +3,15 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import BlogPosts from '../components/BlogPostsListing';
+import Author from '../components/Author';
 
 const BlogPage = ({ pageContext, data }) => (
   <Layout>
     <div className="container">
-      <div id="block-block-15" className="block block-block even blog-posts">
-        <h3 className="title">Recent Blog Posts</h3>
-      </div>
-      <BlogPosts pageContext={pageContext} data={data} prefix="/blog" />
+      <Author key={data.author.id} blogroll={false} {...data.author} />
+    </div>
+    <div className="container">
+      <BlogPosts pageContext={pageContext} data={data} prefix={data.author.slug} />
     </div>
   </Layout>
 );
@@ -18,8 +19,12 @@ const BlogPage = ({ pageContext, data }) => (
 export default BlogPage;
 
 export const pageQuery = graphql`
-  query blogPage($skip: Int!, $limit: Int!) {
+  query authorAndBlogsPage($skip: Int!, $limit: Int!, $author: String!) {
+    author(id: {eq: $author}) {
+      ...AuthorFragment
+    }
     allBlog(
+      filter: {authors: {elemMatch: {id: {in: [$author]}}}}
       sort: { fields: [date], order: DESC }
       limit: $limit
       skip: $skip

@@ -358,6 +358,8 @@ const Layout = ({ children }) => {
 &nbsp;
       </div>
       <div id="grid-box">
+        <br />
+        <br />
         {children}
       </div>
       <script src="https://www.jenkins.io/assets/bower/anchor-js/anchor.min.js" dangerouslySetInnerHTML={{ __html: [] }} />
