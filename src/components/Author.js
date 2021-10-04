@@ -30,7 +30,7 @@ const Author = ({
               </Link>
             </b>
             )}
-            {html && (<p dangerouslySetInnerHTML={{ __html: html }} />)}
+            {html && (<div dangerouslySetInnerHTML={{ __html: html }} />)}
             {!html && (
             <p>
               {`This author has no biography defined.
