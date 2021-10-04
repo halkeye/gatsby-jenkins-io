@@ -17,6 +17,7 @@ const link = (prefix, page) => {
 const Pagination = ({
   prefix, currentPage, numPages,
 }) => {
+  if (numPages === 1) { return null; }
   const linkedPages = Array.from(new Set([
     1,
     2,

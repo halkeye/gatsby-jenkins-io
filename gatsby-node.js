@@ -103,8 +103,8 @@ const createAllAuthorPages = async ({ graphql, actions }) => {
     }
     const posts = allBlogResults.data.allBlog.edges;
     const postsPerPage = 8;
-    const numPages = Math.ceil(posts.length / postsPerPage);
-    (Array.from({ length: numPages }) || [0]).forEach((_, i) => {
+    const numPages = Math.ceil(posts.length / postsPerPage) || 1;
+    Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? author.slug : `${author.slug}/page/${i + 1}`,
         component: path.resolve('./src/templates/author-blog-list-template.js'),
@@ -265,7 +265,6 @@ exports.onCreateNode = async ({
         id: createNodeId(node.id),
         parent: node.id,
         html: node.html,
-        strippedHtml: stripHtml(node.html).result,
         slug: path.join('/blog', datedFileSlug(date, parent.name)),
         date,
         internal: {
@@ -304,7 +303,7 @@ exports.onCreateNode = async ({
         id: parent.name,
         parent: node.id,
         html: node.html,
-        slug: `/blog/authors/${parent.name.toLowerCase()}/`,
+        slug: `/blog/authors/${parent.name.toLowerCase()}`,
         avatar: avatars[parent.name.toLowerCase()],
         internal: {
           type: 'Author',
@@ -314,4 +313,23 @@ exports.onCreateNode = async ({
       createNode(authorNode);
     }
   }
+};
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createFieldExtension, createTypes } = actions;
+  createFieldExtension({
+    name: 'strippedHtml',
+    extend(/* options, prevFieldConfig */) {
+      return {
+        resolve(source) {
+          return stripHtml(source.html).result;
+        },
+      };
+    },
+  });
+  createTypes(`
+    type Blog implements Node {
+      strippedHtml: String @strippedHtml
+    }
+  `);
 };
