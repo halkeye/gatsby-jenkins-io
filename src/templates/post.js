@@ -84,7 +84,7 @@ const Post = ({ data }) => {
                     {' '}
                     by
                     {' '}
-                    {reactJoin(authors.map((a) => <Link to={a.slug}>{a.name}</Link>), ', ')}
+                    {reactJoin(authors.map((a) => <Link key={a.slug} to={a.slug}>{a.name}</Link>), ', ')}
                   </span>
                   <TagList tags={tags || []} />
                 </div>

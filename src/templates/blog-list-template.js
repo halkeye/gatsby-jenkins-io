@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import TagList from '../components/TagList';
+import Pagination from '../components/Pagination';
 
 import { reactJoin, SHORT_MONTH_NAMES } from '../utils';
 
@@ -32,14 +33,14 @@ const Post = ({
         </p>
       </Link>
       <div className="attrs">
-        {reactJoin(authors.map((a) => <Link to={a.slug}>{a.name}</Link>), ', ')}
+        {reactJoin(authors.map((a) => <Link key={a.slug} to={a.slug}>{a.name}</Link>), ', ')}
         <TagList tags={tags || []} />
       </div>
     </li>
   );
 };
 
-const BlogPage = ({ data: { allBlog: { edges } } }) => {
+const BlogPage = ({ pageContext, data: { allBlog: { edges } } }) => {
   if (!edges) {
     return <Layout />;
   }
@@ -56,6 +57,7 @@ const BlogPage = ({ data: { allBlog: { edges } } }) => {
             </ul>
           </div>
         </div>
+        <Pagination prefix="/blog" currentPage={pageContext.currentPage} numPages={pageContext.numPages} />
       </div>
     </Layout>
   );
@@ -64,8 +66,12 @@ const BlogPage = ({ data: { allBlog: { edges } } }) => {
 export default BlogPage;
 
 export const pageQuery = graphql`
-  {
-    allBlog(limit: 1000) {
+  query blogPage($skip: Int!, $limit: Int!) {
+    allBlog(
+      sort: { fields: [date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       edges {
         node {
           date

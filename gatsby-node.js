@@ -43,33 +43,60 @@ const datedFileSlug = (date, name) => {
 // called after the Gatsby bootstrap is finished so you have
 // access to any information necessary to programmatically
 // create pages.
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  // The “graphql” function allows us to run arbitrary
-  // queries against the local Drupal graphql schema. Think of
-  // it like the site has a built-in database constructed
-  // from the fetched data that you can run queries against.
-  return graphql(
-    `
-       {
-         allBlog(limit: 1000) {
-           edges {
-             node {
-               id
-               slug
-             }
-           }
+
+  const allBlogResults = await graphql(`
+    {
+      allBlog(
+        sort: { fields: [date], order: DESC }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `);
+  if (allBlogResults.errors) {
+    throw allBlogResults.errors;
+  } else {
+    const posts = allBlogResults.data.allBlog.edges;
+    const postsPerPage = 8;
+    const numPages = Math.ceil(posts.length / postsPerPage);
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? '/blog' : `/blog/page/${i + 1}`,
+        component: path.resolve('./src/templates/blog-list-template.js'),
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      });
+    });
+  }
+  const individualPostResults = await graphql(`
+   {
+     allBlog(limit: 1000) {
+       edges {
+         node {
+           id
+           slug
          }
        }
-     `,
-  ).then((result) => {
-    if (result.errors) {
-      throw result.errors;
-    }
-
+     }
+   }
+ `);
+  if (individualPostResults.errors) {
+    throw individualPostResults.errors;
+  } else {
     // Create Asciidoc pages.
     const postTemplate = path.resolve('./src/templates/post.js');
-    result.data.allBlog.edges.forEach((edge) => {
+    individualPostResults.data.allBlog.edges.forEach((edge) => {
       // Gatsby uses Redux to manage its internal state.
       // Plugins and sites can use functions like "createPage"
       // to interact with Gatsby.
@@ -85,7 +112,7 @@ exports.createPages = ({ graphql, actions }) => {
         },
       });
     });
-  });
+  }
 };
 
 exports.onCreateNode = async ({
@@ -118,6 +145,7 @@ exports.onCreateNode = async ({
       return;
     }
     if (frontmatter?.layout === 'refresh' && frontmatter?.refresh_to_post_id) {
+      console.log(parent, frontmatter);
       // FIXME - drop blog
       createRedirect({
         fromPath: path.join('/blog', parent.relativeDirectory.replace(/^\/blog/, '')),
