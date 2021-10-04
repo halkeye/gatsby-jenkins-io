@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/authors/darshank15",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"darshank15","html":"<div class=\"paragraph\">\n<p>Hi all, Myslef Darshan Kansagara, Currently working as Software Engineer at Apple. I did GSoC-2020 in Fossology Organisation. I am always happy to learn new technology stacks.\nI worked on java, Python, TimeSeries Database(such as prometheus, InfluxDb) and grafana. I love to solve problems and comeup with solution that helps to automate daily job/task of human being. Make their life easy.</p>\n</div>\n<div class=\"paragraph\">\n<p>I would love to menotor student. As side hobbies I love to teach, Speak and interact with other students and do knowledge sharing.</p>\n</div>","id":"darshank15","irc":null,"linkedin":"darshan-kansagara","name":"Darshan Kansagara","slug":"/blog/authors/darshank15","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"darshank15","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

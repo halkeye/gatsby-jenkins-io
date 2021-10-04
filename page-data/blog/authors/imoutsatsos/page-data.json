@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/authors/imoutsatsos",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"imoutsatsos","html":"<div class=\"paragraph\">\n<p>Life scientist and software engineer.\nInterested in open source, research informatics, imaging, metadata, and reproducible data flows.</p>\n</div>","id":"imoutsatsos","irc":null,"linkedin":null,"name":"Ioannis Moutsatsos","slug":"/blog/authors/imoutsatsos","twitter":"ioannismou"},"allBlog":{"edges":[]}},"pageContext":{"author":"imoutsatsos","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

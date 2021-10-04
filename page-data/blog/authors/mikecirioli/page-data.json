@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/authors/mikecirioli",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"mikecirioli","html":"<div class=\"paragraph\">\n<p>Full stack software developer with 20+ years experience.\n8 years experience as technical lead delivering both internal solutions and customer solutions.\nStrong project management skills, including planning, resources, testing and deliverables.\nMotivated team player willing to take initiative and deliver results.</p>\n</div>","id":"mikecirioli","irc":null,"linkedin":"mike-cirioli-07b2223","name":"Michael Cirioli","slug":"/blog/authors/mikecirioli","twitter":"mikecirioli"},"allBlog":{"edges":[]}},"pageContext":{"author":"mikecirioli","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

@@ -1,0 +1,906 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/gatsby-jenkins-io/styles.7c3b8f7f67d9c5da9f51.css" data-identity="gatsby-global-css">@import url(https://www.jenkins.io/assets/bower/bootstrap/css/bootstrap.min.css);@import url(https://www.jenkins.io/assets/bower/tether/css/tether.min.css);@import url(https://www.jenkins.io/css/jenkins.css);@import url(https://www.jenkins.io/assets/bower/ionicons/css/ionicons.min.css);@import url(https://www.jenkins.io/css/footer.css);@import url(https://www.jenkins.io/css/font-awesome.min.css);.artifact-list li:before,dt[id]:before,h1[id]:before,h2[id]:before,h3[id]:before,h4[id]:before,h5[id]:before,h6[id]:before{content:" ";display:block;height:55px;margin-top:-55px;visibility:hidden}:hover>.anchorjs-link{opacity:0}img{max-width:100%}.anchorjs-link:hover{opacity:1}.anchorjs-link{padding:.4em .3em .4em .5em!important}.container.page{position:relative}body .no-margin{margin:0;padding:0}#ji-hover-layer{position:relative;z-index:999}#download-menu>.dropdown-menu{padding:2rem;width:50rem}.download-popup-menu .popover-arrow{display:none}#download-menu>.dropdown-menu .btn-group:active>.dropdown-menu{display:block}body .popover.download-options{box-shadow:0 3px 15px rgba(0,0,0,.25);max-width:90%!important;min-width:500px!important;width:620px}.betanotice{background-color:#f7f1da;color:#d24939;font-weight:700;text-align:center;top:0;width:100%;z-index:100}body h1.page-title{font:700 4rem georgia;margin-top:-.2rem}body h1.page-title .in-tag{display:none}.sub-heading{margin:-.5rem 0 1rem}.fixed.top{position:fixed;top:0;width:100%;z-index:10}.carousel-item{background:#fff;min-height:27rem}.carousel-item>.carousel-caption{bottom:auto;top:1.5rem}#ji-download .carousel-caption{display:block;margin-top:1rem;padding:1rem;position:static}.carousel-item video{bottom:0;left:0;opacity:.67;position:absolute;right:0;top:0;width:100%}.carousel-item .mask{background:hsla(0,0%,100%,.5);bottom:0;box-shadow:0 0 100px 10px #fff;left:20%;position:absolute;right:20%;top:0}.carousel{z-index:9}.dropdown-menu p{font-size:.875rem!important}@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm){.chromeOnly{height:36px}}.carousel-inner{z-index:8}#ji-download{left:0;min-width:620px;position:absolute;right:0;text-align:center;top:18rem;z-index:9}.authors,.authors>.auth{display:inline-block;margin:0;padding-bottom:5px}.authors>.auth>a{border:1px solid;cursor:pointer;display:block;font-size:50px;padding:5px;text-decoration:none}.authors>.auth>a:hover{background:#def}div .authors{display:block;margin-bottom:3rem;padding:0}.row.body{padding-top:3rem}.no-margin .row{margin:0}.container.center{text-align:center}.center>.center{display:inline;display:inline-block;float:none}body .jumbotron{margin:0}body .card-block{display:block}.jumbotron.featured{background-color:#168bb9}.jumbotron.featured a{color:#fff;text-decoration:none!important}.jumbotron.featured .row>div{position:relative}.jumbotron.featured .icon-docker.big{font-size:300px;position:absolute;right:0;text-decoration:none;top:-4rem}.tint{box-shadow:inset 0 0 100px rgba(0,0,0,.25)}img.desaturate{filter:grayscale(100%);filter:gray;filter:url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale")}.img-box{background:#fff;border:1px solid #ccc;box-sizing:content-box;display:block;float:left;height:132px;line-height:132px;margin:2px;overflow:hidden;padding:0 10px;width:112px}.img-box>img{position:relative;top:-5px;vertical-align:middle;width:100%}.media-row,.step-by-step{border-bottom:.1rem solid #ccc;overflow-x:auto;overflow:visible;padding:2rem 1rem 3rem;position:relative;text-align:center;white-space:nowrap}.media-row{background-color:#fff;display:flex;flex-wrap:wrap}.media-row>.header,.step-by-step>.container>.header{margin-bottom:1.75rem}.media-row>.media,.step-by-step>.container.step{cursor:pointer;font-size:.9rem;vertical-align:top}.date-time,.step-by-step>.container .step .card-title{background:#168bb9;border-radius:50%;color:#fff;display:inline-block;font-size:1rem;height:4.75em;overflow:hidden;padding:.5em;position:relative;text-align:center;width:4.75em}.date-time>.date,.step-by-step>.container .step .card-title>.tag{background:rgba(180,40,40,.85);border-top-left-radius:.5em;border-top-right-radius:.5em;box-shadow:0 1px 5px rgba(0,0,0,.15);font-size:.75em;font-weight:400;left:0;padding:.5em 0 .25em;position:absolute;right:0;top:0}.date-time>.date .small{font-size:.5em}body .date-time{border-radius:.5em;height:5.3em;width:5.3em}.date-time>.date>*{display:inline}.date-time>.date>.dow{bottom:-1.1em;color:rgba(0,0,0,.15);display:block;font-family:arial narrow;font-size:6em;font-weight:bolder;left:-1em;position:absolute;right:-1.15em;text-align:center}.date-time>.time{font-size:1.1em;line-height:.67em;margin:2em -1em 0;position:relative}.step-by-step>.container .step .card-title>.num{font-size:2em;line-height:1em;margin-top:.67em}.step-by-step>.container .step .title{font-size:1.1rem;white-space:nowrap}.step-by-step>.container .step .short{display:block;font-size:.75rem;line-height:1.5em;margin:0 .5rem .5rem;overflow:hidden}.card-block{padding-bottom:0}.media-row>.media{font-size:85%;height:auto;margin:.25rem;min-height:16rem;text-align:left;width:14rem}.media-row>.media>img{width:100%}.media-row>.media>.card-block{padding:.75rem;white-space:normal;width:100%}.media-row>.media>.card-block p{line-height:1.2em}.media-row>.media .media-title{font-size:1.25rem;margin-bottom:.125rem}.quote-row{background:#f9f9f9;border-radius:0;box-shadow:inset 0 10px 100px rgba(0,0,0,.25);white-space:normal}.quote-row .card.important{background:#fff;box-shadow:0 1px 5px rgba(0,0,0,.25);font-size:1rem;margin-top:-1rem;white-space:normal}.quote-row .card.important p{font-size:1rem}#directory td>a{display:block;margin-bottom:.5rem;padding-bottom:.5rem;padding-right:1rem}#directory td>a>img{height:40px;width:40px}#directory tr{vertical-align:top}#directory tr td .title{font-weight:700}#directory tr td .description{font-size:75%}#welcome,body #sidebar ul.resources{border-top:1px solid #ccc;margin-bottom:2rem;margin-top:.75rem;padding-bottom:3rem;padding-top:1.5rem;position:relative}#welcome>div{bottom:0;height:3rem;left:0;position:absolute}#welcome>div>a{display:block;font-weight:700;margin-left:1rem;padding-left:40px;position:absolute;top:0}#sidebar #welcome>div>img{height:32px;left:4px;position:absolute;top:0;width:32px}#sidebar #welcome>.content{height:auto;position:relative}#sidebar ul.resources,#sidebar ul.resources>li,#sidebar ul.resources>li>a{display:block;list-style:none;margin:0;padding:0}body #sidebar ul.resources>li>a{font-weight:700;margin-left:1rem;padding:0 0 .5rem 40px}body .ji-dated-list>.post{border-top:.1rem solid #ccc;margin-bottom:.5rem}.ji-blog-list,.ji-dated-list,.ji-item-list,.ji-item-list>.post>.body,.ji-item-list>post,.ji-item-list>post>.body{display:block;font-size:1rem;list-style:none;margin:0;padding:0;position:relative}.events .ji-item-list{border-bottom:1px solid #ccc;overflow:visible;overflow-x:auto;overflow-y:visible;text-align:center;vertical-align:top;white-space:nowrap}.events .ji-item-list>.event{display:inline-block;margin:0;vertical-align:top}.events .ji-item-list>.event>a{margin:1rem .25rem .25rem;padding:.75rem;text-decoration:none;white-space:normal;width:16rem}.events .ji-item-list>.event>a .title{height:1.1rem;margin:.75rem 0 .25rem;overflow:hidden;position:relative}.events .ji-item-list>.event>a .title:after{bottom:0;box-shadow:inset -3rem 0 2rem -2rem #fff;content:" ";display:block;height:1.1rem;position:absolute;right:0;width:10%}.events .ji-item-list>.event>a .teaser{color:#4a5568;font-size:.85rem;height:3.3rem;overflow:hidden;position:relative}.events .ji-item-list>.event>a .teaser:after{bottom:0;box-shadow:inset -6rem 0 3rem -3rem #fff;content:" ";display:block;height:1.1rem;position:absolute;right:0;width:25%}.ji-dated-list>.post>.attrs,.ji-dated-list>.post>.body{padding:1.25rem 1rem 1rem 5rem;text-decoration:none}.ji-blog-list>.post>.more{color:#79b1be;position:absolute;right:0}.ji-blog-list>.post>.more:before{border:1px solid;content:"+";display:block;float:right;margin-left:.5rem}.ji-blog-list>.post>.body>.teaser,.ji-dated-list>.post>.body>.teaser{color:#555;margin:0 0 .5rem;max-height:6rem;overflow:hidden;position:relative;text-decoration:none}.ji-blog-list>.event>.body>.teaser{max-height:3.3rem!important}.fff.section{background:#fff;box-shadow:0 2px 3px rgba(0,0,0,.15);position:relative;z-index:2}.ji-blog-list>.post>.body>.teaser:after,.ji-dated-list>.post>.body>.teaser:after{bottom:0;box-shadow:inset -25rem 0 15rem -15rem #fff;content:"";display:block;height:1.5rem;position:absolute;right:0;width:30rem}.f9f9f9.section{background:#f9f9f9}.ji-dated-list>.post>.body>.teaser:after,z.f9f9f9.section .ji-blog-list>.post>.body>.teaser:after{box-shadow:inset -25rem 0 15rem -15rem #f9f9f9}.ji-blog-list>.post>.body:hover,.ji-dated-list>.post>.body:hover{text-decoration:none}.ji-blog-list>.post>.body:hover>.header>.title,.ji-dated-list>.post>.body:hover>.title{text-decoration:underline}.ji-dated-list>.post>.body>.teaser{color:#333;text-decoration:none}.ji-dated-list>.post>.body>.card{left:0;position:absolute;top:1.25rem}.ji-dated-list>.post>.attrs{padding-top:0;text-align:left}.ji-dated-list>.post>.attrs .author{display:inline-block;font-size:125%;margin:0 0 .25rem}.ji-blog-list>.post>.attrs>.tags,.ji-dated-list>.post>.attrs>.tags{font-size:75%;opacity:.75}.ji-blog-list>.post>.attrs>.tags>li,.ji-dated-list>.post>.attrs>.tags>li{display:inline-block;padding:0}.ji-blog-list>.post>.attrs>.tags>li>a{padding-right:.25rem}.ji-dated-list>.post>.attrs>.tags>li>a{border:.1rem solid;display:block;padding:0 .25rem}.ji-item-list .card{border:.1rem solid;text-align:center;width:4rem}.date.card>.month{background:#999;color:#fff}.date.card>.day{font-size:150%;font-weight:600;line-height:3rem}.ji-blog-list .date{border:1px solid;display:inline-block;font-size:.75rem;line-height:1.2em;margin:-.25rem .25rem 0 -2.75rem;position:relative;text-align:center;vertical-align:middle}.ji-blog-list .header{padding-left:2.75rem}.ji-blog-list .title{display:inline-block;vertical-align:middle}.ji-blog-list .date>.month{background:#168bb9;border-bottom:1px solid;color:#fff;padding:0 .2rem}.ji-blog-list .post,.ji-item-list .post{margin:.5rem 0 1.5rem}.blog-posts .ji-blog-list .post{background:#fff;margin:.5rem -1.5rem 1rem;padding:1.5rem}.ji-blog-list .attrs{color:#d55}.ji-blog-list .attrs>a{color:#d53730}.ji-blog-list .header.time{padding:0 0 .33rem 2.15rem;position:relative}.ji-blog-list .header.time .date{left:0;margin:0;position:absolute;top:0}.ji-blog-list .date-time .time{color:#d53730;font-size:.85rem;margin-bottom:-.5rem;position:relative;top:-.33rem}.blog-posts>h4,.events>h5{border-bottom:1px solid #ccc;margin:0 0 1rem;min-height:2rem}.events .event .title{display:block;font-size:1rem;margin:0}.events .event .teaser{font-size:.85rem;line-height:1.1rem}.event .teaser{overflow:hidden;position:relative;text-align:justify}.event .teaser.collapsed{max-height:4rem}.event .teaser:not(.collapsed){max-height:unset}.event .teaser.collapsed:before{background-image:linear-gradient(180deg,transparent,#fff);bottom:0;content:"";left:0;padding:3em 0;position:absolute;width:100%}.events .ji-blog-list>.event>.body>.teaser:after{height:1.1rem}.docker-plugins-list{margin-top:3rem}.ji-item-list.plugins>.post .body{padding:.75rem 0 0 2.5rem}.ji-item-list.plugins>.post .body p{margin:0}.ji-item-list.plugins>.post .body>.title{margin-top:0}.ji-item-list.plugins>.post>.attrs{font-size:80%;text-align:right}.ji-item-list.plugins>.post>.body>.card{top:.75rem}.card.icon{line-height:2rem;padding:0 .25rem;vertical-align:middle}.card.icon,.card.icon div{display:inline}.ji-dated-list>.post>.article{text-decoration:none}.ji-dated-list>.post>.article>.title{margin:.5rem 0 .125rem}.ji-dated-list>.post>.article>.url{color:#999;font-size:75%}.doc-block{margin:2rem 0 6rem}.sub-block{margin:3rem 0}.active-section{margin-bottom:1rem}.toc li a{display:block;line-height:1.2em;padding:.5rem 0}.toc .active-section li a{padding:.125rem 0}.cal{border:1px solid #999;margin-bottom:2rem}.cal>.row{border-bottom:1px solid rgba(0,0,0,.2);margin:0}.cal>.days{background:rgba(0,0,0,.15);border-bottom:1px solid #999;box-shadow:inset 0 3px 3px -3px rgba(0,0,0,.3);text-align:center}.cal>.days>.col-md-2{height:auto;line-height:2em;position:relative}.cal>.row>.col-md-2.weekend{background:rgba(0,0,0,.1);border:none;box-shadow:inset 3px 0 3px -3px rgba(0,0,0,.2)}.cal .col-md-2{border-right:1px solid rgba(0,0,0,.1);height:5.5rem}.cal a.apt{background:rgba(100,255,255,.5);box-shadow:inset 0 0 0 1px rgba(0,100,100,.5);display:block;font-size:75%;left:0;line-height:1.2em;padding:.125rem .5rem;position:absolute}.cal a.apt.span-4{margin:1px;width:400%}.cal a.apt.span-1{width:100%}.segment{padding-top:3rem}.cols-3{-moz-columns:3;column-count:3}.chunks{list-style:none;margin:0;padding:0}.features.uniform-height>div{padding-left:0}.uniform-height .box{border-radius:5px;min-height:10rem;padding:.67rem .75rem 0 4rem;position:relative}.uniform-height .box:before,.uniform-height .box i{background:#168bb9;border-radius:50%;color:#fff;content:" ";display:block;font-size:1.75rem;height:3.25rem;left:0;line-height:3.25rem;position:absolute;text-align:center;top:.75rem;width:3.25rem}.uniform-height .box>p{font-size:.8rem;line-height:1.5em;overflow:hidden}.uniform-height .box>h5{font-size:1.1rem;line-height:1.3em;margin-bottom:.33rem}@media (max-width:768px){.segment{padding-top:1rem}.uniform-height .box{margin-bottom:.5rem;min-height:4rem;padding-bottom:.5rem}}@media (min-width:992px) and (max-width:1200px){.uniform-height .box{min-height:12rem}}#ji-download .btn{border-radius:3px;box-shadow:0 3px 3px -1px rgba(0,0,0,.25);position:relative}#ji-download .btn .brick-tops{background:repeating-linear-gradient(90deg,transparent,transparent 12px,#358 0,#07d 22px,#358 32px);display:none;left:0;position:absolute;right:0;top:0}.brick-tops.footer{background:repeating-linear-gradient(90deg,transparent,transparent 12px,#234 0,#357 22px,#234 32px);border-bottom:2px solid rgba(255,255,255,.1)}#ji-download .btn:hover .brick-tops{background:repeating-linear-gradient(90deg,transparent,transparent 12px,#136 0,#05a 22px,#136 32px)}#ji-download .btn:hover{box-shadow:none}body{background-color:#fff;color:#4a5568;font-family:lato,Roboto,Open Sans,sans-serif;font-size:1rem;line-height:1.5;margin:0}.jumbotron.plugins{background:#81b0c4;background:linear-gradient(90deg,#81b0c4,#335061);border-radius:0;color:#fff;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#81b0c4",endColorstr="#335061",GradientType=1)}.overview{padding-top:1.5rem}.overview p{font-size:1.1rem}.btn-primary{background:#d24939;border:0}.btn-primary:active,.btn-primary:focus,.btn-primary:hover{background:#335061;border:0}nav .nav-item{cursor:pointer}nav .nav-item.active{box-shadow:inset 0 -2px #d33833}a{color:#069}#toc-blog{margin-left:-1rem}.section.blogs .content{padding-top:.5rem}.container.blog-post{min-height:65rem}.container.blog-post h1{font-size:2.25rem;margin-bottom:1rem}.container.blog-post .submitted{display:block}.section.blogs h4.blog-title{font-size:1.25rem;padding-bottom:.25rem}.container.blog-post .main-content{margin-bottom:60px}.quoteblock{padding-bottom:1rem}blockquote{border-left:5px solid #ddd;font-style:italic;margin:1rem 0 2rem;padding:1rem 1rem 1rem 2rem}.quoteblock blockquote{background:#fff;margin:1rem 0 0;padding:1rem 1rem 1rem 3rem;position:relative}.quoteblock .attribution{font-style:italic;margin-left:1.5rem}.quoteblock blockquote:before{color:#ddd;content:"\201C";display:block;font-size:4rem;left:0;line-height:1em;position:absolute;text-align:center;top:.5rem;width:3rem}.toc{background-color:#f9f9f9;border-left:1px solid #c9c9c9;clear:right;float:right;margin-bottom:1rem;margin-left:15px;padding:10px;width:20rem}.toc li li{padding-left:1rem}.toc li,.toc li>a,.toc ul{display:block;font-size:.9rem;line-height:1.35rem;list-style:none;margin:0;padding:0}.toc ul.root>li>a{color:#911;font-size:.85rem}.container.blog-post #sidebar{background:#f9f9f9;border-left:1px solid #ccc;bottom:0;box-shadow:inset 10px 0 10px -15px;overflow-y:auto;padding-top:5rem;position:fixed;right:0;top:0}.vertical.events .ji-item-list>.event{display:block}.container.blog-post .events .ji-item-list{border:none;white-space:normal}.container.blog-post .time .date-time{font-size:.75rem;left:1rem;position:absolute}.container.blog-post .events .ji-item-list>.event>a{background:#fff;border:1px solid #ccc;border-radius:3px;box-shadow:0 2px 2px rgba(0,0,0,.15);margin:.25rem 1rem .25rem .25rem;padding:.25rem 0 .25rem 5.5rem;text-align:left;width:auto}.carousel-caption{text-shadow:none}.admonitionblock td.content>.title,.audioblock>.title,.dlist>.title,.exampleblock>.title,.hdlist>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.olist>.title,.openblock>.title,.paragraph>.title,.qlist>.title,.quoteblock>.title,.stemblock>.title,.ulist>.title,.verseblock>.title,.videoblock>.title,table.tableblock>.title{text-rendering:optimizeLegibility;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic;text-align:left}table.tableblock>caption.title{max-width:0;overflow:visible;white-space:nowrap}#preamble>.sectionbody>.paragraph:first-of-type p,.paragraph.lead>p{color:rgba(0,0,0,.85)}table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inherit}.admonitionblock>table{background:none;border:0;border-collapse:separate;margin:10px;width:100%}.admonitionblock>table td.icon{text-align:center;width:80px}.admonitionblock>table td.icon img{max-width:none}.admonitionblock>table td.icon .title{font-family:Open Sans,DejaVu Sans,sans-serif;font-weight:700;text-transform:uppercase}.admonitionblock>table td.content{border-left:1px solid #ddddd8;color:rgba(0,0,0,.6);padding-left:1.125em;padding-right:1.25em}.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}span.icon>.fa{cursor:default}.admonitionblock td.icon [class^="fa icon-"]{cursor:default;font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5)}.admonitionblock td.icon .icon-note:before{color:#19407c;content:"\f05a"}.admonitionblock td.icon .icon-tip:before{color:#111;content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8)}.admonitionblock td.icon .icon-warning:before{color:#bf6900;content:"\f071"}.admonitionblock td.icon .icon-caution:before{color:#bf3400;content:"\f06d"}.admonitionblock td.icon .icon-important:before{color:#bf0000;content:"\f06a"}.fa{text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-family:FontAwesome!important;font-size:inherit}p.details{margin-top:1rem}.imageblock,.listingblock{background:#fafafa;margin:20px 0;padding:15px}.image.right,.imageblock.right{float:right}.image.left,.imageblock.left{float:left}.image.center,.imageblock.center{margin-left:auto;margin-right:auto;text-align:center}.imageblock.boxshadow img,.paragraph.boxshadow img{box-shadow:0 0 15px 0 rgba(0,0,0,.5);margin:5px}#sponsorsblock{padding:1rem 2rem}#sponsorsblock p,#sponsorsblock ul{list-style-type:none;padding:0;text-align:center}#sponsorsblock li{display:inline;padding:1rem}.sponsors a:hover{text-decoration:none}.supporters{padding-top:1.5rem}.supporters a{font-weight:700}.div-mar{border-top:2px solid #fff;margin-right:2rem}.area,.div-mar{padding:1rem 0}.links{padding:0}.footer-left{padding-left:0}@media screen and (max-width:991px){.footer-left{margin-top:1rem}}li>p{margin:0;padding:0}.image.center>img{max-height:100%;max-width:100%}.current-page,.next-link,.previous-link,.skip{background-color:#fff;border:1px solid #ddd;color:#0275d8;float:left;line-height:1.5;margin-left:-1px;padding:.5rem .75rem;position:relative;text-decoration:none}.next-link:focus,.next-link:hover,.previous-link:focus,.previous-link:hover{background-color:#eceeef;border-color:#ddd;color:#014c8c;text-decoration:underline}.current-page{background-color:#eceeef;border-color:#ddd;color:#014c8c}li.card.step{background:none;border:none}.card.step>.card-block>p{white-space:normal}.conum[data-value]{background-color:rgba(0,0,0,.8);border-radius:100px;display:inline-block;font-family:Open Sans,DejaVu Sans,sans-serif;font-size:.75em;font-style:normal;font-weight:700;height:1.67em;line-height:1.67em;text-align:center;width:1.67em}.conum[data-value],.conum[data-value] *{color:#fff!important}.conum[data-value]+b{display:none}.conum[data-value]:after{content:attr(data-value)}pre .conum[data-value]{position:relative;top:-.125em}b.conum *{color:inherit!important}.conum:not([data-value]):empty{display:none}.colist>table tr>td:first-of-type{line-height:1;padding:0 .75em}.colist>table tr>td:last-of-type{padding:.25em 0}table{margin-bottom:1.25rem}.sidebar-nav h4{margin-bottom:1.5rem}.doc-page-link{margin-left:auto;margin-right:auto}.pipeline-block{margin-bottom:1rem}.pipeline-script-expand{font-size:.7rem}.scripted-pipeline{border-left:2px solid #ddd;border-top:1px solid #ddd;padding:5px}.syntax h2{border-bottom:3px solid #ddd}.syntax h3{border-bottom:2px solid #ddd}.syntax h4{border-bottom:1px solid #ddd}table.syntax{border:1px solid #fafafa;font-size:.8rem;margin:1rem}table.syntax p{margin:0;padding:5px}table.syntax>tbody>tr>td{border:1px solid #fafafa}table.syntax>tbody>tr>th{background-color:#fafafa;border:1px solid #fafafa;font-weight:700}.tour .active{font-weight:700}.navbar.navbar-expand-lg{font-size:.875rem}.navbar.navbar-expand-lg.bg-dark{background-color:#212529!important}.navbar.navbar-expand-lg .navbar-brand{font-family:Georgia,Times,Times New Roman,serif;font-size:20px;font-weight:600;padding:2px 0}.navbar.navbar-expand-lg .btn{font-size:.875rem;margin-left:8px;margin-top:1px}.navbar.navbar-expand-lg .btn.dropdown-toggle:after{margin:0 0 0 8px}.navbar.navbar-expand-lg .btn.btn-outline-secondary.active,.navbar.navbar-expand-lg .btn .btn-outline-secondary.active,.navbar.navbar-expand-lg .btn.btn-outline-secondary.focus,.navbar.navbar-expand-lg .btn.btn-outline-secondary:active,.navbar.navbar-expand-lg .btn .btn-outline-secondary:active,.navbar.navbar-expand-lg .btn.btn-outline-secondary:focus{background-color:hsla(0,0%,100%,.15)}.navbar.navbar-expand-lg .btn.btn-outline-secondary:hover,.navbar.navbar-expand-lg .navbar-toggler:hover{background-color:hsla(0,0%,100%,.1)}.navbar.navbar-expand-lg .show>.btn-outline-secondary.dropdown-toggle{background-color:hsla(0,0%,100%,.15)}.navbar.navbar-expand-lg .nav-link.btn{color:hsla(0,0%,100%,.75)}.navbar.navbar-expand-lg .dropdown-menu{font-size:.875rem}.navbar-toggler-icon{font-size:.8em}.nav-link.dropdown-toggle{background-color:transparent;border:0;font-family:inherit;font-size:inherit;line-height:inherit}.navbar .nav-link:focus,.navbar .navbar-brand:focus{outline-color:rgba(255,255,255,.5);outline-style:auto;outline-width:1px}.no-outline .navbar .nav-link:focus,.no-outline .navbar .navbar-brand:focus{outline-width:0}.banner-container .skew:before{-webkit-backface-visibility:hidden;backface-visibility:visible;-webkit-backface-visibility:initial;backface-visibility:initial;background:#f8f9fb;content:"";height:600px;left:0;overflow:visible;position:absolute;top:-100px;transform:skewY(-14deg);width:100%;z-index:-1}@media (min-width:767px){.header .skew:before{height:900px;top:-350px}}@media (min-width:992px){.header .skew:before{height:1020px;top:-350px}}.jumbotron{background-color:#f8f9fb}.post-attrs>.tags>li{display:inline-block;font-size:.7rem}.post-attrs>.tags>li>a{background-color:#069;border:.1rem solid;color:#fff;display:inline-block;padding:0 .25rem}.author.box td{max-width:600px;padding:5px;vertical-align:top}.author.box p{margin-bottom:3px}.author.about-header{font:1.5em Georgia,Times New Roman;margin-bottom:3px}.author.name{font:1.3em Georgia,Times New Roman}.author.logo{border-radius:6px;height:128px;max-width:none}.author.social-media-buttons{float:left;list-style:none;margin-top:0;padding:0;width:100%}.author.social-media-buttons li{display:block;float:left;margin-right:10px}.author-list{display:flex;flex-wrap:wrap}.author-card{background:#fff;border:.1rem solid #ccc;border-radius:3px;box-sizing:border-box;color:#666;cursor:pointer;font-size:.85rem;height:16.5rem;margin:.25rem;padding:.67rem;text-align:center;text-decoration:none!important;width:13rem}.author-card,.author-card .author.logo{display:block}.author-card .author.logo{margin:16px auto}.author-card .social-media-buttons{display:flex;margin-top:16px;width:100%}.author-card .social-media-buttons li{flex-grow:1;text-align:center}.author-card .social-media-buttons li a{margin:auto}.group-description p{margin-bottom:0}.group-links{margin-bottom:1rem}.logo-thumb{max-height:256px}.btn.btn-xs{border-radius:.2rem;height:1rem;line-height:.5rem;margin:.2rem;padding:.15rem;width:1rem}.grid-container{grid-gap:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(256px,1fr));margin-bottom:1rem}.grid-container .card{border:1px solid #d3d3d3;border-radius:.25rem}.grid-container .card .content{padding:15px}.grid-all,.grid-all td,.grid-all th{border:1px solid #dee2e6;padding:.75rem}.grid-all thead th{border-bottom-width:2px}.nav-item.searchbox{margin:auto auto auto .75em}.twitter-share-button{background-color:#1b95e0;background-image:url(/images/twitter-logo.svg);background-position:4px;background-repeat:no-repeat;background-size:14px 14px;border-radius:3px;box-sizing:border-box;color:#fff;cursor:pointer;display:inline-block;font-size:.7rem;font-weight:500;height:20px;line-height:20px;padding:1px 8px 1px 24px;position:relative}.twitter-share-button:hover{color:#fff;text-decoration:none}</style><meta name="generator" content="Gatsby 3.14.1"/><title data-react-helmet="true">Jenkins</title><link data-react-helmet="true" href="https://www.jenkins.io/favicon.ico" rel="shortcut icon" type="image/x-icon"/><link data-react-helmet="true" href="https://www.jenkins.io/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><link data-react-helmet="true" href="https://www.jenkins.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/><link data-react-helmet="true" href="https://www.jenkins.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/><link data-react-helmet="true" href="/site.webmanifest" rel="manifest"/><link data-react-helmet="true" color="#5bbad5" href="https://www.jenkins.io/safari-pinned-tab.svg" rel="mask-icon"/><meta data-react-helmet="true" content="text/html; charset=UTF-8" http-equiv="Content-Type"/><meta data-react-helmet="true" charSet="utf-8"/><meta data-react-helmet="true" content="width=device-width, initial-scale=1" name="viewport"/><meta data-react-helmet="true" content="ie=edge" http-equiv="x-ua-compatible"/><meta data-react-helmet="true" content="#2b5797" name="msapplication-TileColor"/><meta data-react-helmet="true" content="#ffffff" name="theme-color"/><meta data-react-helmet="true" content="summary_large_image" name="twitter:card"/><meta data-react-helmet="true" content="@JenkinsCI" name="twitter:site"/><meta data-react-helmet="true" content="@JenkinsCI" name="twitter:creator"/><meta data-react-helmet="true" content="article" property="og:type"/><meta data-react-helmet="true" content="https:/www.jenkins.io/template/" property="og:url"/><style data-react-helmet="true">#grid-box { position: relative } </style><style data-react-helmet="true">html { min-height:100%; position: relative; }</style><link rel="sitemap" type="application/xml" href="/gatsby-jenkins-io/sitemap-index.xml"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="icon" href="/gatsby-jenkins-io/favicon-32x32.png?v=4a9773549091c227cd2eb82ccd9c5e3a" type="image/png"/><link rel="manifest" href="/gatsby-jenkins-io/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/gatsby-jenkins-io/icons/icon-48x48.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="72x72" href="/gatsby-jenkins-io/icons/icon-72x72.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="96x96" href="/gatsby-jenkins-io/icons/icon-96x96.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="144x144" href="/gatsby-jenkins-io/icons/icon-144x144.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="192x192" href="/gatsby-jenkins-io/icons/icon-192x192.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="256x256" href="/gatsby-jenkins-io/icons/icon-256x256.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="384x384" href="/gatsby-jenkins-io/icons/icon-384x384.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="512x512" href="/gatsby-jenkins-io/icons/icon-512x512.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link as="script" rel="preload" href="/gatsby-jenkins-io/webpack-runtime-858dd632bac0d63b6e45.js"/><link as="script" rel="preload" href="/gatsby-jenkins-io/framework-094b0089736b8f621f0d.js"/><link as="script" rel="preload" href="/gatsby-jenkins-io/app-43188d140ca63afb8771.js"/><link as="script" rel="preload" href="/gatsby-jenkins-io/commons-12cbe55ce4f6cbfe1e93.js"/><link as="script" rel="preload" href="/gatsby-jenkins-io/component---src-templates-tag-blog-list-template-js-3631acbb8557cd5b95be.js"/><link as="fetch" rel="preload" href="/gatsby-jenkins-io/page-data/node/tags/plugins/page/2/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/gatsby-jenkins-io/page-data/sq/d/3649515864.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/gatsby-jenkins-io/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><script src="https://www.jenkins.io/assets/bower/jquery/jquery.min.js"></script><nav class="navbar navbar-expand-lg navbar-dark top bg-dark fixed-top" id="ji-toolbar"><a class="navbar-brand" href="https://www.jenkins.io/">Jenkins</a><button class="navbar-toggler" data-target="#CollapsingNavbar" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="CollapsingNavbar"><ul class="nav navbar-nav mr-auto"><li class="nav-item dropdown"><button type="button" aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"><svg width="36" height="18" xmlns="http://www.w3.org/2000/svg" role="img" xlink="http://www.w3.org/1999/xlink" viewBox="-3.23 44.77 362.70 271.95"><defs><linearGradient id="a" x1="359.765" x2="104.082" y1="134.295" y2="124.577" gradientTransform="matrix(1 0 0 -1 0 439.068)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ed1c24"></stop><stop offset="1" stop-color="#f7941d"></stop></linearGradient><linearGradient id="b" x1="355.202" x2="99.519" y1="254.467" y2="244.749" href="#a"></linearGradient><linearGradient id="c" x1="183.903" x2="10.612" y1="227.598" y2="221.023" href="#a"></linearGradient><linearGradient id="d" x1="367.119" x2="157.995" y1="265.311" y2="257.091" href="#a"></linearGradient></defs><path fill="#c49a6c" d="M231.52 309.278c2.483-.332 4.895-.77 7.255-1.329s4.649-1.206 6.991-1.957c13.494-4.58 25.187-12.952 36.374-24.593l-.14-.175c-14.944 15.486-30.693 25.344-50.48 28.054z"></path><path fill="url(#a)" d="M224.232 309.96h.332c1.084 0 2.15-.14 3.216-.228a93.844 93.844 0 0 1-3.233.227z"></path><path fill="url(#b)" d="M284.692 187.187l-.122.192.122-.192z"></path><path fill="url(#c)" d="M146.145 231.847a150.844 150.844 0 0 1-12.97 15.862c-7.582 7.889-15.507 13.563-24.652 16.667a47.832 47.832 0 0 1-4.738 1.326 56.959 56.959 0 0 1-4.916.9 38.32 38.32 0 0 1-1.682.214l-.912.083c-.723.059-1.445.118-2.18.154h-3.068a42.325 42.325 0 0 1-9.192-1.043 49.977 49.977 0 0 1-6.764-2.002 43.097 43.097 0 0 1-4.525-1.954c-1.493-.77-2.961-1.516-4.407-2.37a59.5 59.5 0 0 1-17.105-15.399 59.714 59.714 0 0 1-2.914-4.311 53.09 53.09 0 0 1-1.291-2.263 51.985 51.985 0 0 1-2.263-4.738 46.72 46.72 0 0 1 0-36.426 51.986 51.986 0 0 1 2.263-4.738 54.14 54.14 0 0 1 1.291-2.263 59.742 59.742 0 0 1 2.914-4.311 59.714 59.714 0 0 1 17.105-15.4 60.828 60.828 0 0 1 4.407-2.369q2.217-1 4.525-1.777a49.976 49.976 0 0 1 6.906-2.073 42.325 42.325 0 0 1 9.192-1.042h3.128c.722 0 1.445.094 2.155.154l1.043.106 1.019.119c1.8.237 3.553.557 5.271.96.853.2 1.694.426 2.523.663a51.186 51.186 0 0 1 11.846 5.176 59.645 59.645 0 0 1 4.395 2.89 74.485 74.485 0 0 1 8.386 7.108q2.038 1.99 4.063 4.193l.083-.13a159.395 159.395 0 0 1 11.064 13.942c5.437-8.576 13.658-21.464 16.584-25.74 1.185-1.718 2.37-3.46 3.66-5.212-13.54-16.513-29.827-30.23-51.587-36.082h-.154a89.397 89.397 0 0 0-3.187-.794l-.45-.107a92.565 92.565 0 0 0-3.151-.627l-.628-.119a80.578 80.578 0 0 0-3.743-.569h-.142a58.29 58.29 0 0 0-2.073-.236h-.391l-1.872-.166h-.568l-1.754-.119h-.675l-1.777-.07h-3.115c-46.447-.25-87.125 40.476-87.125 86.911s40.725 87.173 87.172 87.173h3.14l1.729-.071h.734l1.67-.095h.676l1.706-.154h.568l1.813-.213.414-.06 1.967-.272h.213a125.91 125.91 0 0 0 3.553-.628l.652-.142c.96-.201 1.907-.415 2.855-.64l.58-.142a86.66 86.66 0 0 0 3.009-.817l.237-.071c20.73-6.077 36.425-19.392 49.55-35.277-2.037-3.068-3.4-5.366-4.039-6.48z"></path><path fill="url(#d)" d="M318.05 51.733v94.66a85.514 85.514 0 0 0-52.595-18.729h-3.115l-1.777.072-.7.047-1.752.118h-.569l-1.871.166h-.391c-.7.071-1.386.142-2.073.237h-.154c-1.256.154-2.5.355-3.732.569l-.628.118c-1.066.19-2.108.403-3.15.628l-.45.107c-30.35 6.858-50.333 28.808-66.822 52.82-.7 1.018-1.35 2.049-2.038 3.068-2.25 3.423-5.46 8.422-8.635 13.397-4.17 6.527-8.292 13.03-9.939 15.66l20.624 32.137s21.997 40.465 61.68 51.482l.237.07c.995.297 2.002.558 3.009.818l.58.142c.936.237 1.896.439 2.855.64l.652.142c1.184.225 2.369.439 3.553.628h.214l1.966.273.415.059 1.812.213h.569l1.705.154h.676l1.67.095h.734l1.73.07h3.139c54.703 0 86.355-30.964 87.149-85.063V51.733zm-52.595 215.403h-3.068c-.734 0-1.457-.095-2.18-.154l-.912-.083c-.568-.06-1.125-.13-1.682-.213a49.077 49.077 0 0 1-9.571-2.275 49.612 49.612 0 0 1-6.634-2.83 55.792 55.792 0 0 1-6.254-3.768 63.068 63.068 0 0 1-3.009-2.215 82.399 82.399 0 0 1-8.683-7.925l-.095.119c-1.255-1.303-2.487-2.69-3.731-4.11-.154-.167-.296-.356-.45-.534-.628-.722-1.256-1.445-1.884-2.215s-1.125-1.398-1.682-2.097-.888-1.101-1.338-1.682a184.467 184.467 0 0 1-6.053-8.292c-.7-.995-1.398-2.025-2.109-3.056-.379-.569-.77-1.184-1.185-1.73-.675-1.018-1.362-2.013-2.049-3.056l-.355-.545c-1.185-1.812-2.37-3.684-3.649-5.603q2.95-4.608 5.817-8.86c1.907-2.831 3.79-5.556 5.662-8.138s3.72-5.046 5.591-7.38 3.72-4.525 5.603-6.586q2.026-2.203 4.063-4.194c1.374-1.338 2.748-2.594 4.158-3.778s2.807-2.287 4.252-3.329a57.594 57.594 0 0 1 7.748-4.62c.331-.166.663-.367 1.006-.533l.226-.118c1.41-.652 2.843-1.185 4.3-1.73l.485-.201c.273-.083.557-.142.83-.237a44.943 44.943 0 0 1 3.34-.948l1.374-.343a60.798 60.798 0 0 1 4.738-.841l1.019-.119 1.042-.106c.711 0 1.434-.119 2.156-.154h3.128a42.431 42.431 0 0 1 4.572.26 48.011 48.011 0 0 1 6.93 1.35c1.54.427 3.08.925 4.596 1.505a48.724 48.724 0 0 1 4.525 1.955c1.493.722 2.961 1.516 4.407 2.369s2.866 1.8 4.24 2.784 2.725 2.049 4.028 3.174a58.459 58.459 0 0 1 8.837 9.477 59.73 59.73 0 0 1 2.914 4.312 51.067 51.067 0 0 1 5.318 11.916 47.38 47.38 0 0 1 1.185 5.165 45.567 45.567 0 0 1 .71 8.09c.072 35.964-16.062 52.122-52.227 52.122z"></path></svg></button><div class="dropdown-menu"><a class="dropdown-item feature" href="https://cd.foundation/">What is CDF?</a><a class="dropdown-item feature" href="https://jenkins-x.io/">Jenkins X</a><a class="dropdown-item feature" href="https://cloud.google.com/tekton/">Tekton</a><a class="dropdown-item feature" href="https://www.spinnaker.io/">Spinnaker</a></div></li></ul><ul class="nav navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/gatsby-jenkins-io/blog/">Blog</a></li><li class="nav-item dropdown"><button aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown">Documentation</button><div class="dropdown-menu"><a class="dropdown-item feature" href="/gatsby-jenkins-io/doc/book/"><strong>User Guide</strong></a><a class="dropdown-item" href="/gatsby-jenkins-io/doc/book/installing/"> - Installing Jenkins</a><a class="dropdown-item" href="https://www.jenkins.io/doc/book/pipeline/"> - Jenkins Pipeline</a><a class="dropdown-item" href="https://www.jenkins.io/doc/book/managing/"> - Managing Jenkins</a><a class="dropdown-item" href="https://www.jenkins.io/doc/book/security/"> - Securing Jenkins</a><a class="dropdown-item" href="https://www.jenkins.io/doc/book/system-administration/"> - System Administration</a><a class="dropdown-item" href="https://www.jenkins.io/doc/book/glossary/"> - Terms and Definitions</a><a class="dropdown-item" href="https://www.jenkins.io/solutions/"><strong>Solution Pages</strong></a><a class="dropdown-item" href="https://www.jenkins.io/doc/tutorials/"><strong>Tutorials</strong></a><a class="dropdown-item" href="https://www.jenkins.io/doc/pipeline/tour/getting-started/"> - Guided Tour</a><a class="dropdown-item" href="https://www.jenkins.io/doc/tutorials/"> - More Tutorials</a><a class="dropdown-item feature" href="https://www.jenkins.io/doc/developer/"><strong>Developer Guide</strong></a><a class="dropdown-item" href="https://www.jenkins.io/participate/"><strong>Contributor Guide</strong></a></div></li><li class="nav-item"><a class="nav-link" href="https://plugins.jenkins.io">Plugins</a></li><li class="nav-item dropdown"><button aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown">Community</button><div class="dropdown-menu"><a class="dropdown-item feature" href="https://www.jenkins.io/participate/">Overview</a><a class="dropdown-item feature" href="https://www.jenkins.io/chat/" title="Chat with the rest of the Jenkins community on IRC">Chat</a><a class="dropdown-item feature" href="https://www.jenkins.io/projects/jam/">Meet</a><a class="dropdown-item feature" href="https://www.jenkins.io/events/">Events</a><a class="dropdown-item feature" href="https://issues.jenkins.io/">Issue Tracker</a><a class="dropdown-item feature" href="https://www.jenkins.io/mailing-lists/" title="Browse Jenkins mailing list archives and/or subscribe to lists">Mailing Lists</a><a class="dropdown-item feature" href="https://www.jenkins.io/project/roadmap/">Roadmap</a><a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">Account Management</a><a class="dropdown-item feature" href="https://www.jenkins.io/sigs/"><strong>Special Interest Groups</strong></a><a class="dropdown-item feature" href="https://www.jenkins.io/sigs/advocacy-and-outreach/"> - Advocacy and Outreach</a><a class="dropdown-item feature" href="https://www.jenkins.io/sigs/chinese-localization/"> - Chinese Localization</a><a class="dropdown-item feature" href="https://www.jenkins.io/sigs/cloud-native/"> - Cloud Native</a><a class="dropdown-item feature" href="https://www.jenkins.io/sigs/docs/"> - Documentation</a><a class="dropdown-item feature" href="https://www.jenkins.io/sigs/gsoc/"> - Google Summer of Code</a><a class="dropdown-item feature" href="https://www.jenkins.io/sigs/hw-and-eda/"> - Hardware and EDA</a><a class="dropdown-item feature" href="https://www.jenkins.io/sigs/pipeline-authoring/"> - Pipeline Authoring</a><a class="dropdown-item feature" href="https://www.jenkins.io/sigs/platform/"> - Platform</a><a class="dropdown-item feature" href="https://www.jenkins.io/sigs/ux/"> - User Experience</a></div></li><li class="dropdown nav-item"><button aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown">Subprojects</button><div class="dropdown-menu"><a class="dropdown-item feature" href="https://www.jenkins.io/projects/">Overview</a><a class="dropdown-item feature" href="https://www.jenkins.io/projects/evergreen/">Evergreen</a><a class="dropdown-item feature" href="https://www.jenkins.io/projects/gsoc/">Google Summer of Code in Jenkins</a><a class="dropdown-item feature" href="https://www.jenkins.io/projects/infrastructure/">Infrastructure</a><a class="dropdown-item feature" href="https://www.jenkins.io/projects/jam/">CI/CD and Jenkins Area Meetups</a><a class="dropdown-item feature" href="https://www.jenkins.io/projects/jcasc/">Jenkins Configuration as Code</a><a class="dropdown-item feature" href="https://www.jenkins.io/projects/jenkins-operator/">Jenkins Operator</a><a class="dropdown-item feature" href="https://www.jenkins.io/projects/remoting/">Jenkins Remoting</a><a class="dropdown-item feature" href="https://www.jenkins.io/sigs/docs/gsod/2020/projects/document-jenkins-on-kubernetes/">Document Jenkins on Kubernetes</a></div></li><li class="nav-item dropdown"><button aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown">About</button><div class="dropdown-menu"><a class="dropdown-item" href="https://www.jenkins.io/project/roadmap/">Roadmap</a><a class="dropdown-item" href="https://www.jenkins.io/security/">Security</a><a class="dropdown-item" href="https://www.jenkins.io/press/">Press</a><a class="dropdown-item" href="https://www.jenkins.io/awards/">Awards</a><a class="dropdown-item" href="https://www.jenkins.io/project/conduct/">Conduct</a><a class="dropdown-item" href="https://www.jenkins.io/artwork/">Artwork</a></div></li><li class="nav-item dropdown"><button aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown">English</button><div class="dropdown-menu"><a class="dropdown-item" href="https://www.jenkins.io/zh/">中文 Chinese</a></div></li><li class="nav-item"><a class="nav-link btn btn-outline-secondary" href="https://www.jenkins.io/download/">Download</a></li></ul></div></nav><div class="pt-4"> </div><div id="grid-box"><br/><br/><div class="container"><div id="block-block-15" class="block block-block even blog-posts"><h3 class="title">Recent Blog Posts</h3></div><div class="content blog-posts"><div class="item-list"><ul class="ji-blog-list ji-item-list"><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/29/git-performance-improvement-phase2/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">29</div></div><h5 class="title">Git Plugin Performance Improvement Phase-2 Progress</h5></div><p class="teaser">The second phase of the Git Plugin Performance Improvement project has been great in terms of the progress we have achieved in implementing performance improvement insights
+derived from the phase one JMH micro-benchmark experiments.
+
+What we’ve learned so far in this project is that a git fetch is highly correlated to the size of the remote repository. In order to make fetch improvements in this plugin, our task was to find the difference in performance for the two available git implementations in the Git Plugin, git and JGit.
+
+Our major finding was that git performs much better than JGit when it comes to a large sized repository (&gt;100 MiB). Interestingly, JGit performs better than git when size of the repository is less than 100 MiB.
+
+In this phase, we were successful in coding this derived knowledge from the benchmarks into a new functionality called the
+GitToolChooser.
+
+GitToolChooser
+
+This class aims to add the functionality of recommending a git implementation on the basis of the size of a repository which has a strong correlation to the performance of git fetch (from performance Benchmarks).
+
+It utilizes two heuristics to calculate the size:
+
+Using cached .git dir from multibranch projects to estimate the size of a repository
+
+Providing an extension point which, upon implementation, can use REST APIs exposed by git service providers like Github, GitLab, etc to fetch the size of the remote repository.
+
+Will it optimize your Jenkins instance?
+That requires one of the following:
+
+you have a multibranch project in your Jenkins instance, the plugin can use that to recommend the optimal git implementation
+
+you have a branch Source Plugin installed in the Jenkins instance, the particular branch source plugin will recommend a git implementation using REST APIs provided by GitHub or GitLab respectively.
+
+The architecture and code for this class is at: PR-931
+
+Note : This functionality is an upcoming feature in the subsequent Git Plugin release.
+
+JMH benchmarks in multiple environments
+
+The benchmarks were being executed on Linux and macOS machines frequently but there was a need to check if the results gained from those benchmarks would hold true across more platforms to ensure that the solution (GitToolChooser) is generally platform-agnostic.
+
+To test this hypothesis, we performed an experiment:
+
+Running git fetch operation for a 400 MiB sized repository on:
+
+Windows
+
+FreeBSD 12
+
+ppc64le
+
+s390x
+
+The result of running this experiment is given below:
+
+Observations:
+
+ppc64le and s390x are able to run the operation in almost half the time it takes for the Windows or FreeBSD 12 machine. This behavior may be attributed to the increased computational power of those machines.
+
+The difference in performance between git and JGit remains constant across all platforms which is a positive sign for the GitToolChooser as its recommendation would be consistent across multiple devices and operating systems.
+
+Release Plan 🚀
+
+JENKINS-49757 - Avoid double fetch from Git checkout step
+This issue was fixed in phase one, avoids the second fetch in redundant cases.
+It will be shipped with some benchmarks on the change in performance due to the removal of the second fetch.
+
+PR-574
+
+PR-904
+
+GitToolChooser
+
+PR-931
+This pull request is under review, will be shipped in one of the subsequent Git Plugin releases.
+
+Current Challenges with GitToolChooser
+
+Implement the extension point to support GitHub Branch Source Plugin, Gitlab Branch Source Plugin and Gitea Plugin.
+
+The current version of JGit doesn’t support LFS checkout and sparse checkout, need to make sure that the recommendation doesn’t break existing use cases.
+
+Future Work
+
+In phase three, we wish to:
+
+Release a new version of the Git and Git Client Plugin with the features developed during the project
+
+Continue to explore more areas for performance improvement
+
+Add a new git operation: git clone (Stretch Goal)
+
+Reaching Out
+
+Feel free to reach out to us for any questions or feedback on the project’s Gitter Channel or the Jenkins
+Developer Mailing list.
+
+Project Page
+
+Phase 1 Blog Post<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/rishabhbudhouliya">Rishabh Budhouliya</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/git">git</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/platform-sig">platform-sig</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/performance">performance</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/27/machine-learning-plugin-coding-phase2/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">27</div></div><h5 class="title">Machine Learning Plugin project - Coding Phase 2 blog post</h5></div><p class="teaser">Welcome back folks!
+
+This blog post is about my coding phase 2 in Jenkins Machine Learning Plugin for this GSoC 2020.
+After successfully passing the evaluation and demo in the phase 1, our team went ahead for facing the challenges in phase 2.
+
+Summary
+
+This phase of coding was well spent by documentation and by fixing many bugs.
+As the main feature of connecting to an IPython Kernel is done in phase 1, we were able to focus on fixing minor/major bugs and documenting for the users.
+According to the JENKINS-62927 issue, a Docker agent was built to facilitate users without concerning plugin dependencies in python.
+In the act of deprecation of Python 2, we ported our plugin to support Python 3.
+We have tested our plugin in Conda, venv and Windows environments.
+Machine learning plugin has successfully passed the end to end test. A feature for a code editor is needed for further discussion/analysis as we have done a simple editor that may be useful in other ways in the future. PR#35
+
+Main features of Machine Learning plugin
+
+Run Jupyter notebook, (Zeppelin) JSON and Python files
+
+Run Python code directly
+
+Convert Jupyter Notebooks to Python and JSON
+
+Configure IPython kernel properties
+
+Support to execute Notebooks/Python on Agent
+
+Support for Windows and Linux
+
+Upcoming features
+
+Extract graph/map/images from the code
+
+Save artifacts according to the step name
+
+Generate reports for corresponding build
+
+Future improvements
+
+Usage of JupyterRestClient
+
+Support for multiple language kernels
+
+Note : There is no commitment on future improvements during GSoC period
+
+Docker agent
+
+The following Dockerfile can be used to build the Docker container as an agent for the Machine Learning plugin. This docker agent can be used to run  notebooks or python scripts.
+
+Dockerfile
+
+FROM jenkins/agent:latest
+
+MAINTAINER Loghi
+
+USER root
+
+RUN apt update &amp;&amp; apt install --no-install-recommends python3 -y \
+    python3-pip \
+    &amp;&amp; rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt /requirements.txt
+
+RUN pip3 install --upgrade pip setuptools &amp;&amp; \
+    pip3 install --no-cache-dir -r /requirements.txt &amp;&amp; \
+    ln -sf /usr/bin/python3 /usr/bin/python &amp;&amp; \
+    ln -sf /usr/bin/pip3 /usr/bin/pip
+
+USER jenkins
+
+Ported to Python 3
+
+As discussed in the previous meeting, we concluded that the plugin should support Python 3 as Python 2.7+ has been deprecated since the beginning of 2020. Pull request for docker agent should be also ported to Python 3 support.
+
+Jupyter Rest Client API
+
+The Jupyter Notebook server API seemed to be promising that it can be also used to run notebooks and codes. There were 3 api implementations that were merged in the master. But we had to focus on what was proposed in the design document and had to finish all must-have issues/works. Jupyter REST client was left for future implementation. It is also a good start to contribute to the plugin from the community.
+
+Fixed bugs for running in agent
+
+There were a few bugs related to the file path of notebooks while building a job. The major problem was caused by the python dependencies needed to connect to a IPython kernel. All issues/bugs were fixed before the timeline given.
+
+R support as a future improvement
+
+This is what we tried to give a glimpse of knowledge that this plugin can be extended for multi language support in the future. There was a conclusion that the kernel should be selected dynamically using extension of the script file(like eval_model.rb or train_model.r), instead of scripting the same code for each kernel.
+
+Documentation and End to End testing
+
+A well explained documentation was published in the repository. A guided tutorial to run a notebook checked out from a git repo in an agent was included in the docs page. Mentors helped to test our plugin in both Linux and Windows.
+
+Code editor with rebuild feature
+
+Code editor was filtered as a nice to have feature in the design document. After grabbing the idea of Jenkinsfile replay editor, I could do the same for the code. At the same time, when we are getting the source code from git, it is not an elegant way of editing code in the original code. After the discussion, we had to leave the PR open that may have use cases in the future if needed.
+
+Jenkins LTS update
+
+The plugin has been updated to support Jenkins LTS 2.204.1 as 2.164.3 had some problems with installing pipeline supported API/plugin
+
+Installation for experimental version
+
+Enable the experimental update center
+
+Search for Machine Learning Plugin and check the box along it.
+
+Click on Install without restart
+
+The plugin should now be installed on your system.
+
+Resources
+
+Community Bonding blog post
+
+Phase 1 blog post
+
+Github
+
+Project page
+
+Design document<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/loghijiaha">Loghi Perinpanayagam</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/machinelearning">machinelearning</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/datascience">datascience</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/communitybonding">communitybonding</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/24/external-fingerprint-storage-phase-2/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">24</div></div><h5 class="title">External Fingerprint Storage Phase-2 Updates</h5></div><p class="teaser">As another great phase for the
+External Fingerprint Storage Project
+comes to an end, we summarise the work done during this phase in this blog post.
+It was an exciting and fruitful journey, just like the previous phase, and offered some great learning experience.
+
+To understand what the project is about and the past progress, please refer to the
+phase 1 blog post.
+
+New Stories Completed
+
+We targeted four stories in this phase, namely fingerprint cleanup, fingerprint migration, refactoring the current
+implementation to use descriptors, and improved testing of the Redis Fingerprint Storage Plugin.
+We explain these stories in detail below.
+
+Fingerprint Cleanup
+
+https://github.com/jenkinsci/jenkins/pull/4817
+
+https://github.com/jenkinsci/redis-fingerprint-storage-plugin/pull/23
+
+This story involved extending the FingerprintStorage API to allow external storage plugins to perform and configure
+their own fingerprint cleanup strategies.
+We added the following functionalities to Jenkins core API:
+
+FingerprintStorage#iterateAndCleanupFingerprints(TaskListener taskListener)
+
+This allows external fingerprint storage implementations to implement their own custom fingerprint cleanup.
+The method is called periodically by Jenkins core.
+
+FingerprintStorage#cleanFingerprint(Fingerprint fingerprint, TaskListener taskListener)
+
+This is a reference implementation which can be called by external storage plugins to clean up a fingerprint.
+It is upto the plugin implementation to decide whether to use this method.
+They may choose to write a custom implementation.
+
+We consume these new API functionalities in the
+Redis Fingerprint Storage plugin.
+The plugin uses cursors to traverse the fingerprints, updating the build information, and deleting the build-less
+fingerprints.
+
+Earlier, fingerprint cleanup was always run periodically and there was no way to turn it off.
+We also added an option to allow the user to turn off fingerprint cleanup.
+
+This was done because it may be the case that keeping redundant fingerprints in memory might be cheaper than the
+cleanup operation (especially in the case of external storages, which are cheaper these days).
+
+Fingerprint Migration
+
+https://github.com/jenkinsci/jenkins/pull/4825
+
+Earlier, there was no support for fingerprints stored in the local storage.
+In this phase, we introduce migration support for users.
+The old fingerprints are now migrated to the new configured external storage whenever they are used (lazy migration).
+This allows gradual migration of old fingerprints from local disk storage to the new external storage.
+
+Refactor FingerprintStorage to use descriptors
+
+https://github.com/jenkinsci/jenkins/pull/4834
+
+https://github.com/jenkinsci/redis-fingerprint-storage-plugin/pull/36
+
+Earlier, whenever an external fingerprint storage plugin was installed, it was enabled by default.
+We refactored the implementation to make use of Descriptor pattern so the fingerprint engine can now be selected
+as a dropdown from the Jenkins configuration page.
+The dropdown is shown only when multiple fingerprint storage engines are configured on the system.
+Redis Fingerprint Storage Plugin was refactored
+to use this new implementation.
+
+Strengthened testing for the Redis Fingerprint Storage Plugin
+
+https://github.com/jenkinsci/redis-fingerprint-storage-plugin/pull/33
+
+We introduced new connection tests in the
+Redis Fingerprint Storage Plugin.
+These tests allow testing of cases like slow connection, breakage of connection to Redis, etc.
+These were implemented using the Toxiproxy module inside Testcontainers.
+
+https://github.com/jenkinsci/redis-fingerprint-storage-plugin/pull/31
+
+We introduced test for Configuration-as-code (JCasC) compatibility with the plugin.
+The documentation for configuring the plugin using JCasC was also added.
+
+https://github.com/jenkinsci/redis-fingerprint-storage-plugin/pull/39
+
+We introduced a suite of authentication tests, to verify the proper working of the Redis authentication system.
+Authentication uses the credentials plugin.
+
+https://github.com/jenkinsci/redis-fingerprint-storage-plugin/pull/32
+
+https://github.com/jenkinsci/redis-fingerprint-storage-plugin/pull/36
+
+We strengthened our web UI testing to ensure that the configuration page for the plugin works properly as planned.
+
+Other miscellaneous tasks
+
+Please refer to the Jira Epic for this phase.
+
+Releases 🚀
+
+Changes in the Jenkins core (except migration) were released in Jenkins 2.248.
+
+We drafted 1.0-rc-1
+release for the Redis Fingerprint Storage Plugin
+to deliver the changes.
+This was an increment from the alpha release
+we had drafted at the end of the previous phase.
+The plugin is now available at https://plugins.jenkins.io/redis-fingerprint-storage/!
+
+Trying out the new features!
+
+The latest release for the plugin can be downloaded from the update center, instructions for which can be
+found in the README
+of the plugin.
+We appreciate you trying out the plugin, and welcome any suggestions, feature requests, bug reports, etc.
+
+Acknowledgements
+
+The Redis Fingerprint Storage plugin is built and maintained by the Google Summer of Code (GSoC) Team for
+External Fingerprint Storage for
+Jenkins. Special thanks to Oleg Nenashev,
+Andrey Falko, Mike Cirioli,
+Tim Jacomb, and the entire Jenkins community for all the contribution to this project.
+
+Future Work
+
+Some of the topics we aim to tackle in the next phase include a new reference implementation (possibly backed
+by PostgreSQL), tracing, etc.
+
+Reaching Out
+
+Feel free to reach out to us for any questions, feedback, etc. on the project’s Gitter Channel or the Jenkins
+Developer Mailing list.
+We use Jenkins Jira to track issues.
+Feel free to file issues under redis-fingerprint-storage-plugin component.
+
+Other Links
+
+Redis Fingerprint Storage Plugin
+
+Issue Tracker for Phase 2
+
+jep:226[]
+
+Gitter Channel
+
+Project Page
+
+Phase 1 Blog Post<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/stellargo">Sumit Sarin</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/fingerprint">fingerprint</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/cloud-native">cloud-native</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/external-storage">external-storage</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/redis">redis</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/09/git-performance-improvement-phase1/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day"> 9</div></div><h5 class="title">Git Plugin Performance Improvement: Phase-1</h5></div><p class="teaser">Git Plugin Performance Improvement is a Google Summer of Code 2020 project.
+It aims to improve the performance of the git plugin, which provides fundamental git functionalities.
+
+Internally, the plugin provides these functionalities using two implementations: command line git and JGit (pure java implementation).
+
+CLI git is the default implementation for the plugin, a user can switch to JGit if needed
+
+The project is divided into two parallel stages:
+
+Stage 1 : Create benchmarks which evaluate the execution time of a git operation provided by CLI git and JGit using JMH, a micro benchmarking test harness.
+
+Stage 2 : Implement the insights gained from the analysis into the plugin to improve the overall performance of the plugin.
+
+The project also aims to fix any existing performance bottlenecks within the plugin as well.
+
+Benchmarks
+
+The benchmarks are written using JMH. It was introduced in a GSoC 2019 project to Jenkins.
+
+JMH is provided within the plugin through the Jenkins Unit Test Harness POM dependency.
+
+The JMH benchmarks are created and run within the git client plugin
+
+During phase-1, we have created benchmarks for two operations: &quot;git fetch&quot; and &quot;git ls-remote&quot;
+
+Results and Analysis
+
+The benchmark analysis for git fetch:
+
+Git fetch results
+
+The performance of git fetch (average execution time/op) is strongly correlated to the size of a repository
+
+There exists an inflection point on the scale of repository size after which the nature of JGit performance changes (it starts to degrade)
+
+After running multiple benchmarks, it is safe to say that for a large sized repository CLI-git would be a better choice of implementation.
+
+We can use this insight to implement a feature which avoids JGit when it comes to large repositories.
+
+Please refer to PR-521 for an elaborate explanation on these results
+
+Note: Repository size means du -h .git
+
+Fixing redundant fetch issue
+
+The git plugin performs two fetch operations instead of one while performing a fresh checkout of a remote git repository.
+
+To fix this issue, we had to safely remove the second fetch keeping multiple use-cases in mind. The fix itself was not difficult to code, but to do that safely without breaking any existing use-case was a challenging task.
+
+Further Plan
+
+After consolidating a benchmarking strategy during Phase 1, the next steps will be:
+
+Provide functionality to the git plugin, which enables it to estimate the size of the repository without cloning it.
+
+Broaden the scope of benchmarking strategy
+
+Consider parameters like number of branches, references and commit history to find a relation with the performance of a git operation
+
+The git plugin depends on other plugins like Credentials which might require benchmarking the plugin itself and the effects of these external dependencies on the plugin’s performance
+
+Focus on other use-cases of the plugin
+
+For phase-1, I focused on the checkout step and the operations involved with it
+
+For the next phase, the focus will shift to other areas like Multibranch pipelines or Organisation Folders
+
+How can you help?
+
+If you have reached this far of the blog, you might be interested in the project.
+
+To help, you can
+
+Review the benchmarks in the benchmarks module
+
+Analyse the benchmarks results available on ci.jenkins.io [soon]
+
+Come visit our Gitter channel: https://gitter.im/jenkinsci/git-plugin<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/rishabhbudhouliya">Rishabh Budhouliya</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/git">git</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/platform-sig">platform-sig</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/performance">performance</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/09/github-checks-api-plugin-coding-phase-1/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day"> 9</div></div><h5 class="title">GitHub Checks API Plugin Project - Coding Phase 1</h5></div><p class="teaser">This blog post is about our coding phase 1 progress on GSoC project: GitHub Checks API Plugin.
+
+The GitHub Checks API is a highly customized way to integrate CI tools to make reports for pull-requests (PRs).
+It allows users to see CI reports on GitHub pages directly.
+
+Figure 1. GitHub Check Run Screenshot from GitHub Docs
+
+What’s more exciting is that it can leave annotations on specific lines of code, just as the comments people left while reviewing.
+
+Figure 2. Check Run Annotation Screenshot from GitHub Docs
+
+While on Jenkins&#x27; side, the source code view provided by Warnings Next Generation Plugin does pretty much the same thing.
+
+Figure 3. Source Code View from Warnings Next Generation Plugin
+
+Utilizing such features through GitHub Checks API, it would make Jenkins more convenient to GitHub users.
+
+Features from Coding Phase 1
+
+In the past month, our team was mostly working on the general checks API and an implementation for GitHub checks API.
+
+GitHub Checks API Plugin Demo [starts from 50:15]
+
+General Checks API
+
+Although the general checks API is developed based on the semantic meaning of GitHub Checks API, we still want to prepare it for similar concepts on other platforms like Commit Status API from GitLab.
+Contributions for implementations on these platforms will be welcomed in the future.
+
+GitHub Checks API Implementation
+
+Our work on supporting GitHub Checks API is mostly done by now.
+Besides, we implemented a consumer to automatically create a check run that simply indicates the current stage of a Jenkins build.
+After the release, Jenkins developers (especially publisher plugin ones) can create their own GitHub checks for a GitHub branch source project by consuming our API.
+
+Example: To create a check run like:
+
+Consumers need to use our API in this way:
+
+ChecksDetails details = new ChecksDetailsBuilder()
+        .withName(&quot;Jenkins&quot;)
+        .withStatus(ChecksStatus.COMPLETED)
+        .withDetailsURL(&quot;https://ci.jenkins.io&quot;)
+        .withStartedAt(LocalDateTime.now(ZoneOffset.UTC))
+        .withCompletedAt(LocalDateTime.now(ZoneOffset.UTC))
+        .withConclusion(ChecksConclusion.SUCCESS)
+        .withOutput(new ChecksOutputBuilder()
+                .withTitle(&quot;Jenkins Check&quot;)
+                .withSummary(&quot;# A Successful Build&quot;)
+                .withText(&quot;## 0 Failures&quot;)
+                .withAnnotations(Arrays.asList(
+                        new ChecksAnnotationBuilder()
+                                .withPath(&quot;Jenkinsfile&quot;)
+                                .withLine(1)
+                                .withAnnotationLevel(ChecksAnnotationLevel.NOTICE)
+                                .withMessage(&quot;say hello to Jenkins&quot;)
+                                .withStartColumn(0)
+                                .withEndColumn(20)
+                                .withTitle(&quot;Hello Jenkins&quot;)
+                                .withRawDetails(&quot;a simple echo command&quot;)
+                                .build(),
+                        new ChecksAnnotationBuilder()
+                                .withPath(&quot;Jenkinsfile&quot;)
+                                .withLine(2)
+                                .withAnnotationLevel(ChecksAnnotationLevel.WARNING)
+                                .withMessage(&quot;say hello to GitHub Checks API&quot;)
+                                .withStartColumn(0)
+                                .withEndColumn(30)
+                                .withTitle(&quot;Hello GitHub Checks API&quot;)
+                                .withRawDetails(&quot;a simple echo command&quot;)
+                                .build()))
+                .build())
+        .withActions(Collections.singletonList(
+                new ChecksAction(&quot;formatting&quot;, &quot;format code&quot;, &quot;#0&quot;)))
+        .build();
+
+ChecksPublisher publisher = ChecksPublisherFactory.fromRun(run);
+publisher.publish(details);
+
+Future Works
+
+The next step is integrating our API into Warnings Next Generation Plugin and Code Coverage API Plugin consume our API.
+After that, pipeline support will be added: users can publish checks directly in a pipeline script without requiring a consumer plugin that support the checks.
+
+Resources
+
+GitHub Repository
+
+Project Page
+
+Gitter Channel
+
+References
+
+GitHub Doc: Creating CI tests with the Checks API
+
+Warnings Next Generation Plugin: Source Code View<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/xiongkezhi">Kezhi Xiong</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/github">github</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/api">api</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/06/30/machine-learning-plugin-coding-phase1/"><div class="header"><div class="date"><div class="month">Jun</div><div class="day">30</div></div><h5 class="title">Machine Learning Plugin project - coding phase 1 blog post</h5></div><p class="teaser">Welcome back !
+
+This blog post is briefing my coding phase 1 in Jenkins Machine Learning Plugin for this GSoC 2020.
+
+After a fresh introduction of community bonding, On June 1st, coding of GSoC had started officially with phase 1. At this point, every GSoC student should be expected to have a rigid plan with their entire project. With the guidance of mentors I was able to complete a design document and timeline which can be slightly adjustable during the coding. The coding phase was more about coding and discussion.
+
+Quick review
+
+Pull Requests
+21
+
+Jira Issues
+11
+
+Major Tasks
+3
+
+Completed
+3
+
+In progress
+0
+
+Week 1
+
+I have to ensure that I have a solid architecture for implementing the core of this plugin such that perhaps I or future community will be able to develop R and Julia kernels for this plugin. Factory method design patterns are suitable when users need different types of products ( Python, R and Julia) without knowing much about the internal infrastructure ( Manager of these interpreters ).
+
+All the base classes were implemented this week.
+
+Design the Kernel connectors
+
+Initiate the interpreter
+
+Close the connection
+
+Add simple tests
+
+Update pom.xml
+
+More than these changes, repo was updated with pull request template and licence header. Readme was extended a little at the end of the week.
+
+Issues and Challenges
+
+Git rebase and squash
+
+Tests invokes ipython client in the server failed during the CI build
+
+Week 2
+
+With the help of a design document, I had a plan to do the configurations globally and using the Abstract Folder property I could save the configuration and retrieve for the job configuartion. I used to reference some other well developed plugin for the structure of code. That helped me a lot while I was coding. Our first official contributor has popped out his pull request.
+
+Form validations and helper html will be a great help in the user point of view as well as developers. A minor bug was fixed with the guidance of mentors by writing tests with ‘Jenkins WebClient`. Until the end of the week, builder class of the plugin has been implemented with lots of research and discussion. Finally,  Test connection was added to the global configuration page to start the connection and test it. A single issue that blocked me using py4j authentication about zeppelin-python was reported in Jira.
+
+Server Configuration
+
+Issues and challenges
+
+Backend depends on Apache zeppelin-python API to connect IPython
+
+Find relevant extension points to extend the plugin
+
+Week 3
+
+Earlier in this week, we were trying to merge our IPython builder PR without any memory leaks or bugs that will cause the system to be devastating while running this plugin. Later, this whole week I was implementing a file parser that could copy the necessary files and had the ability to accomplish the file conversion.
+
+Supported file types
+
+Python (.py)
+
+JSON (Zeppelin notebooks format)
+
+IPython builder was able to run Jupyter Notebooks and Zeppelin formatted JSON files at the end of the 3rd week. Minor issues were fixed in the code. We used ANSI color plugin to fix the abnormal view of error messages produced by the ipython kernel.
+
+Copying and converting Jupyter Notebook
+
+Issues and Challenges
+
+Python error messages could not be displayed in rich format
+If a job is running at user level, but if the python code access file/file path which is not authorized to the user, it returns a permission denied message.
+While running on agent, notebook has to be written/copied to agent workspace
+Artifacts should be maintained/reachable from controller after build.
+
+Week 4
+
+As all the major tasks has done, the demo preparation and plan for a experimental release was carried during the last week. There were lots of research on how to connect to a existing kernel in remote. Demo and presentation were prepared along the week.
+
+Issues and Challenges
+
+Releasing the first version was bit late
+
+Knowledge transfer
+
+How to debug the code through IntelliJ
+
+Edit configuration → Add new Configuration → Maven
+
+Command line → type hpi:run
+
+Click the debug icon on the toolbar or go to Run menu then Debug
+
+How to setup to test the plugin
+
+Setup JDK 8 and Maven 3.5.*
+
+Create a directory $ mkdir machine-learning-plugin
+
+Create a virtual environment $ virtualenv venv
+
+Activate your virtual environment $ source venv/bin/activate
+
+Run $ which python to ensure your python path
+
+$ git clone https://github.com/jenkinsci/machine-learning-plugin.git
+
+Run $ mvn clean install from the machine-learning-plugin directory
+
+Run $ mvn hpi:run to start Jenkins with the plugin
+
+Set up the builder with localhost and other parameters
+
+Create a job
+
+Write python code like print(“plugin works”)
+
+Build the job
+
+Issues and bugs
+
+JENKINS-62528 Issues on Jenkins build in the plugin repository
+
+JENKINS-62621 Global configuration for IPython servers
+
+JENKINS-62649 Implementation of IPython Builder
+
+JENKINS-62711 File parser to copy source files to workspace
+
+JENKINS-62733 Python errors are not displayed properly in console log
+
+JENKINS-62735 Send/Receive necessary files from controller/agent to agent/controller
+
+JENKINS-62593 Improve the documentation
+
+JENKINS-62742 Increase Test coverage
+
+Resources and Links
+
+Github
+
+Project page
+
+Design document<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/loghijiaha">Loghi Perinpanayagam</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/machinelearning">machinelearning</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/datascience">datascience</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/communitybonding">communitybonding</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/06/27/external-fingerprint-storage/"><div class="header"><div class="date"><div class="month">Jun</div><div class="day">27</div></div><h5 class="title">External Fingerprint Storage Phase-1 Updates</h5></div><p class="teaser">Externalizing fingerprint storage for Jenkins is a  Google Summer of Code 2020 project.
+We are working on building a pluggable storage engine for fingerprints (see jep:226[]).
+
+File fingerprinting is a way to track which version of a file is being used by a job/build, making dependency tracking easy. The fingerprint engine of Jenkins can track usages of artifacts, credentials, files, etc. within the system. Currently, it does this by maintaining a local XML-based database which leads to dependence on the physical disk of the Jenkins controller.
+
+Allowing fingerprint storage to be moved to external storages decreases the dependence of Jenkins instances on the physical disk space and also allows for tracking the flow of fingerprints across instances of Jenkins connected to the same external storage.
+
+Advantages of using external storage drivers:
+
+Remove dependence on Jenkins controller disk storage
+
+Can configure pay-as-you-use cloud storages
+
+Easy Backup Management
+
+Better Reliability and Availability
+
+Fingerprints can be tracked across Jenkins instances
+
+Along with this API, we are also working on a reference implementation in the form of a plugin, powered by Redis.
+
+As phase 1 of this project comes to an end, this blog post serves as a summary of the progress we made to the entire Jenkins community.
+
+Current State
+
+The new API introduced in Jenkins core is under review. Once merged, it will offer developers to extend it to build external fingerprint storage plugins.
+
+The Redis Fingerprint Storage Plugin is alpha release ready. We would immensely appreciate any feedback.
+
+External Fingerprint Storage Demo
+
+Introducing the new API for plugin developers
+
+With PR-4731, we introduce a new fingerprint storage API, allowing configuring custom storage engines.
+We exposed the following methods in the new FingerprintStorage class:
+
+void save()
+
+Saves the given Fingerprint in the storage.
+
+Fingerprint load(String id)
+
+Returns the Fingerprint with the given unique ID. The unique ID for a fingerprint is defined by Fingerprint#getHashString().
+
+void delete(String id)
+
+Deletes the Fingerprint with the given unique ID.
+
+boolean isReady()
+
+Returns true if there is some data in the fingerprint database corresponding to the particular Jenkins instance.
+
+Introducing Redis Fingerprint Storage Plugin
+
+Redis Fingerprint Storage Plugin uses the new External Fingerprint Storage API to store the fingerprints in a Redis instance.
+
+Installation:
+
+The alpha release (version 0.1-alpha-1) for the plugin was drafted, and can be installed using the experimental update center.
+
+Follow along the following steps after running Jenkins to download and install the plugin:
+
+Select Manage Jenkins
+
+Select Manage Plugins
+
+Go to Advanced tab
+
+Configure the Update Site URL as: https://updates.jenkins.io/experimental/update-center.json
+
+Click on Submit, and then press the Check Now button.
+
+Go to Available tab.
+
+Search for Redis Fingerprint Storage Plugin and check the box along it.
+
+Click on Install without restart
+
+The plugin should now be installed on your system.
+
+Usage
+
+Once the plugin has been installed, you can configure the Redis server details by following the steps below:
+
+Select Manage Jenkins
+
+Select Configure System
+
+Scroll to the section Redis Fingerprint Storage Configuration and fill in the required details:
+
+Host - Enter hostname where Redis is running
+
+Port - Specify the port on which Redis is running
+
+SSL - Click if SSL is enabled
+
+Database - Redis supports integer indexed databases, which can be specified here.
+
+Connection Timeout - Set the connection timeout duration in milliseconds.
+
+Socked Timeout - Set the socket timeout duration in milliseconds.
+
+Credentials - Configure authentication using username and password to the Redis instance.
+
+Enabled - Check this to enable the plugin (Note: This is likely to be removed very soon, and will be enabled by default.)
+
+Use the Test Redis Connection to verify that the details are correct and Jenkins is able to connect to the Redis instance.
+
+Press the Save button.
+
+Now, all the fingerprints produced by this Jenkins instance should be saved in the configured Redis server!
+
+Future Work
+
+Some of the topics we aim to tackle in the next phases include extending the API, fingerprint cleanup, migrations (internal→external, external→internal, external→external), tracing, ORM, implementing the saveable listener, etc.
+
+Acknowledgements
+
+The Redis Fingerprint Storage plugin is built and maintained by the Google Summer of Code (GSoC) Team for
+External Fingerprint Storage for Jenkins.
+
+Special thanks to Oleg Nenashev, Andrey Falko, Mike Cirioli, Jesse Glick, and the entire Jenkins community for all the contribution to this project.
+
+Reaching Out
+
+Feel free to reach out to us for any questions, feedback, etc. on the project’s Gitter Channel or the Jenkins Developer Mailing list
+
+We use Jenkins Jira to track issues.
+Feel free to file issues under redis-fingerprint-storage-plugin component.
+
+Other Links
+
+Phase 1 demo
+
+Presentation slides
+
+Redis Fingerprint Storage Plugin
+
+Issue Tracker for Phase 1
+
+jep:226[]
+
+Gitter Channel
+
+Project Page<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/stellargo">Sumit Sarin</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/fingerprint">fingerprint</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/cloud-native">cloud-native</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/external-storage">external-storage</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/redis">redis</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/06/03/machine-learning-plugin-community-bonding/"><div class="header"><div class="date"><div class="month">Jun</div><div class="day"> 3</div></div><h5 class="title">Machine Learning Plugin project - community bonding blog post</h5></div><p class="teaser">Hello everyone !
+
+This is one of the Jenkins project in GSoC 2020. We are working this new Machine Learning Plugin for this GSoC 2020.
+This is my story about the community bonding of GSoC 2020. I am happy to share my journey with you.
+
+Introducing Myself and my Fantastic 4 Mentors
+
+I am Loghi Perinpanayagam from University of Moratuwa. I was selected for GSoC 2020 for Machine Learning Plugin in Jenkins. I am glad to introduce my mentors to this project. I was assigned with four mentors who are really enthusiastic to help me on kicking off this summer of code.
+
+Student
+
+Loghi Perinpanayagam
+
+Mentors
+
+Bruno P. Kinoshita
+
+Ioannis Moutsatsos
+
+Marky Jackson
+
+Shivay Lamba
+
+How was my preparation last year ?
+
+I learned about this open source program in my second year. But atleast I tried last year on a different organization’s project that was related to Data Visualization Recommendation for Data Science. But the problem was I did not contribute as much as this year and was too late in the application process. As usual Machine learning related projects have a lot of competition compared to other projects. I prepared on learning Data visualization in Machine Learning and existing Models for the recommendation system. Finally I wrote a proposal with the SeqToSeq model without much knowledge on neural networks at that time. And I did not communicate much through the dedicated slack channel.  That may be one of the reasons for the failure. But the main reason was my latency for GSoC 2019.
+
+How did I hurdle GSoC 2020 ?
+
+Since the time I realized how open source is needed and helpful for the community, I have been passionate about contributing to open source projects. At the instance, I finished my internship in Bangalore, India in 2019, I immediately focused on participating in GSoC. This is my last year (2020) as a student of my BSc Computer Science life, I wanted to get selected this year as a student.
+
+There was a guidance seminar organized by our department, I got to know that Jenkins had opened their project ideas. That was an extremely impressive beginning of my GSoC 2020 journey. I walked through all the draft and accepted projects in the Jenkins.io page. As I am already interested in Machine Learning and I am familiar with Java, I picked the most impressive idea for me that does not have an initial repo. That means I wanted to use my knowledge to think and research a lot with this project. But I had to contribute and want to know about the infrastructure of Jenkins codebase. Because that makes the selection panel easy to pick up the student for the project.  Then I repeatedly searched to contribute to Jenkins. I found issues that were easy for me to work from the git plugin and git client plugin. I started to contribute some test issues on git plugin and git client plugin. After I got a clear knowledge on how a plugin works in Jenkins, I started working on the POC with the hint provided in the project idea page. Actually, that was fun to code.
+
+Mentors have helped many students during the application process. I was able to do a working POC that had a minimum capability to do the task of the project. Finally mentors opened for proposal submission. I hurried to prepare a draft proposal. After I got reviews from mentors, I started to improve the proposal. At the end of the proposal submission, I was able to deliver a good proposal for this project. As I was curious about this plugin, I dug into more on how to integrate Jupyter notebook with this plugin. I published an medium article as a result of my research during the acceptance waiting period.
+
+Results released
+
+The result was going to be announced on 4th May, I believed in my project proposal and POC and I got selected for this GSoC 2020. Whoa ! That was a goosebumping moment in my entire life. The feeling was like Something I achieved. As a result of my hard work, I deserved that.
+For example, I spent 7 days continuously making the POC work without any collision between maven artifacts.
+
+Community Bonding
+
+After the release of results, I was preparing myself for the community bonding. There are lots of interactions happening between me and mentors than before.I had to update my project page and my profile in Jenkins.io. We had our first meeting with lots of excitement and love on 10th of May. Mentors and I introduced ourselves even though we know each other. We discussed the high level view of GSoC and I asked some questions that I had in my mind. As my plugin was a new repository, most of the discussion was related to the repository and its name. I had  to find a name for the new plugin. We had regular conversations about the blogpost and presentations at the end.
+
+In the second meeting, We discussed the process for hosting a new plugin in Jenkins, tracking issues with JIRA, blog posts and high level road map for the project. And I suggested some interesting plugin names but they were not matching to the goal of the project, mentors told me to try other names which perfectly describe the project. I was advised to read all the research guidelines and plugin naming conventions. We discussed how code reviews will be done and source code management through the git. After this meeting, our meeting has shifted to the official Jenkins Zoom account.
+
+Our third meeting was quite serious about our project planning. I had been preparing my design document for the project with the help of mentors before the meeting day. Hence I got lots of reviews and useful examples for my future work on phase 1. At this point, we decided with the plugin name Machine Learning Plugin which was accepted by all mentors and I created the repo and requested a Jira ticket for the plugin hosting request. We were planning to remind the Jira ticket within the next 3 days. Mentors want me to make sure I updated the Jenkins GSoC page before the community period ends. Lots of discussion carried about the design document that I had been preparing last week before the meeting. Some important points from the meeting notes follows :
+
+Define features in the design document
+
+Diagrams for the operations
+
+How plugin works in distributed environment
+
+Code editor library
+
+Requirements for the first Plugin release
+
+Blog post draft document
+
+ToDo works for me for next week
+
+Therefore, I had to work hard after this meeting, this made me involved in the project more. I have to put my huge effort to make this opportunity golden. Our team has the willingness to complete this project and will definitely help the Data Science community with this plugin.
+Kudos to my team for the amazing work so far!!!
+
+This was my entire journey until now. Hope you enjoyed it and hope you learned the mistakes I made last year and corrected in this summer.
+Thanks for reading, and Stay tuned I will be uploading blog posts for those of you interested.
+
+Resources and Links
+
+Project page
+
+Design document<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/loghijiaha">Loghi Perinpanayagam</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/machinelearning">machinelearning</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/datascience">datascience</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/communitybonding">communitybonding</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li></ul></div></li></ul></div></div><div><nav><ul class="pagination"><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/node/tags/plugins">«</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/node/tags/plugins">1</a></li><li class="page-item active"><a aria-current="page" class="page-link" href="/gatsby-jenkins-io/node/tags/plugins/page/2">2</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/node/tags/plugins/page/3">3</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/node/tags/plugins/page/4">4</a></li><li class="page item disabled"><div class="page-link">...</div></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/node/tags/plugins/page/12">12</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/node/tags/plugins/page/13">13</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/node/tags/plugins/page/14">14</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/node/tags/plugins/page/3">»</a></li></ul></nav></div></div></div><script src="https://www.jenkins.io/assets/bower/anchor-js/anchor.min.js"></script><script src="https://www.jenkins.io/assets/bower/tether/js/tether.min.js"></script><script src="https://www.jenkins.io/assets/bower/bootstrap/js/bootstrap.min.js"></script><footer id="footer"><div class="container"><div class="row"><div class="col-md-4"><div class="license-box"><div id="creativecommons"><a href="https://creativecommons.org/licenses/by-sa/4.0/"><p><img alt="Creative Commons Attribution-ShareAlike license" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png"/></p></a><p>The content driving this site is licensed under the Creative Commons Attribution-ShareAlike 4.0 license.</p></div></div></div><div class="links col-md-8"><div class="container"><div class="row"><div class="area col-md-3"><div class="div-mar"><h5>Resources</h5><ul class="resources"><li><a href="https://www.jenkins.io/download/">Downloads</a></li><li><a href="https://www.jenkins.io/node/">Blog</a></li><li><a href="https://www.jenkins.io/doc/">Documentation</a></li><li><a href="https://plugins.jenkins.io/">Plugins</a></li><li><a href="https://www.jenkins.io/security/">Security</a></li><li><a href="https://www.jenkins.io/participate/">Contributing</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Project</h5><ul class="project"><li><a href="https://www.jenkins.io/project/">Structure and governance</a></li><li><a href="https://issues.jenkins.io">Issue tracker</a></li><li><a href="https://www.jenkins.io/project/roadmap/">Roadmap</a></li><li><a href="https://github.com/jenkinsci">GitHub</a></li><li><a href="https://ci.jenkins.io">Jenkins on Jenkins</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Community</h5><ul class="community"><li><a href="https://www.jenkins.io/events/">Events</a></li><li><a href="https://www.jenkins.io/mailing-lists/">Mailing lists</a></li><li><a href="https://www.jenkins.io/chat/">Chats</a></li><li><a href="https://www.jenkins.io/sigs/">Special Interest Groups</a></li><li><a href="https://twitter.com/jenkinsci">Twitter</a></li><li><a href="https://reddit.com/r/jenkinsci">Reddit</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Other</h5><ul class="other"><li><a href="https://www.jenkins.io/conduct/">Code of Conduct</a></li><li><a href="https://www.jenkins.io/press/">Press information</a></li><li><a href="https://www.jenkins.io/merchandise/">Merchandise</a></li><li><a href="https://www.jenkins.io/artwork/">Artwork</a></li><li><a href="https://www.jenkins.io/awards/">Awards</a></li></ul></div></div></div></div></div></div></div></footer><script>
+  $(function(){
+    var $body = $(document.body);
+    $(".nav-link.dropdown-toggle").on("mousedown", function(){
+      $body.addClass("no-outline");
+    })
+    $body.on("keydown", function(){
+      $body.removeClass("no-outline");
+    })
+  })
+</script></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/node/tags/plugins/page/2";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-ea100fe6f02bbc648246.js"],"app":["/app-43188d140ca63afb8771.js"],"component---src-pages-404-js":["/component---src-pages-404-js-47ac51e928948b38608d.js"],"component---src-pages-index-js":["/component---src-pages-index-js-1a97f429813fea6561af.js"],"component---src-pages-page-2-js":["/component---src-pages-page-2-js-74b0880e66be9d8858e3.js"],"component---src-pages-using-typescript-tsx":["/component---src-pages-using-typescript-tsx-c165de62207de7fb5221.js"],"component---src-templates-author-blog-list-template-js":["/component---src-templates-author-blog-list-template-js-b61199093ca1f0d70385.js"],"component---src-templates-blog-list-template-js":["/component---src-templates-blog-list-template-js-ca6bee91df25d027edd4.js"],"component---src-templates-post-js":["/component---src-templates-post-js-e8ab9f898d0f6cebb5f5.js"],"component---src-templates-tag-blog-list-template-js":["/component---src-templates-tag-blog-list-template-js-3631acbb8557cd5b95be.js"]};/*]]>*/</script><script src="/gatsby-jenkins-io/polyfill-ea100fe6f02bbc648246.js" nomodule=""></script><script src="/gatsby-jenkins-io/component---src-templates-tag-blog-list-template-js-3631acbb8557cd5b95be.js" async=""></script><script src="/gatsby-jenkins-io/commons-12cbe55ce4f6cbfe1e93.js" async=""></script><script src="/gatsby-jenkins-io/app-43188d140ca63afb8771.js" async=""></script><script src="/gatsby-jenkins-io/framework-094b0089736b8f621f0d.js" async=""></script><script src="/gatsby-jenkins-io/webpack-runtime-858dd632bac0d63b6e45.js" async=""></script></body></html>
