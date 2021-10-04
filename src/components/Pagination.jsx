@@ -10,7 +10,7 @@ const link = (prefix, page) => {
   // Other pages on blog or tags:
   // https://jenkins.io/node/page/4.html
   // https://jenkins.io/node/tags/pipeline/page/4.html
-  if (page === 0) { return prefix; }
+  if (page === 1) { return prefix; }
   return `${prefix}/page/${page}`;
 };
 
