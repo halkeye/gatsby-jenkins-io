@@ -5,7 +5,7 @@ const TagList = ({ tags }) => (
   <ul className="list-inline tags">
     {tags.map((tag) => (
       <li key={tag}>
-        <Link className="tag-link" to={`/node/tags/jenkins/${tag}`}>
+        <Link className="tag-link" to={`/node/tags/${tag}`}>
           {tag}
         </Link>
       </li>

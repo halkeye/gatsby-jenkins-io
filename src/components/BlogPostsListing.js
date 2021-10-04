@@ -39,7 +39,7 @@ const Post = ({
   );
 };
 
-const BlogPosts = ({ pageContext, data: { allBlog: { edges } } }) => {
+const BlogPosts = ({ prefix, pageContext, data: { allBlog: { edges } } }) => {
   if (!edges) {
     return null;
   }
@@ -52,7 +52,7 @@ const BlogPosts = ({ pageContext, data: { allBlog: { edges } } }) => {
           </ul>
         </div>
       </div>
-      <Pagination prefix="/blog" currentPage={pageContext.currentPage} numPages={pageContext.numPages} />
+      <Pagination prefix={prefix} currentPage={pageContext.currentPage} numPages={pageContext.numPages} />
     </>
   );
 };

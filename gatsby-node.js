@@ -120,6 +120,48 @@ const createAllAuthorPages = async ({ graphql, actions }) => {
   }
 };
 
+const createAllTagPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  const eachTagsResults = await graphql('{ tags: allBlog { distinct(field: tags) } }');
+
+  if (eachTagsResults.errors) {
+    throw eachTagsResults.errors;
+  }
+  for (const tag of eachTagsResults.data.tags.distinct) {
+    const allBlogResults = await graphql(`
+      {
+        allBlog(filter: {tags: {in: "${tag}"}}) {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `);
+    if (allBlogResults.errors) {
+      throw allBlogResults.errors;
+    }
+    const posts = allBlogResults.data.allBlog.edges;
+    const postsPerPage = 8;
+    const numPages = Math.ceil(posts.length / postsPerPage);
+    const slug = `/node/tags/${tag}`;
+    (Array.from({ length: numPages }) || [0]).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? slug : `${slug}/page/${i + 1}`,
+        component: path.resolve('./src/templates/tag-blog-list-template.js'),
+        context: {
+          tag,
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      });
+    });
+  }
+};
+
 const createIndividualBlogPosts = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const individualPostResults = await graphql(`
@@ -166,6 +208,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createAllBlogPages({ graphql, actions }),
     createAllAuthorPages({ graphql, actions }),
     createIndividualBlogPosts({ graphql, actions }),
+    createAllTagPages({ graphql, actions }),
   ]);
 };
 
