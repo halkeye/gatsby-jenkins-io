@@ -10,5 +10,6 @@ const SocialMediaButtons = ({
     {linkedin && (<li className="author"><a href={`https://www.linkedin.com/in/${linkedin}`} target="_blank" rel="noreferrer noopener">LinkedIn</a></li>)}
   </ul>
 );
+SocialMediaButtons.displayName = 'SocialMediaButtons';
 
 export default SocialMediaButtons;

@@ -38,6 +38,7 @@ const Post = ({
     </li>
   );
 };
+Post.displayName = 'Post';
 
 const BlogPosts = ({ prefix, pageContext, data: { allBlog: { edges } } }) => {
   if (!edges) {
@@ -56,5 +57,6 @@ const BlogPosts = ({ prefix, pageContext, data: { allBlog: { edges } } }) => {
     </>
   );
 };
+BlogPosts.displayName = 'BlogPosts';
 
 export default BlogPosts;

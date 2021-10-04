@@ -15,6 +15,7 @@ const BlogPage = ({ pageContext, data }) => (
     </div>
   </Layout>
 );
+BlogPage.displayName = 'BlogPage';
 
 export default BlogPage;
 

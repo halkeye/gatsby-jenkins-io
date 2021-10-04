@@ -7,5 +7,6 @@ const Avatar = ({ name, avatar }) => (
     {!avatar?.childImageSharp && <StaticImage src="../../content/images/logos/transparent/transparent.svg" alt={name} width={128} />}
   </div>
 );
+Avatar.displayName = 'Avatar';
 
 export default Avatar;
