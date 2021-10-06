@@ -165,16 +165,25 @@ const createAllTagPages = async ({ graphql, actions }) => {
 const createIndividualBlogPosts = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const individualPostResults = await graphql(`
-   {
-     allBlog(limit: 1000) {
-       edges {
-         node {
-           id
-           slug
-         }
-       }
-     }
-   }
+  {
+    allBlog(
+      sort: { fields: [date], order: ASC }
+      limit: 1000
+    ) {
+      edges {
+        next {
+          slug
+        }
+        node {
+          id
+          slug
+        }
+        previous {
+          slug
+        }
+      }
+    }
+  }
  `);
   if (individualPostResults.errors) {
     throw individualPostResults.errors;
@@ -193,6 +202,8 @@ const createIndividualBlogPosts = async ({ graphql, actions }) => {
       path: edge.node.slug,
       component: slash(postTemplate),
       context: {
+        next: edge.next?.slug,
+        previous: edge.previous?.slug,
         id: edge.node.id,
       },
     });
@@ -215,7 +226,7 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.onCreateNode = async ({
   node, actions, getNode, createNodeId, createContentDigest, reporter,
 }) => {
-  const { createNode, createRedirect } = actions;
+  const { createNode, createParentChildLink, createRedirect } = actions;
   if (node.internal.type === 'File') {
     if (node.sourceInstanceName === 'images') {
       const dir = path.join(__dirname, 'public', 'images', node.relativeDirectory);
@@ -250,6 +261,38 @@ exports.onCreateNode = async ({
       });
       return;
     }
+    if (parent.sourceInstanceName === 'author') {
+      const authorNode = {
+        ...frontmatter,
+        id: parent.name,
+        parent: node.id,
+        html: node.html,
+        // slug: `/blog/authors/${parent.name.toLowerCase()}`.trim(),
+        slug: path.join(parent.relativeDirectory, parent.name.toLowerCase()),
+        avatar: avatars[parent.name.toLowerCase()],
+        internal: {
+          type: 'Author',
+        },
+      };
+      authorNode.internal.contentDigest = createContentDigest(authorNode);
+      createParentChildLink({ parent: node, child: await createNode(authorNode) });
+      return;
+    }
+    if (frontmatter.layout === 'simplepage') {
+      const simplePageNode = {
+        ...frontmatter,
+        id: parent.name,
+        parent: node.id,
+        html: node.html,
+        slug: path.join(parent.relativeDirectory, parent.name.toLowerCase()),
+        internal: {
+          type: 'SimplePage',
+        },
+      };
+      simplePageNode.internal.contentDigest = createContentDigest(simplePageNode);
+      createParentChildLink({ parent: node, child: await createNode(simplePageNode) });
+      return;
+    }
     // probably isn't needed, but just in case for non blog/author
     // const slug = createFilePath({ node, getNode });
     // createNodeField({
@@ -257,8 +300,8 @@ exports.onCreateNode = async ({
     //  node,
     //  value: slug,
     // });
-    // TODO - - next if post.layout != 'post'
-    if (parent.sourceInstanceName === 'blog') {
+    //
+    if (frontmatter.layout === 'post' && parent.relativeDirectory.startsWith('blog/')) {
       const date = dateFromFilename(parent);
       const blogNode = {
         ...frontmatter,
@@ -295,23 +338,16 @@ exports.onCreateNode = async ({
         blogNode.opengraph.image = path.normalize(blogNode.opengraph.image.replace(/^\/images\//, `${path.resolve('./content/images/')}/`));
       }
       blogNode.internal.contentDigest = createContentDigest(blogNode);
-      createNode(blogNode);
+      createParentChildLink({ parent: node, child: await createNode(blogNode) });
+      return;
     }
-    if (parent.sourceInstanceName === 'author') {
-      const authorNode = {
-        ...frontmatter,
-        id: parent.name,
-        parent: node.id,
-        html: node.html,
-        slug: `/blog/authors/${parent.name.toLowerCase()}`.trim(),
-        avatar: avatars[parent.name.toLowerCase()],
-        internal: {
-          type: 'Author',
-        },
-      };
-      authorNode.internal.contentDigest = createContentDigest(authorNode);
-      createNode(authorNode);
-    }
+    console.log({
+      absolutePath: parent.absolutePath,
+      relativeDirectory: parent.relativeDirectory,
+      frontmatter,
+    });
+    // console.log(parent, node);
+    // process.exit(1);
   }
 };
 
@@ -333,3 +369,33 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
   `);
 };
+
+/*
+exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
+  const { createNode } = actions
+
+  // Data can come from anywhere, but for now create it manually
+  const myData = {
+    key: 123,
+    foo: `The foo field of my node`,
+    bar: `Baz`
+  }
+
+  const nodeContent = JSON.stringify(myData)
+
+  const nodeMeta = {
+    id: createNodeId(`my-data-${myData.key}`),
+    parent: null,
+    children: [],
+    internal: {
+      type: `MyNodeType`,
+      mediaType: `text/html`,
+      content: nodeContent,
+      contentDigest: createContentDigest(myData)
+    }
+  }
+
+  const node = Object.assign({}, myData, nodeMeta)
+  createNode(node)
+}
+*/

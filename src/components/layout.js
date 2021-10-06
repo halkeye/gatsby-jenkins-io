@@ -566,6 +566,8 @@ const Layout = ({ children }) => {
   );
 };
 
+Layout.displayName = 'Layout';
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };

@@ -19,13 +19,17 @@ const Authors = ({ authors, blogroll }) => (
 );
 Authors.displayName = 'Author';
 
-const Post = ({ data }) => {
+const Post = ({ data, pageContext }) => {
   const {
     title, date, authors, html, tags, slug, links,
   } = data.blog;
   return (
     <Layout>
       <div className="container blog-post">
+        <div className="row">
+          <div className="col"><Link to={pageContext.previous}>Prev</Link></div>
+          <div className="col text-right"><Link to={pageContext.next}>Next</Link></div>
+        </div>
         <div className="row body">
           <div id="content" className="col-md-11 col-md-offset-1 main-content">
             <div className="content-top">

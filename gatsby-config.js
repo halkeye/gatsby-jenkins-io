@@ -72,17 +72,30 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'blog',
-        // escape hatch for when restarting gatsby a lot (debugging gatsby configs)
-        path: process.env.USE_JUNK ? `${__dirname}/junk/blog` : `${__dirname}/content/blog`,
-        ignore: ['**/_includes', '**/CHANGELOG.adoc', '**/README.adoc'],
+        name: 'images',
+        path: `${__dirname}/content/images`,
+        // this will ignore ./jenkins.io/content/images/jams/ToulouseJam/README.asciidoc
+        // FIXME - unignore later when more processing is done
+        ignore: ['**/CHANGELOG.adoc', '**/README.adoc', '**/README.asciidoc'],
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'images',
-        path: `${__dirname}/content/images`,
+        name: 'data',
+        // escape hatch for when restarting gatsby a lot (debugging gatsby configs)
+        path: process.env.USE_JUNK ? `${__dirname}/junk` : `${__dirname}/content`,
+        ignore: [
+          '**/_config',
+          '**/_data',
+          '**/_ext',
+          '**/_layouts',
+          '**/_partials',
+          '**/_includes',
+          '**/CHANGELOG.adoc',
+          '**/README.adoc',
+          '**/doc/tutorials/kubernetes/installing-jenkins-on-kubernetes/*.yaml', // example files that cannot be processed by transform-yaml
+        ],
       },
     },
     {
