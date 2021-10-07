@@ -86,6 +86,7 @@ module.exports = {
         // escape hatch for when restarting gatsby a lot (debugging gatsby configs)
         path: process.env.USE_JUNK ? `${__dirname}/junk` : `${__dirname}/content`,
         ignore: [
+          '**/doc/developer/tutorial/index.adoc', // broken files for now
           '**/_config',
           '**/_data',
           '**/_ext',
