@@ -282,7 +282,7 @@ exports.onCreateNode = async ({
         id: parent.relativePath,
         parent: node.id,
         html: node.html,
-        slug: path.join(parent.relativeDirectory, cleanName(parent.name)),
+        slug: path.join('author', parent.relativeDirectory, cleanName(parent.name)),
         avatar: avatars[parent.name.toLowerCase()],
         internal: {
           type: 'Author',
