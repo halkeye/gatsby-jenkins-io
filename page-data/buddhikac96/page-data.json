@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/buddhikac96",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"buddhikac96","html":"","id":"buddhikac96.adoc","irc":null,"linkedin":null,"name":"Buddhika Chathuranga","slug":"buddhikac96","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"buddhikac96.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

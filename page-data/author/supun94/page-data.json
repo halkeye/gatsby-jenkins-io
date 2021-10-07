@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/supun94",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"supun94","html":"","id":"supun94.adoc","irc":"Supun","linkedin":null,"name":"Supun Wanniarachchi","slug":"author/supun94","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"supun94.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

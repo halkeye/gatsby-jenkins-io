@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/glaforge",
-    "result": {"data":{"author":{"avatar":null,"blog":"https://glaforge.appspot.com/","github":"glaforge","html":"","id":"glaforge.adoc","irc":null,"linkedin":null,"name":"Guillaume Laforge","slug":"glaforge","twitter":"glaforge"},"allBlog":{"edges":[]}},"pageContext":{"author":"glaforge.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/meekrosoft",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"meekrosoft","html":"","id":"meekrosoft.adoc","irc":null,"linkedin":null,"name":"Mike Long","slug":"meekrosoft","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"meekrosoft.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

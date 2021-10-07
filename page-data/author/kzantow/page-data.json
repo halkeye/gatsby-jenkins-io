@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/kzantow",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"kzantow","html":"","id":"kzantow.adoc","irc":null,"linkedin":null,"name":"Keith Zantow","slug":"author/kzantow","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"kzantow.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

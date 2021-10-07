@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/awitt",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"awittha","html":"","id":"awitt.adoc","irc":null,"linkedin":null,"name":"Austin Witt","slug":"author/awitt","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"awitt.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/madsnielsen",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"MadsNielsen","html":"<div class=\"paragraph\">\n<p>Mads started working for Praqma in late 2011, hired as a software developer. Later became involved in several smaller plugin projects for the Jenkins project.\nMaintainer and author of several (some of them now depecerated) plugins. Contributor and Jenkins advocate.\nMads likes movies and would love to go to the cinema with you.</p>\n</div>","id":"MadsNielsen.adoc","irc":null,"linkedin":null,"name":"Mads Nielsen","slug":"author/madsnielsen","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"MadsNielsen.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

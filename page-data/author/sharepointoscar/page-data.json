@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/sharepointoscar",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"sharepointoscar","html":"<div class=\"paragraph\">\n<p>Oscar is a developer advocate at CloudBees, focusing on Jenkins X.</p>\n</div>","id":"sharepointoscar.adoc","irc":null,"linkedin":"oscarmedina","name":"Oscar Medina","slug":"author/sharepointoscar","twitter":"sharepointoscar"},"allBlog":{"edges":[]}},"pageContext":{"author":"sharepointoscar.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

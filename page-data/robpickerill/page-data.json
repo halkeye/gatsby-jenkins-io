@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/robpickerill",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"robpickerill","html":"","id":"robpickerill.adoc","irc":null,"linkedin":null,"name":"Rob Pickerill","slug":"robpickerill","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"robpickerill.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

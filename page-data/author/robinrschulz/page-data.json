@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/robinrschulz",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"RobinRSchulz","html":"<div class=\"paragraph\">\n<p>Robin is a software developer for development infrastructure at 1&amp;1 Telecommunication.\nHe has been working with Jenkins for many years and develops some Jenkins plugins.</p>\n</div>","id":"robinrschulz.adoc","irc":null,"linkedin":null,"name":"Robin Schulz","slug":"author/robinrschulz","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"robinrschulz.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

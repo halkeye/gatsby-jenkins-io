@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/zaycodes",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"zaycodes","html":"<div class=\"paragraph\">\n<p>Zainab is a software developer and technical writer who is passionate about contributing to open source, improving technical documentation and advocating for gender diversity in open source collaboration. She started contributing to Jenkins documentation during the technical writer exploration phase for <a href=\"https://developers.google.com/season-of-docs\">Google Season of Docs</a> 2020, and is currently working on <a href=\"/sigs/docs/#jenkins-on-kubernetes\">Documentation for Jenkins on Kubernetes</a>.</p>\n</div>","id":"zaycodes.adoc","irc":null,"linkedin":"zaycodes","name":"Zainab Abubakar","slug":"zaycodes","twitter":"zaycodes"},"allBlog":{"edges":[]}},"pageContext":{"author":"zaycodes.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

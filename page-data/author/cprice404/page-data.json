@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/cprice404",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"cprice404","html":"<div class=\"paragraph\">\n<p>Chris is a software engineer at Puppet, who mostly works on backend services\nfor Puppet itself, but occasionally gets to spend some time improving CI\nand automation using Jenkins.</p>\n</div>","id":"cprice404.adoc","irc":null,"linkedin":null,"name":"Chris Price","slug":"author/cprice404","twitter":"cprice404"},"allBlog":{"edges":[]}},"pageContext":{"author":"cprice404.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

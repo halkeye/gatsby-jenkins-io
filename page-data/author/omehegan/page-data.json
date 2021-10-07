@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/omehegan",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"omehegan","html":"<div class=\"paragraph\">\n<p>Owen has been using and administering Jenkins for software companies since 2009 (when it was known as Hudson). He can play the guitar, he knows Morse code, and he has sometimes been known to rebuild two-stroke engines successfully on the first try.</p>\n</div>","id":"omehegan.adoc","irc":null,"linkedin":null,"name":"Owen Mehegan","slug":"author/omehegan","twitter":"literatesavant"},"allBlog":{"edges":[]}},"pageContext":{"author":"omehegan.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

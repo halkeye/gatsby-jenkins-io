@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/qparra",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":null,"html":"<div class=\"paragraph\">\n<p>Quentin is a cybersecurity engineer who participated in a hands on project related to Jenkins security during his last year of master.</p>\n</div>","id":"qparra.adoc","irc":null,"linkedin":null,"name":"Quentin Parra","slug":"author/qparra","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"qparra.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

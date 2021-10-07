@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/bvdawson",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"bvdawson","html":"<div class=\"paragraph\">\n<p>DevOps dude at CloudBees.\nJenkins Marketing Manager.\nTools geek.</p>\n</div>","id":"bvdawson.adoc","irc":null,"linkedin":null,"name":"Brian Dawson","slug":"bvdawson","twitter":"brianvdawson"},"allBlog":{"edges":[]}},"pageContext":{"author":"bvdawson.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

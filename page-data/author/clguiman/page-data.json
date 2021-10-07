@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/clguiman",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"clguimanMSFT","html":"","id":"clguiman.adoc","irc":null,"linkedin":null,"name":"Claudiu Guiman","slug":"author/clguiman","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"clguiman.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

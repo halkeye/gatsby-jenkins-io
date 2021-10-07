@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/kwhetstone",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"kwhetstone","html":"<div class=\"paragraph\">\n<p>Kristin Whetstone is a software engineer at CloudBees working on several different services and tools.\nShe spends a lot of time thinking about test automation and testing that automation.\nShe has participated in a few different areas of Jenkins since 2015, and has previously mentored Jenkins GSoC projects.</p>\n</div>","id":"kwhetstone.adoc","irc":"kwhetstone","linkedin":"kwhetstone","name":"Kristin Whetstone","slug":"kwhetstone","twitter":"lighteningdrake"},"allBlog":{"edges":[]}},"pageContext":{"author":"kwhetstone.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

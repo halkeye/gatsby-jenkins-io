@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/dcoraboeuf",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"dcoraboeuf","html":"<div class=\"paragraph\">\n<p>I&#8217;ve started many years ago in the Java development before switching\nprogressively toward continuous delivery aspects.  I&#8217;m now a consultant\nimplementing CD solutions based on Jenkins. Implementation of the Pipeline\nas Code principles have allowed one of my clients to be able to manage more\nthan 3000 jobs, using a self service approach based on the Seed plugin.</p>\n</div>\n<div class=\"paragraph\">\n<p>I&#8217;m also a contributor for some Jenkins plugins and the author of the\nOntrack application, which allows the monitoring of continuous delivery\npipelines.</p>\n</div>","id":"dcoraboeuf.adoc","irc":null,"linkedin":null,"name":"Damien Coraboeuf","slug":"dcoraboeuf","twitter":"DamienCoraboeuf"},"allBlog":{"edges":[]}},"pageContext":{"author":"dcoraboeuf.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

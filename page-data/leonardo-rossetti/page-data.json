@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/leonardo-rossetti",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"odra","html":"","id":"leonardo-rossetti.adoc","irc":null,"linkedin":null,"name":"Leonardo Rossetti","slug":"leonardo-rossetti","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"leonardo-rossetti.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

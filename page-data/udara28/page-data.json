@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/udara28",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"udara28","html":"","id":"udara28.adoc","irc":"udara28","linkedin":null,"name":"Udara De Silva","slug":"udara28","twitter":"udarapiumal"},"allBlog":{"edges":[]}},"pageContext":{"author":"udara28.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

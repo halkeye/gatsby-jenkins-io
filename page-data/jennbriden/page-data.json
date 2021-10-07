@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/jennbriden",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"jennbriden","html":"<div class=\"paragraph\">\n<p>Jenn Briden is located in the Seattle area and is the Product Manager for the Blue Ocean plugin and the Jenkins pipeline. She has previously worked at Microsoft and ExtraHop Networks. Jenn likes drinking coffee but hasn&#8217;t ever seen a bigfoot.</p>\n</div>","id":"jennbriden.adoc","irc":null,"linkedin":null,"name":"Jenn Briden","slug":"jennbriden","twitter":"jennbriden"},"allBlog":{"edges":[]}},"pageContext":{"author":"jennbriden.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/dwnusbaum",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"dwnusbaum","html":"<div class=\"paragraph\">\n<p>Devin has worked on various areas of Jenkins for the past two years as a software engineer at CloudBees. He is currently a maintainer of core Jenkins Pipeline plugins and also works on Jenkins X Pipeline.</p>\n</div>","id":"dwnusbaum.adoc","irc":null,"linkedin":null,"name":"Devin Nusbaum","slug":"author/dwnusbaum","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"dwnusbaum.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

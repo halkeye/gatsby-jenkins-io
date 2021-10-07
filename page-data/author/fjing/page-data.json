@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/fjing",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":null,"html":"<div class=\"paragraph\">\n<p>Forest runs\nthe <a href=\"https://www.meetup.com/Shanghai-Jenkins-Area-Meetup/\">Shanghai Jenkins Area Meetup</a> and <a href=\"https://www.bagevent.com/event/jenkins-user-conference\">Jenkins User Conference China</a>.</p>\n</div>","id":"fjing.adoc","irc":null,"linkedin":null,"name":"Forest Jing","slug":"author/fjing","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"fjing.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

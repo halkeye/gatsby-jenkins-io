@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/cyrille-leclerc",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"cyrille-leclerc","html":"","id":"cyrille-leclerc.adoc","irc":null,"linkedin":null,"name":"Cyrille Le Clerc","slug":"author/cyrille-leclerc","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"cyrille-leclerc.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

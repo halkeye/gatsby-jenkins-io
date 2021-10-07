@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/jphartley",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"jphartley","html":"<div class=\"paragraph\">\n<p>Jeremy is the Jenkins Product Manager working at <a href=\"https://www.cloudbees.com\">CloudBees</a>. He is especially interested in helping to create a new User Interface for Jenkins.</p>\n</div>","id":"jphartley.adoc","irc":null,"linkedin":null,"name":"Jeremy Hartley","slug":"author/jphartley","twitter":"hartleypm"},"allBlog":{"edges":[]}},"pageContext":{"author":"jphartley.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

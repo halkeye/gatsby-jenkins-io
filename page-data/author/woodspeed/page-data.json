@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/woodspeed",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"woodspeed","html":"<div class=\"paragraph\">\n<p>Viktor is a security consultant and the 2019 Jenkins Security MVP.</p>\n</div>","id":"woodspeed.adoc","irc":null,"linkedin":null,"name":"Viktor Gazdag","slug":"author/woodspeed","twitter":"wucpi"},"allBlog":{"edges":[]}},"pageContext":{"author":"woodspeed.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

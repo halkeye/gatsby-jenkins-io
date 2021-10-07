@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/gilesgas",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"gilesgas","html":"","id":"gilesgas.adoc","irc":null,"linkedin":null,"name":"Giles Gaskell","slug":"author/gilesgas","twitter":"giles_gas"},"allBlog":{"edges":[]}},"pageContext":{"author":"gilesgas.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

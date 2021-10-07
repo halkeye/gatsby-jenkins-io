@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/scherler",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"scherler","html":"<div class=\"paragraph\">\n<p>Thorsten Scherler has a broad background in open source consulting, training and solutions since 2002.\nHe&#8217;s an engineer at CloudBees, working full time on the <a href=\"https://jenkins.io/projects/blueocean/\">Blue Ocean</a> front end.\nHe left Germany in 2003 after finishing his university degrees and has been living in sunny Seville ever since.</p>\n</div>","id":"scherler.adoc","irc":null,"linkedin":null,"name":"Thorsten Scherler","slug":"scherler","twitter":"thorScherler"},"allBlog":{"edges":[]}},"pageContext":{"author":"scherler.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

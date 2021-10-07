@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/payal94",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"payal94","html":"","id":"payal94.adoc","irc":null,"linkedin":null,"name":"Payal Priyadarshini","slug":"payal94","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"payal94.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

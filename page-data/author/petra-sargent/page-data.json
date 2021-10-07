@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/petra-sargent",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"petra-sargent","html":"","id":"petra-sargent.adoc","irc":null,"linkedin":null,"name":"Petra Sargent","slug":"author/petra-sargent","twitter":"momsthatcode"},"allBlog":{"edges":[]}},"pageContext":{"author":"petra-sargent.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

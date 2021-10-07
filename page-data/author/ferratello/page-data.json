@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/ferratello",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"ferratello","html":"","id":"ferratello.adoc","irc":null,"linkedin":null,"name":"Mauro Ferratello","slug":"author/ferratello","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"ferratello.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/tfoxnc",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"tfoxnc","html":"","id":"tfoxnc.adoc","irc":null,"linkedin":null,"name":"Tammy Fox","slug":"author/tfoxnc","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"tfoxnc.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

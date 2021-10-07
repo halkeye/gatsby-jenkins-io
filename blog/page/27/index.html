@@ -288,89 +288,7 @@ pipeline {
 
 These are just a few example of the power of the new sequential stages feature in Declarative 1.3.
 This new feature adds another set of significant use cases that can be handled smoothly using Declarative Pipeline.
-In my next post, I’ll show the another highly requested feature - the new ability to restart a Pipeline run from any stage in that Pipeline.<span class="more"></span></p></a><div class="attrs"><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/pipeline">pipeline</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/06/27/lessons-java10-hackathon/"><div class="header"><div class="date"><div class="month">Jun</div><div class="day">27</div></div><h5 class="title">What I learned from the Jenkins &amp; Java 10+ Hackathon</h5></div><p class="teaser">Last week I participated in the
-Jenkins &amp; Java 10 Online Hackathon.
-It was my first Jenkins hackathon and I roped in
-Jonah Graham to do some pair-programming.
-The hackathon featured JDK Project Jigsaw committers Mandy Chung and Paul Sandoz,
-as well as Jenkins creator Kohsuke Kawaguchi.
-It was a great opportunity for me to learn a lot about Jenkins and Java 10.
-
-Why Java 10?
-
-With the
-Java 8 EoL data looming,
-the focus was on the current available version of Java, Java 10.
-Java 10 offers some nice new features and APIs, not least
-improved docker container integration.
-We learned from Paul of a number of projects with Java 10 migration success stories including Elasticsearch, Kafka &amp; Netty.
-
-At the beginning of the hackathon week, the Jenkins Pipeline feature would crash out when using Java 10.
-This was resolved with a number of fixes including the upgrade of the
-ASM library.
-Then it was nice to see things
-up and running with Java 10.
-
-Getting up &amp; running
-
-The first steps were to do some exploratory testing using
-Jenkins with Java 10 via Docker, thanks to
-Oleg for providing clear instructions.
-This was boringly straightforward as most things worked and we only found one
-issue to report.
-Next to try to get some patches in, we needed to set-up a dev environment.
-The live session gave us what we needed to set up a
-plugin or
-core dev environment.
-One open question we had was whether Jenkins has semantic versioning and
-API tools
-to help identify when you might be breaking backwards compatibility.
-Overall it was straightforward to get a dev environment up and running.
-
-Java 10 New APIs
-
-The next step was to find an issue which we could help resolve.
-Many of the Java 10 issues were related to &#x27;Illegal reflective access&#x27; from various plugins or third-party libraries.
-However after investigating a couple, removing these warnings required a good architectural knowledge of the plugin or core code itself.
-In the end we decided that messing around with classloaders or attempting to upgrade version of jdom was not one for the newbies.
-
-Instead we looked at
-removing reflection
-in cases of isAccessible calls.
-We found the
-ProcessHandle
-api very useful and a good replacement for some misuse of reflection, and even better it made the code work on Windows too.
-Mandy also pointed us to look at the
-Lookup api
-as possible alternate to findClass calls.
-
-Multi-Release JAR Builds
-
-Using new APIs is all well and good but presents a problem when you want to maintain backwards compatibility with Java 8.
-Hence the need for some sort of multi-jar solution -
-Nicolas De loof proposed one such solution for
-multi-release jars with Maven for this case.
-
-sun.misc.Signal
-
-The Java Signal API is being deprecated, but so far no replacement APIs
-are available for signal handling.
-Jenkins makes use of the Signal APIs so a big question for the Jigsaw team was whether this would be replaced going forward.
-Kohsuke pointed out how it is important for Java to maintain this UNIX like behaviour as it shouldn’t matter to end users that Jenkins is written in Java.
-It seems these APIs will be replaced in due course, they just
-aren’t there right now.
-
-Collaboration, Collaboration, Collaboration
-
-It was great to have the discussions with the Jigsaw team.
-They reminded us how they need to know the Java use cases out there and how their team uses these to feed into their development process.
-In turn, the hackathon had Jenkins community members participate, for instance
-easy-jenkins was up and running with Java 10 by the end of the week.
-The hackathon had a great feeling of community spirit and was a reminder why collaborations with communities and also between different communities can be powerful and fun for all involved.
-
-At the end of the week Jonah and I were both happy that we made our first Jenkins contributions (which were reviewed and merged quickly).
-Thanks to all who participated and made it highly enjoyable, especially Oleg for great organization.
-I look forward to the next one!<span class="more"></span></p></a><div class="attrs"><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/events">events</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/community">community</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/java10">java10</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/java11">java11</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/06/27/new-login-page/"><div class="header"><div class="date"><div class="month">Jun</div><div class="day">27</div></div><h5 class="title">New design, UX and extensibility digest for login page et. al.</h5></div><p class="teaser">This blog post gives an introduction to the new design for the login and signup forms and Jenkins is (re)starting pages introduced in Jenkins 2.128.
+In my next post, I’ll show the another highly requested feature - the new ability to restart a Pipeline run from any stage in that Pipeline.<span class="more"></span></p></a><div class="attrs"><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/pipeline">pipeline</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/06/27/new-login-page/"><div class="header"><div class="date"><div class="month">Jun</div><div class="day">27</div></div><h5 class="title">New design, UX and extensibility digest for login page et. al.</h5></div><p class="teaser">This blog post gives an introduction to the new design for the login and signup forms and Jenkins is (re)starting pages introduced in Jenkins 2.128.
 The first part of the blog post is an introduction to the new design and UX for Jenkins users.
 The later part is talking about extensibility in a more technical manner, aimed at plugin developers.
 
@@ -453,7 +371,89 @@ For example, I used this technique to create a prototype of a login page for a C
 Conclusion
 
 We hope you like the recent changes to some core pages and as well the new design and UX. We further hope you feel enabled to
-customize the look and feel to adopt your needs with the SimplePageDecorator.<span class="more"></span></p></a><div class="attrs"><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/core">core</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/ux">ux</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/06/26/jenkins-essentials-at-eclipsecon-france/"><div class="header"><div class="date"><div class="month">Jun</div><div class="day">26</div></div><h5 class="title">Presenting Jenkins Essentials at EclipseCon France</h5></div><p class="teaser">Jenkins Essentials has been renamed to Jenkins Evergreen since this was written.
+customize the look and feel to adopt your needs with the SimplePageDecorator.<span class="more"></span></p></a><div class="attrs"><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/core">core</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/ux">ux</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/06/27/lessons-java10-hackathon/"><div class="header"><div class="date"><div class="month">Jun</div><div class="day">27</div></div><h5 class="title">What I learned from the Jenkins &amp; Java 10+ Hackathon</h5></div><p class="teaser">Last week I participated in the
+Jenkins &amp; Java 10 Online Hackathon.
+It was my first Jenkins hackathon and I roped in
+Jonah Graham to do some pair-programming.
+The hackathon featured JDK Project Jigsaw committers Mandy Chung and Paul Sandoz,
+as well as Jenkins creator Kohsuke Kawaguchi.
+It was a great opportunity for me to learn a lot about Jenkins and Java 10.
+
+Why Java 10?
+
+With the
+Java 8 EoL data looming,
+the focus was on the current available version of Java, Java 10.
+Java 10 offers some nice new features and APIs, not least
+improved docker container integration.
+We learned from Paul of a number of projects with Java 10 migration success stories including Elasticsearch, Kafka &amp; Netty.
+
+At the beginning of the hackathon week, the Jenkins Pipeline feature would crash out when using Java 10.
+This was resolved with a number of fixes including the upgrade of the
+ASM library.
+Then it was nice to see things
+up and running with Java 10.
+
+Getting up &amp; running
+
+The first steps were to do some exploratory testing using
+Jenkins with Java 10 via Docker, thanks to
+Oleg for providing clear instructions.
+This was boringly straightforward as most things worked and we only found one
+issue to report.
+Next to try to get some patches in, we needed to set-up a dev environment.
+The live session gave us what we needed to set up a
+plugin or
+core dev environment.
+One open question we had was whether Jenkins has semantic versioning and
+API tools
+to help identify when you might be breaking backwards compatibility.
+Overall it was straightforward to get a dev environment up and running.
+
+Java 10 New APIs
+
+The next step was to find an issue which we could help resolve.
+Many of the Java 10 issues were related to &#x27;Illegal reflective access&#x27; from various plugins or third-party libraries.
+However after investigating a couple, removing these warnings required a good architectural knowledge of the plugin or core code itself.
+In the end we decided that messing around with classloaders or attempting to upgrade version of jdom was not one for the newbies.
+
+Instead we looked at
+removing reflection
+in cases of isAccessible calls.
+We found the
+ProcessHandle
+api very useful and a good replacement for some misuse of reflection, and even better it made the code work on Windows too.
+Mandy also pointed us to look at the
+Lookup api
+as possible alternate to findClass calls.
+
+Multi-Release JAR Builds
+
+Using new APIs is all well and good but presents a problem when you want to maintain backwards compatibility with Java 8.
+Hence the need for some sort of multi-jar solution -
+Nicolas De loof proposed one such solution for
+multi-release jars with Maven for this case.
+
+sun.misc.Signal
+
+The Java Signal API is being deprecated, but so far no replacement APIs
+are available for signal handling.
+Jenkins makes use of the Signal APIs so a big question for the Jigsaw team was whether this would be replaced going forward.
+Kohsuke pointed out how it is important for Java to maintain this UNIX like behaviour as it shouldn’t matter to end users that Jenkins is written in Java.
+It seems these APIs will be replaced in due course, they just
+aren’t there right now.
+
+Collaboration, Collaboration, Collaboration
+
+It was great to have the discussions with the Jigsaw team.
+They reminded us how they need to know the Java use cases out there and how their team uses these to feed into their development process.
+In turn, the hackathon had Jenkins community members participate, for instance
+easy-jenkins was up and running with Java 10 by the end of the week.
+The hackathon had a great feeling of community spirit and was a reminder why collaborations with communities and also between different communities can be powerful and fun for all involved.
+
+At the end of the week Jonah and I were both happy that we made our first Jenkins contributions (which were reviewed and merged quickly).
+Thanks to all who participated and made it highly enjoyable, especially Oleg for great organization.
+I look forward to the next one!<span class="more"></span></p></a><div class="attrs"><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/events">events</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/community">community</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/java10">java10</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/java11">java11</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/06/26/jenkins-essentials-at-eclipsecon-france/"><div class="header"><div class="date"><div class="month">Jun</div><div class="day">26</div></div><h5 class="title">Presenting Jenkins Essentials at EclipseCon France</h5></div><p class="teaser">Jenkins Essentials has been renamed to Jenkins Evergreen since this was written.
 
 It’s been far too long since we posted an update on
 Jenkins Essentials. While it’s not

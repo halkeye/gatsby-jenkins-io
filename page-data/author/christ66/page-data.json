@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/christ66",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"christ66","html":"","id":"christ66.adoc","irc":"schristou","linkedin":null,"name":"Steven Christou","slug":"author/christ66","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"christ66.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

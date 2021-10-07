@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/vgaidarji",
-    "result": {"data":{"author":{"avatar":null,"blog":"http://vgaidarji.me","github":"vgaidarji","html":"<div class=\"paragraph\">\n<p>Veaceslav is a software developer with the main focus on Android platform.\nIn his free time, he enjoys working on different open-source projects.</p>\n</div>","id":"vgaidarji.adoc","irc":null,"linkedin":null,"name":"Veaceslav Gaidarji","slug":"vgaidarji","twitter":"v_gaidarji"},"allBlog":{"edges":[]}},"pageContext":{"author":"vgaidarji.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

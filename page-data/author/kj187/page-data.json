@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/author/kj187",
+    "result": {"data":{"author":{"avatar":null,"blog":"http://blog.kj187.de","github":"kj187","html":"<div class=\"paragraph\">\n<p>Julian Kleinhans is working as a Software Architect at <a href=\"https://www.aoe.com\">AOE GmbH</a> in Krefeld.\nBeside his passion as a developer, he is also passionate about whiskey.\nHis blog deals with various topics such as web development and whisky tasting.</p>\n</div>","id":"kj187.adoc","irc":null,"linkedin":null,"name":"Julian Kleinhans","slug":"author/kj187","twitter":"kj187"},"allBlog":{"edges":[]}},"pageContext":{"author":"kj187.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

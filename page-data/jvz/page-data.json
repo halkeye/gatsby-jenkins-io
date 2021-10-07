@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/jvz",
-    "result": {"data":{"author":{"avatar":null,"blog":"https://musigma.blog/","github":"jvz","html":"<div class=\"paragraph\">\n<p>Mathematician, software engineer, and free software evangelist.\nWorks for CloudBees on the <a href=\"https://jenkins.io/security/\">Jenkins Security Team</a> along with other Jenkins community work since 2018.\nPMC Chair of the <a href=\"https://logging.apache.org/\">Apache Logging Services project</a> and Secretary for the <a href=\"https://www.apache.org/\">Apache Software Foundation</a>.</p>\n</div>","id":"jvz.adoc","irc":null,"linkedin":null,"name":"Matt Sicker","slug":"jvz","twitter":"jvz"},"allBlog":{"edges":[]}},"pageContext":{"author":"jvz.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

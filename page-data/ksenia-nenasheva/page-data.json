@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/ksenia-nenasheva",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"ksenia-nenasheva","html":"","id":"ksenia-nenasheva.adoc","irc":null,"linkedin":null,"name":"Ksenia Nenasheva","slug":"ksenia-nenasheva","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"ksenia-nenasheva.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}
