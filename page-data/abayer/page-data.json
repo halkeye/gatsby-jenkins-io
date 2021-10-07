@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/abayer",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"abayer","html":"<div class=\"paragraph\">\n<p>Andrew was a core committer to Hudson and the author of numerous plugins.</p>\n</div>","id":"abayer.adoc","irc":null,"linkedin":null,"name":"Andrew Bayer","slug":"abayer","twitter":"abayer"},"allBlog":{"edges":[]}},"pageContext":{"author":"abayer.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

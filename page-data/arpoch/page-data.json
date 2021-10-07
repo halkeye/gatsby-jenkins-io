@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/arpoch",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"arpoch","html":"<div class=\"paragraph\">\n<p>Harshit Chopra is an open source enthusiast from India.</p>\n</div>","id":"arpoch.adoc","irc":null,"linkedin":"harshit-chopra-275269178","name":"Harshit Chopra","slug":"arpoch","twitter":"Harshit14413301"},"allBlog":{"edges":[]}},"pageContext":{"author":"arpoch.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/blog/authors/node",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"node","html":"","id":"node","irc":null,"linkedin":null,"name":"Yang Zhentao","slug":"/blog/authors/node","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"node","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/alexsomai",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"alexsomai","html":"","id":"alexsomai.adoc","irc":null,"linkedin":null,"name":"Alexandru Somai","slug":"alexsomai","twitter":"alex_somai"},"allBlog":{"edges":[]}},"pageContext":{"author":"alexsomai.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

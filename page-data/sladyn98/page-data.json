@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/sladyn98",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"sladyn98","html":"<div class=\"paragraph\">\n<p>Sladyn is a Computer Science student at Mumbai University, India.\nHe is participating in Community Bridge 2019 to provide development tools to JCasC plugin in the form of IDE integrations, schema architecture improvements and configuration extension points <a href=\"https://github.com/jenkinsci/configuration-as-code-plugin\">Configuration as Code Plugin</a>.</p>\n</div>","id":"sladyn98.adoc","irc":null,"linkedin":null,"name":"Sladyn Nunes","slug":"sladyn98","twitter":"SladynN"},"allBlog":{"edges":[]}},"pageContext":{"author":"sladyn98.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

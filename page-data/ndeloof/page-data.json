@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/ndeloof",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"ndeloof","html":"","id":"ndeloof.adoc","irc":null,"linkedin":null,"name":"Nicolas De Loof","slug":"ndeloof","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"ndeloof.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

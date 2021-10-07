@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/pstrh",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"pstrh","html":"","id":"pstrh.adoc","irc":null,"linkedin":null,"name":"Philip Stroh","slug":"pstrh","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"pstrh.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

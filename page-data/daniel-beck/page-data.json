@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/daniel-beck",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"daniel-beck","html":"<div class=\"paragraph\">\n<p>Daniel is a Jenkins core maintainer and, as security officer, leads the <a href=\"/security/#team\">Jenkins security team</a>.\nHe sometimes contributes to developer documentation and project infrastructure.</p>\n</div>","id":"daniel-beck.adoc","irc":null,"linkedin":null,"name":"Daniel Beck","slug":"daniel-beck","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"daniel-beck.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

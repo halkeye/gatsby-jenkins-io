@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/sylwiabrant",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"SylwiaBrant","html":"<div class=\"paragraph\">\n<p>Software Engineer at VirtusLab, working in area of cloud-native technologies.</p>\n</div>\n<div class=\"paragraph\">\n<p>Maintainer of Jenkins Kubernetes Operator.</p>\n</div>","id":"sylwiabrant.adoc","irc":null,"linkedin":null,"name":"Sylwia Brant","slug":"sylwiabrant","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"sylwiabrant.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

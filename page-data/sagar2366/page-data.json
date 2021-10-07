@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/sagar2366",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"Sagar2366","html":"<div class=\"paragraph\">\n<p>Sagar is an open source enthusiast, developer, speaker, and learner from Maharashtra, India.</p>\n</div>","id":"Sagar2366.adoc","irc":"Sagar2366","linkedin":"sagar-utekar-b32750116","name":"Sagar Utekar","slug":"sagar2366","twitter":"named_uttu"},"allBlog":{"edges":[]}},"pageContext":{"author":"Sagar2366.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

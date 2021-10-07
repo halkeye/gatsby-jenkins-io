@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/mdesanti",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"mdesanti","html":"<div class=\"paragraph\">\n<p>Head of Infrastructure &amp; Cloud at <a href=\"https://www.wolox.com.ar\">Wolox</a></p>\n</div>","id":"mdesanti.adoc","irc":null,"linkedin":null,"name":"Matias De Santi","slug":"mdesanti","twitter":"mdsanti"},"allBlog":{"edges":[]}},"pageContext":{"author":"mdesanti.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

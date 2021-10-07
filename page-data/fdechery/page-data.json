@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/fdechery",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"fdechery","html":"","id":"fdechery.adoc","irc":null,"linkedin":null,"name":"Francois Dechery","slug":"fdechery","twitter":"francoisdechery"},"allBlog":{"edges":[]}},"pageContext":{"author":"fdechery.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

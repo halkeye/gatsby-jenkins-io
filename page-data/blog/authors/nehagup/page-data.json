@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/blog/authors/nehagup",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"nehagup","html":"","id":"nehagup","irc":null,"linkedin":null,"name":"Neha Gupta","slug":"/blog/authors/nehagup","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"nehagup","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/dominicgunn",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"dominicgunn","html":"","id":"dominicgunn.adoc","irc":null,"linkedin":null,"name":"Dominic Gunn","slug":"dominicgunn","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"dominicgunn.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

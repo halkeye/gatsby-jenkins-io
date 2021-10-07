@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/carlossg",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"carlossg","html":"","id":"carlossg.adoc","irc":null,"linkedin":null,"name":"Carlos Sanchez","slug":"carlossg","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"carlossg.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

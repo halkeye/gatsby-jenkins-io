@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/kinow",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"kinow","html":"","id":"kinow.adoc","irc":null,"linkedin":null,"name":"Bruno P. Kinoshita","slug":"kinow","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"kinow.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

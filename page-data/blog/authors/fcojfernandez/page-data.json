@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/blog/authors/fcojfernandez",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"fcojfernandez","html":"<div class=\"paragraph\">\n<p>Widely experienced Software Engineer focused mainly on Java developments.\nFrancisco worked mainly on projects for different sectors such as banking or utilities, where he specialized in backend and architecture design.\nSince 2016 he has been working at CloudBees collaborating on different Jenkins related projects, such as Jenkinsfile Runner and Custom War Packager.\nHe is the current maintainer of Folders plugin and one of the co-maintainers of EC2, Git and Git Client plugins.</p>\n</div>","id":"fcojfernandez","irc":null,"linkedin":"fcojfernandez","name":"Francisco Fernandez","slug":"/blog/authors/fcojfernandez","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"fcojfernandez","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

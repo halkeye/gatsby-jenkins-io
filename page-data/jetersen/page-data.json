@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/jetersen",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"jetersen","html":"","id":"jetersen.adoc","irc":null,"linkedin":null,"name":"Joseph Petersen","slug":"jetersen","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"jetersen.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

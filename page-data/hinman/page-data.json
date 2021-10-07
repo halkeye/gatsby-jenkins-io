@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/hinman",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":null,"html":"","id":"hinman.adoc","irc":null,"linkedin":null,"name":"Hannah Inman","slug":"hinman","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"hinman.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

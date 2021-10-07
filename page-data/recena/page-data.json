@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/recena",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"recena","html":"","id":"recena.adoc","irc":null,"linkedin":null,"name":"Manuel Recena","slug":"recena","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"recena.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

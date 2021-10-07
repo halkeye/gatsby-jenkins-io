@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/lloydchang",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"lloydchang","html":"","id":"lloydchang.adoc","irc":null,"linkedin":null,"name":"Lloyd Chang","slug":"lloydchang","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"lloydchang.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

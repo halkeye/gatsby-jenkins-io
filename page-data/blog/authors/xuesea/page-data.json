@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/blog/authors/xuesea",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"xuesea","html":"","id":"xuesea","irc":null,"linkedin":null,"name":"Li Lianqiang","slug":"/blog/authors/xuesea","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"xuesea","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}
