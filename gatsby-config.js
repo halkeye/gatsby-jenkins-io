@@ -92,6 +92,8 @@ module.exports = {
           '**/_layouts',
           '**/_partials',
           '**/_includes',
+          '**/.gitkeep',
+          '**/.htaccess',
           '**/CHANGELOG.adoc',
           '**/README.adoc',
           '**/doc/tutorials/kubernetes/installing-jenkins-on-kubernetes/*.yaml', // example files that cannot be processed by transform-yaml
@@ -123,6 +125,7 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-transformer-yaml',
+    // 'gatsby-transformer-haml',
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',

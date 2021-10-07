@@ -39,6 +39,35 @@ const datedFileSlug = (date, name) => {
   ].join('/');
 };
 
+const cleanName = (name) => name.toLowerCase().replace(/\.html$/, '').replace(/^index$/, '');
+
+const createAllSimplePages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  const allResults = await graphql(`
+    {
+      allSimplePage {
+        edges {
+          node {
+            id
+            slug
+          }
+        }
+      }
+    }
+  `);
+  if (allResults.errors) {
+    throw allResults.errors;
+  }
+  console.log('simplepages', JSON.stringify(allResults, null, 4));
+  return Promise.all(allResults.data.allSimplePage.edges.map((edge) => createPage({
+    path: edge.node.slug,
+    component: slash(path.resolve('./src/templates/simplepage.js')),
+    context: {
+      id: edge.node.id,
+    },
+  })));
+};
+
 const createAllBlogPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const allBlogResults = await graphql(`
@@ -61,18 +90,16 @@ const createAllBlogPages = async ({ graphql, actions }) => {
     const posts = allBlogResults.data.allBlog.edges;
     const postsPerPage = 8;
     const numPages = Math.ceil(posts.length / postsPerPage);
-    Array.from({ length: numPages }).forEach((_, i) => {
-      createPage({
-        path: i === 0 ? '/blog' : `/blog/page/${i + 1}`,
-        component: path.resolve('./src/templates/blog-list-template.js'),
-        context: {
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          numPages,
-          currentPage: i + 1,
-        },
-      });
-    });
+    await Promise.all(Array.from({ length: numPages }).map((_, i) => createPage({
+      path: i === 0 ? '/blog' : `/blog/page/${i + 1}`,
+      component: path.resolve('./src/templates/blog-list-template.js'),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })));
   }
 };
 
@@ -104,19 +131,17 @@ const createAllAuthorPages = async ({ graphql, actions }) => {
     const posts = allBlogResults.data.allBlog.edges;
     const postsPerPage = 8;
     const numPages = Math.ceil(posts.length / postsPerPage) || 1;
-    Array.from({ length: numPages }).forEach((_, i) => {
-      createPage({
-        path: i === 0 ? author.slug : `${author.slug}/page/${i + 1}`,
-        component: path.resolve('./src/templates/author-blog-list-template.js'),
-        context: {
-          author: author.id,
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          numPages,
-          currentPage: i + 1,
-        },
-      });
-    });
+    await Promise.all(Array.from({ length: numPages }).map((_, i) => createPage({
+      path: i === 0 ? author.slug : `${author.slug}/page/${i + 1}`,
+      component: path.resolve('./src/templates/author-blog-list-template.js'),
+      context: {
+        author: author.id,
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })));
   }
 };
 
@@ -146,19 +171,17 @@ const createAllTagPages = async ({ graphql, actions }) => {
     const postsPerPage = 8;
     const numPages = Math.ceil(posts.length / postsPerPage);
     const slug = `/node/tags/${tag}`;
-    (Array.from({ length: numPages }) || [0]).forEach((_, i) => {
-      createPage({
-        path: i === 0 ? slug : `${slug}/page/${i + 1}`,
-        component: path.resolve('./src/templates/tag-blog-list-template.js'),
-        context: {
-          tag,
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          numPages,
-          currentPage: i + 1,
-        },
-      });
-    });
+    Promise.all((Array.from({ length: numPages }) || [0]).map((_, i) => createPage({
+      path: i === 0 ? slug : `${slug}/page/${i + 1}`,
+      component: path.resolve('./src/templates/tag-blog-list-template.js'),
+      context: {
+        tag,
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })));
   }
 };
 
@@ -190,24 +213,15 @@ const createIndividualBlogPosts = async ({ graphql, actions }) => {
   }
   // Create Asciidoc pages.
   const postTemplate = path.resolve('./src/templates/post.js');
-  individualPostResults.data.allBlog.edges.forEach((edge) => {
-    // Gatsby uses Redux to manage its internal state.
-    // Plugins and sites can use functions like "createPage"
-    // to interact with Gatsby.
-    createPage({
-      // Each page is required to have a `path` as well
-      // as a template component. The `context` is
-      // optional but is often necessary so the template
-      // can query data specific to each page.
-      path: edge.node.slug,
-      component: slash(postTemplate),
-      context: {
-        next: edge.next?.slug,
-        previous: edge.previous?.slug,
-        id: edge.node.id,
-      },
-    });
-  });
+  await Promise.all(individualPostResults.data.allBlog.edges.map((edge) => createPage({
+    path: edge.node.slug,
+    component: slash(postTemplate),
+    context: {
+      next: edge.next?.slug,
+      previous: edge.previous?.slug,
+      id: edge.node.id,
+    },
+  })));
 };
 
 // Implement the Gatsby API “createPages”. This is
@@ -216,6 +230,7 @@ const createIndividualBlogPosts = async ({ graphql, actions }) => {
 // create pages.
 exports.createPages = async ({ graphql, actions }) => {
   await Promise.all([
+    createAllSimplePages({ graphql, actions }),
     createAllBlogPages({ graphql, actions }),
     createAllAuthorPages({ graphql, actions }),
     createIndividualBlogPosts({ graphql, actions }),
@@ -264,11 +279,10 @@ exports.onCreateNode = async ({
     if (parent.sourceInstanceName === 'author') {
       const authorNode = {
         ...frontmatter,
-        id: parent.name,
+        id: parent.relativePath,
         parent: node.id,
         html: node.html,
-        // slug: `/blog/authors/${parent.name.toLowerCase()}`.trim(),
-        slug: path.join(parent.relativeDirectory, parent.name.toLowerCase()),
+        slug: path.join(parent.relativeDirectory, cleanName(parent.name)),
         avatar: avatars[parent.name.toLowerCase()],
         internal: {
           type: 'Author',
@@ -281,10 +295,10 @@ exports.onCreateNode = async ({
     if (frontmatter.layout === 'simplepage') {
       const simplePageNode = {
         ...frontmatter,
-        id: parent.name,
+        id: parent.relativePath,
         parent: node.id,
         html: node.html,
-        slug: path.join(parent.relativeDirectory, parent.name.toLowerCase()),
+        slug: path.join(parent.relativeDirectory, cleanName(parent.name)),
         internal: {
           type: 'SimplePage',
         },
