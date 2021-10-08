@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/author/davidcurrie",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"davidcurrie","html":"","id":"davidcurrie","irc":null,"linkedin":null,"name":"David Currie","slug":"blog/author/davidcurrie","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"davidcurrie","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/author/cdancy",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"cdancy","html":"","id":"cdancy","irc":null,"linkedin":null,"name":"Christopher Dancy","slug":"blog/author/cdancy","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"cdancy","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

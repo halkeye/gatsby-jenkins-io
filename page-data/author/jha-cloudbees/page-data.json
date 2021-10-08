@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/author/jha-cloudbees",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"jha-cloudbees","html":"","id":"jha-cloudbees.adoc","irc":null,"linkedin":null,"name":"John Ha","slug":"author/jha-cloudbees","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"jha-cloudbees.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

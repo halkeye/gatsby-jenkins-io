@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/author/jglick",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"jglick","html":"<div class=\"paragraph\">\n<p>Jesse has been developing Jenkins core and plugins for years.\nHe is the coauthor with Kohsuke of the core infrastructure of the Pipeline system.</p>\n</div>","id":"jglick.adoc","irc":null,"linkedin":null,"name":"Jesse Glick","slug":"author/jglick","twitter":"tyvole"},"allBlog":{"edges":[]}},"pageContext":{"author":"jglick.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

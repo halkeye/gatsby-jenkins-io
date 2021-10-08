@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/author/sahilrkalra",
+    "result": {"data":{"author":{"avatar":{"childImageSharp":null},"blog":null,"github":"sahilrkalra","html":"<div class=\"paragraph\">\n<p>Sahil is a Certified Kubernetes Application Developer.\nHe works as a DevOps Engineer for <a href=\"https://www.varian.com/\">Varian</a> in Pune, India.</p>\n</div>","id":"sahilrkalra","irc":null,"linkedin":"sahilrkalra","name":"Sahil Kalra","slug":"blog/author/sahilrkalra","twitter":"sahilrkalra"},"allBlog":{"edges":[]}},"pageContext":{"author":"sahilrkalra","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

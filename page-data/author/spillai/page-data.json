@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/author/spillai",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":null,"html":"<div class=\"paragraph\">\n<p>Director of Labs &amp; Strategic Insights, Infostretch</p>\n</div>","id":"spillai.adoc","irc":null,"linkedin":null,"name":"Sanil Pillai","slug":"author/spillai","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"spillai.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

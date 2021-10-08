@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/author/omkar_dsd",
+    "result": {"data":{"author":{"avatar":{"childImageSharp":null},"blog":null,"github":"omkar-dsd","html":"<div class=\"paragraph\">\n<p>Omkar is the User of Jenkins and is a co-mentor for the <a href=\"https://plugins.jenkins.io/git\">git plugin</a> and the <a href=\"https://plugins.jenkins.io/git-client\">git client plugin</a> (SME for Git) for GSoC'20</p>\n</div>","id":"omkar_dsd","irc":null,"linkedin":null,"name":"Omkar Deshpande","slug":"blog/author/omkar_dsd","twitter":"omkar_dsd"},"allBlog":{"edges":[]}},"pageContext":{"author":"omkar_dsd","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

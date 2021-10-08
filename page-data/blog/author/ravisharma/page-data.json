@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/author/ravisharma",
+    "result": {"data":{"author":{"avatar":{"childImageSharp":null},"blog":null,"github":"TBD","html":"<div class=\"paragraph\">\n<p>Ravi is a software development manager at T-Mobile.\nHis team created the <a href=\"https://github.com/tmobile/POET-pipeline-library\">POET Pipeline library</a>.\nThey&#8217;ve blogged about POET on the\n<a href=\"https://opensource.t-mobile.com/blog/posts/a-lean-mean-pipeline-machine/\">T-mobile open source site</a> and presented a\n<a href=\"https://www.youtube.com/watch?v=AjaHmnhfbaM\">Jenkins community webinar</a> as well.</p>\n</div>","id":"ravisharma","irc":null,"linkedin":null,"name":"Ravi Sharma","slug":"blog/author/ravisharma","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"ravisharma","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

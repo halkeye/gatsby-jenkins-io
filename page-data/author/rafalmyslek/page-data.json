@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/author/rafalmyslek",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"rafalmyslek","html":"","id":"rafalmyslek.adoc","irc":null,"linkedin":null,"name":"Rafal Myslek","slug":"author/rafalmyslek","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"rafalmyslek.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

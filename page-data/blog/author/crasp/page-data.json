@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/author/crasp",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"crasp","html":"","id":"crasp","irc":null,"linkedin":null,"name":"Christian Rasp","slug":"blog/author/crasp","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"crasp","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

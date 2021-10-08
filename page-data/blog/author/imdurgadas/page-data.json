@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/author/imdurgadas",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"imdurgadas","html":"","id":"imdurgadas","irc":null,"linkedin":null,"name":"Durgadas Kamath","slug":"blog/author/imdurgadas","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"imdurgadas","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

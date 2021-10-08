@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/author/stephenc",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"stephenc","html":"","id":"stephenc.adoc","irc":null,"linkedin":null,"name":"Stephen Connolly","slug":"author/stephenc","twitter":"connolly_s"},"allBlog":{"edges":[]}},"pageContext":{"author":"stephenc.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

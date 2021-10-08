@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/author/antoniaklja",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"antoniaklja","html":"<div class=\"paragraph\">\n<p>Engineering Manager in a cloud-native world managing mid-sized cross-functional team and responsible for cloud-related initiatives at VirtusLab.</p>\n</div>","id":"antoniaklja.adoc","irc":null,"linkedin":null,"name":"Bartek Antoniak","slug":"author/antoniaklja","twitter":"antoniaklja"},"allBlog":{"edges":[]}},"pageContext":{"author":"antoniaklja.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

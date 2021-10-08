@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/author/donhui",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"donhui","html":"","id":"donhui","irc":null,"linkedin":null,"name":"Wang Donghui","slug":"blog/author/donhui","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"donhui","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

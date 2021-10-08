@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/author/olivergondza",
+    "result": {"data":{"author":{"avatar":{"childImageSharp":null},"blog":"https://olivergondza.github.io/","github":"olivergondza","html":"<div class=\"paragraph\">\n<p>Engineer at Red Hat. Open Source enthusiast. Jenkins core member.</p>\n</div>","id":"olivergondza","irc":"ogondza","linkedin":null,"name":"Oliver Gondža","slug":"blog/author/olivergondza","twitter":"ogondza"},"allBlog":{"edges":[]}},"pageContext":{"author":"olivergondza","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

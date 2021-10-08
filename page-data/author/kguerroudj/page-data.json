@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/author/kguerroudj",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":null,"html":"<div class=\"paragraph\">\n<p>Kevin is a cybersecurity engineer who participated in a hands on project related to Jenkins security during his last year of master.</p>\n</div>","id":"kguerroudj.adoc","irc":null,"linkedin":"kevin-guerroudj","name":"Kevin Guerroudj","slug":"author/kguerroudj","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"kguerroudj.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

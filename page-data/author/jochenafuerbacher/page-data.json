@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/author/jochenafuerbacher",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"Jochen-A-Fuerbacher","html":"<div class=\"paragraph\">\n<p>Jochen is a software developer for development infrastructure at 1&amp;1 Telecommunication.\nHe has been working with Jenkins for many years and develops some Jenkins plugins.</p>\n</div>","id":"jochenafuerbacher.adoc","irc":null,"linkedin":null,"name":"Jochen A. Fürbacher","slug":"author/jochenafuerbacher","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"jochenafuerbacher.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

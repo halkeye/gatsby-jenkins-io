@@ -253,7 +253,7 @@ please feel free to join us at the contributor summit or to meet us at the commu
 Together with Jesse and Carlos we are also going to present some bits of our work at the
 A Cloud Native Jenkins talk.
 
-Stay tuned for more updates and demos on the Cloud-Native Jenkins fronts!<span class="more"></span></p></a><div class="attrs"><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/community">community</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/sig">sig</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/cloud-native">cloud-native</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/cloud-native-sig">cloud-native-sig</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/07/25/contributor-summit/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">25</div></div><h5 class="title">Join us at the Jenkins Contributor Summit San Francisco, Monday 17 September 2018</h5></div><p class="teaser">The Jenkins Contributor summit is where the current and future contributors of the Jenkins project get together.
+Stay tuned for more updates and demos on the Cloud-Native Jenkins fronts!<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/page/26/blog/author/oleg_nenashev">Oleg Nenashev</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/community">community</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/sig">sig</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/cloud-native">cloud-native</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/cloud-native-sig">cloud-native-sig</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/07/25/contributor-summit/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">25</div></div><h5 class="title">Join us at the Jenkins Contributor Summit San Francisco, Monday 17 September 2018</h5></div><p class="teaser">The Jenkins Contributor summit is where the current and future contributors of the Jenkins project get together.
 This summit will be on Monday, September 17th 2018 in San Francisco, just before DevOps World | Jenkins World.
 The summit brings together community members to learn, meet and help shape the future of Jenkins.
 In the Jenkins commmunity we value all types and sizes of contributions and love to welcome new participants.
@@ -302,77 +302,7 @@ Bring your laptop, come prepared with questions and ideas, and be ready for some
 Join in, hear the latest and get involved in any project during the BoF sessions.
 If you want to share anything there will be an opportunity to do a 5-min ignite talk at the end.
 Attending is free, and no DevOps World | Jenkins World ticket is needed, but RSVP if you are going to attend to help us plan.
-See you there!<span class="more"></span></p></a><div class="attrs"><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/community">community</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/events">events</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkins-world">jenkins-world</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/07/23/javadoc-service-improvements/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">23</div></div><h5 class="title">Jenkins Javadoc: Service Improvements</h5></div><p class="teaser">Jenkins infrastructure is continuously improving.
-The latest service to get some attention and major improvement is the Jenkins javadoc.
-
-There were a number of issues affecting that service:
-
-Irregular updates -
-Developers wouldn’t find the latest java documentation because of inadequate update frequence.
-
-Broken HTTPS support -
-when users would go to the Javadoc site they would get an unsafe site warning and then an incorrect redirection.
-
-Obsolete content - Javadoc was not cleaned up correctly and plenty of obsolete pages remained which confused end users.
-
-As Jenkins services
-migrate to Azure infrastructure,
-something that needed to be done was to move the javadoc service there as a standalone service.
-I took the same approach as jenkins.io, putting data on an azure file storage, using a nginx proxy in front of it and running on kubernetes.
-This approach brings multiple benefits:
-
-We store static files on an azure file storage which brings data reliability, redundancy, etc.
-
-We use Kubernetes Ingress to configure HTTP/HTTPS endpoint
-
-We use Kubernetes Service to provide load balancing
-
-We use Kubernetes deployment to deploy default nginx containers with azure file storage volume.
-
-HTTP/HTTPS workflow
-
-+----------------------+     goes on     +------------------------------+
-  |  Jenkins Developer   |----------------&gt;+  https://javadoc.jenkins.io  |
-  +----------------------+                 +------------------------------+
-                                                                      |
-  +-------------------------------------------------------------------|---------+
-  | Kubernetes Cluster:                                               |         |
-  |                                                                   |         |
-  | +---------------------+     +-------------------+     +-----------v------+  |
-  | | Deployment: Javadoc |     | Service: javadoc  &lt;-----| Ingress: javadoc |  |
-  + +---------------------+     +-------------------+     +------------------+  |
-  |                                           |                                 |
-  |                          -----------------+                                 |
-  |                          |                |                                 |
-  |                          |                |                                 |
-  | +------------------------v--+    +--------v------------------+              |
-  | | Pod: javadoc              |    | Pod: javadoc              |              |
-  | | container: &quot;nginx:alpine&quot; |    | container: &quot;nginx:alpine&quot; |              |
-  | | +-----------------------+ |    | +-----------------------+ |              |
-  | | | Volume:               | |    | | Volume:               | |              |
-  | | | /usr/share/nginx/html | |    | | /usr/share/nginx/html | |              |
-  | | +-------------------+---+ |    | +----+------------------+ |              |
-  | +---------------------|-----+    +------|--------------------+              |
-  |                       |                 |                                   |
-  +-----------------------|-----------------|-----------------------------------+
-                          |                 |
-                          |                 |
-                       +--+-----------------+-----------+
-                       |   Azure File Storage: javadoc  |
-                       +--------------------------------+
-
-The javadoc static files are now generated by a Jenkins
-job regularly and then published from a trusted jenkins instance.
-We only update what has changed and remove obsolete documents.
-More information can be find
-here
-
-The next thing in continuously improving is also to look at the user experience of the javadoc to make it easier to discover javadoc for other components or versions.
-( Help Needed)
-
-These changes all go towards improving the developer experience for those using javadocs and making life easier for core and plugin developers.
-See the new and improved javadoc service here
-Jenkins Javadoc.<span class="more"></span></p></a><div class="attrs"><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/javadoc">javadoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/azure">azure</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/infrastructure">infrastructure</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/kubernetes">kubernetes</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/07/23/remoting-kafka-plugin-1.0-release/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">23</div></div><h5 class="title">Remoting Kafka Plugin 1.0: A new method to connect agents</h5></div><p class="teaser">I am very excited to announce that we have recently released 1.0 version of Remoting Kafka Plugin under Jenkins Plugin. You can check the CHANGELOG to see the features included in this release.
+See you there!<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/page/26/blog/author/tracymiranda">Tracy Miranda</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/community">community</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/events">events</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkins-world">jenkins-world</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/07/23/remoting-kafka-plugin-1.0-release/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">23</div></div><h5 class="title">Remoting Kafka Plugin 1.0: A new method to connect agents</h5></div><p class="teaser">I am very excited to announce that we have recently released 1.0 version of Remoting Kafka Plugin under Jenkins Plugin. You can check the CHANGELOG to see the features included in this release.
 
 About me
 
@@ -479,7 +409,77 @@ Phase 2 Evaluation Slides
 
 Phase 1 Evaluation Video
 
-Phase 2 Evaluation Video<span class="more"></span></p></a><div class="attrs"><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2018">gsoc2018</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/remoting">remoting</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/kafka">kafka</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/07/20/devops-world-jenkins-world-2018-agenda-is-live/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">20</div></div><h5 class="title">DevOps World-Jenkins World 2018 Agenda is Live</h5></div><p class="teaser">This year the Jenkins project introduced a few exciting efforts:
+Phase 2 Evaluation Video<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/page/26/blog/author/pvtuan10">Pham Vu Tuan</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2018">gsoc2018</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/remoting">remoting</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/kafka">kafka</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/07/23/javadoc-service-improvements/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">23</div></div><h5 class="title">Jenkins Javadoc: Service Improvements</h5></div><p class="teaser">Jenkins infrastructure is continuously improving.
+The latest service to get some attention and major improvement is the Jenkins javadoc.
+
+There were a number of issues affecting that service:
+
+Irregular updates -
+Developers wouldn’t find the latest java documentation because of inadequate update frequence.
+
+Broken HTTPS support -
+when users would go to the Javadoc site they would get an unsafe site warning and then an incorrect redirection.
+
+Obsolete content - Javadoc was not cleaned up correctly and plenty of obsolete pages remained which confused end users.
+
+As Jenkins services
+migrate to Azure infrastructure,
+something that needed to be done was to move the javadoc service there as a standalone service.
+I took the same approach as jenkins.io, putting data on an azure file storage, using a nginx proxy in front of it and running on kubernetes.
+This approach brings multiple benefits:
+
+We store static files on an azure file storage which brings data reliability, redundancy, etc.
+
+We use Kubernetes Ingress to configure HTTP/HTTPS endpoint
+
+We use Kubernetes Service to provide load balancing
+
+We use Kubernetes deployment to deploy default nginx containers with azure file storage volume.
+
+HTTP/HTTPS workflow
+
++----------------------+     goes on     +------------------------------+
+  |  Jenkins Developer   |----------------&gt;+  https://javadoc.jenkins.io  |
+  +----------------------+                 +------------------------------+
+                                                                      |
+  +-------------------------------------------------------------------|---------+
+  | Kubernetes Cluster:                                               |         |
+  |                                                                   |         |
+  | +---------------------+     +-------------------+     +-----------v------+  |
+  | | Deployment: Javadoc |     | Service: javadoc  &lt;-----| Ingress: javadoc |  |
+  + +---------------------+     +-------------------+     +------------------+  |
+  |                                           |                                 |
+  |                          -----------------+                                 |
+  |                          |                |                                 |
+  |                          |                |                                 |
+  | +------------------------v--+    +--------v------------------+              |
+  | | Pod: javadoc              |    | Pod: javadoc              |              |
+  | | container: &quot;nginx:alpine&quot; |    | container: &quot;nginx:alpine&quot; |              |
+  | | +-----------------------+ |    | +-----------------------+ |              |
+  | | | Volume:               | |    | | Volume:               | |              |
+  | | | /usr/share/nginx/html | |    | | /usr/share/nginx/html | |              |
+  | | +-------------------+---+ |    | +----+------------------+ |              |
+  | +---------------------|-----+    +------|--------------------+              |
+  |                       |                 |                                   |
+  +-----------------------|-----------------|-----------------------------------+
+                          |                 |
+                          |                 |
+                       +--+-----------------+-----------+
+                       |   Azure File Storage: javadoc  |
+                       +--------------------------------+
+
+The javadoc static files are now generated by a Jenkins
+job regularly and then published from a trusted jenkins instance.
+We only update what has changed and remove obsolete documents.
+More information can be find
+here
+
+The next thing in continuously improving is also to look at the user experience of the javadoc to make it easier to discover javadoc for other components or versions.
+( Help Needed)
+
+These changes all go towards improving the developer experience for those using javadocs and making life easier for core and plugin developers.
+See the new and improved javadoc service here
+Jenkins Javadoc.<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/page/26/blog/author/olblak">Olivier Vernin</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/javadoc">javadoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/azure">azure</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/infrastructure">infrastructure</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/kubernetes">kubernetes</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/07/20/devops-world-jenkins-world-2018-agenda-is-live/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">20</div></div><h5 class="title">DevOps World-Jenkins World 2018 Agenda is Live</h5></div><p class="teaser">This year the Jenkins project introduced a few exciting efforts:
 Configuration as Code, Jenkins X, Jenkins Evergreen, Blue Ocean and Pipeline.
 With DevOps World-Jenkins World San Francisco and Nice only a few short months away,
 we’ve made sure to include plenty of sessions related to these exciting efforts on the agenda.
@@ -536,7 +536,7 @@ You can plan on this to be highly educational, wildly engaging… overall an exc
 
 See you there!
 
-If you need more persuasion, use the code JWFOSS to get 30% discount off your pass.<span class="more"></span></p></a><div class="attrs"><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/event">event</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkins-world">jenkins-world</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/07/19/jenkins-x-accelerate/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">19</div></div><h5 class="title">Accelerate with Jenkins X</h5></div><p class="teaser">Jenkins X uses Capabilities identified by the &quot;Accelerate:  The Science Behind Devops&quot;
+If you need more persuasion, use the code JWFOSS to get 30% discount off your pass.<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/page/26/blog/author/alyssat">Alyssa Tong</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/event">event</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkins-world">jenkins-world</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/07/19/jenkins-x-accelerate/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">19</div></div><h5 class="title">Accelerate with Jenkins X</h5></div><p class="teaser">Jenkins X uses Capabilities identified by the &quot;Accelerate:  The Science Behind Devops&quot;
 
 Jenkins X is a reimagined CI/CD implementation for the Cloud which is heavily influence by the
 State of DevOps reports and more recently the book
@@ -679,12 +679,12 @@ new technoligies and languages like golang.  Why not get involved?
 
 Demo
 
-If you’ve not already seen it here’s a video showing a spring boot quickstart with automatic CI/CD pipelines and preview environments.<span class="more"></span></p></a><div class="attrs"><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkinsx">jenkinsx</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/kubernetes">kubernetes</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/07/18/security-updates/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">18</div></div><h5 class="title">Security updates for Jenkins core</h5></div><p class="teaser">We just released security updates to Jenkins, versions 2.133 and 2.121.2, that fix multiple security vulnerabilities.
+If you’ve not already seen it here’s a video showing a spring boot quickstart with automatic CI/CD pipelines and preview environments.<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/page/26/blog/author/jrawlings">James Rawlings</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkinsx">jenkinsx</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/kubernetes">kubernetes</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/07/18/security-updates/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">18</div></div><h5 class="title">Security updates for Jenkins core</h5></div><p class="teaser">We just released security updates to Jenkins, versions 2.133 and 2.121.2, that fix multiple security vulnerabilities.
 
 For an overview of what was fixed, see the security advisory.
 For an overview on the possible impact of these changes on upgrading Jenkins LTS, see our LTS upgrade guide.
 
-Subscribe to the jenkinsci-advisories mailing list to receive important notifications related to Jenkins security.<span class="more"></span></p></a><div class="attrs"><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/core">core</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/security">security</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/07/17/simple-pull-request-plugin/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">17</div></div><h5 class="title">Pipeline as YAML: Alpha release</h5></div><p class="teaser">About me
+Subscribe to the jenkinsci-advisories mailing list to receive important notifications related to Jenkins security.<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/page/26/blog/author/daniel-beck">Daniel Beck</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/core">core</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/security">security</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/07/17/simple-pull-request-plugin/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">17</div></div><h5 class="title">Pipeline as YAML: Alpha release</h5></div><p class="teaser">About me
 
 I am Abhishek Gautam, 3rd year student from Visvesvaraya National Institute of
 technology, India, Nagpur. I was a member of ACM Chapter and Google student developer club of my
@@ -889,7 +889,7 @@ Demo Repository
 
 Phase 2 Presentation video (July 12, 2018)
 
-Phase 2 Presentation Slides (July 12, 2018)<span class="more"></span></p></a><div class="attrs"><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2018">gsoc2018</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugin">plugin</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/pipeline">pipeline</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/yaml">yaml</a></li></ul></div></li></ul></div></div><div><nav><ul class="pagination"><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/25">«</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog">1</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/2">2</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/3">3</a></li><li class="page item disabled"><div class="page-link">...</div></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/24">24</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/25">25</a></li><li class="page-item active"><a aria-current="page" class="page-link" href="/gatsby-jenkins-io/blog/page/26">26</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/27">27</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/28">28</a></li><li class="page item disabled"><div class="page-link">...</div></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/98">98</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/99">99</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/100">100</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/27">»</a></li></ul></nav></div></div></div><script src="https://www.jenkins.io/assets/bower/anchor-js/anchor.min.js"></script><script src="https://www.jenkins.io/assets/bower/tether/js/tether.min.js"></script><script src="https://www.jenkins.io/assets/bower/bootstrap/js/bootstrap.min.js"></script><footer id="footer"><div class="container"><div class="row"><div class="col-md-4"><div class="license-box"><div id="creativecommons"><a href="https://creativecommons.org/licenses/by-sa/4.0/"><p><img alt="Creative Commons Attribution-ShareAlike license" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png"/></p></a><p>The content driving this site is licensed under the Creative Commons Attribution-ShareAlike 4.0 license.</p></div></div></div><div class="links col-md-8"><div class="container"><div class="row"><div class="area col-md-3"><div class="div-mar"><h5>Resources</h5><ul class="resources"><li><a href="https://www.jenkins.io/download/">Downloads</a></li><li><a href="https://www.jenkins.io/node/">Blog</a></li><li><a href="https://www.jenkins.io/doc/">Documentation</a></li><li><a href="https://plugins.jenkins.io/">Plugins</a></li><li><a href="https://www.jenkins.io/security/">Security</a></li><li><a href="https://www.jenkins.io/participate/">Contributing</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Project</h5><ul class="project"><li><a href="https://www.jenkins.io/project/">Structure and governance</a></li><li><a href="https://issues.jenkins.io">Issue tracker</a></li><li><a href="https://www.jenkins.io/project/roadmap/">Roadmap</a></li><li><a href="https://github.com/jenkinsci">GitHub</a></li><li><a href="https://ci.jenkins.io">Jenkins on Jenkins</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Community</h5><ul class="community"><li><a href="https://www.jenkins.io/events/">Events</a></li><li><a href="https://www.jenkins.io/mailing-lists/">Mailing lists</a></li><li><a href="https://www.jenkins.io/chat/">Chats</a></li><li><a href="https://www.jenkins.io/sigs/">Special Interest Groups</a></li><li><a href="https://twitter.com/jenkinsci">Twitter</a></li><li><a href="https://reddit.com/r/jenkinsci">Reddit</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Other</h5><ul class="other"><li><a href="https://www.jenkins.io/conduct/">Code of Conduct</a></li><li><a href="https://www.jenkins.io/press/">Press information</a></li><li><a href="https://www.jenkins.io/merchandise/">Merchandise</a></li><li><a href="https://www.jenkins.io/artwork/">Artwork</a></li><li><a href="https://www.jenkins.io/awards/">Awards</a></li></ul></div></div></div></div></div></div></div></footer><script>
+Phase 2 Presentation Slides (July 12, 2018)<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/page/26/blog/author/abhishek_gautam">Abhishek Gautam</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2018">gsoc2018</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugin">plugin</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/pipeline">pipeline</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/yaml">yaml</a></li></ul></div></li></ul></div></div><div><nav><ul class="pagination"><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/25">«</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog">1</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/2">2</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/3">3</a></li><li class="page item disabled"><div class="page-link">...</div></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/24">24</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/25">25</a></li><li class="page-item active"><a aria-current="page" class="page-link" href="/gatsby-jenkins-io/blog/page/26">26</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/27">27</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/28">28</a></li><li class="page item disabled"><div class="page-link">...</div></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/98">98</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/99">99</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/100">100</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/27">»</a></li></ul></nav></div></div></div><script src="https://www.jenkins.io/assets/bower/anchor-js/anchor.min.js"></script><script src="https://www.jenkins.io/assets/bower/tether/js/tether.min.js"></script><script src="https://www.jenkins.io/assets/bower/bootstrap/js/bootstrap.min.js"></script><footer id="footer"><div class="container"><div class="row"><div class="col-md-4"><div class="license-box"><div id="creativecommons"><a href="https://creativecommons.org/licenses/by-sa/4.0/"><p><img alt="Creative Commons Attribution-ShareAlike license" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png"/></p></a><p>The content driving this site is licensed under the Creative Commons Attribution-ShareAlike 4.0 license.</p></div></div></div><div class="links col-md-8"><div class="container"><div class="row"><div class="area col-md-3"><div class="div-mar"><h5>Resources</h5><ul class="resources"><li><a href="https://www.jenkins.io/download/">Downloads</a></li><li><a href="https://www.jenkins.io/node/">Blog</a></li><li><a href="https://www.jenkins.io/doc/">Documentation</a></li><li><a href="https://plugins.jenkins.io/">Plugins</a></li><li><a href="https://www.jenkins.io/security/">Security</a></li><li><a href="https://www.jenkins.io/participate/">Contributing</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Project</h5><ul class="project"><li><a href="https://www.jenkins.io/project/">Structure and governance</a></li><li><a href="https://issues.jenkins.io">Issue tracker</a></li><li><a href="https://www.jenkins.io/project/roadmap/">Roadmap</a></li><li><a href="https://github.com/jenkinsci">GitHub</a></li><li><a href="https://ci.jenkins.io">Jenkins on Jenkins</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Community</h5><ul class="community"><li><a href="https://www.jenkins.io/events/">Events</a></li><li><a href="https://www.jenkins.io/mailing-lists/">Mailing lists</a></li><li><a href="https://www.jenkins.io/chat/">Chats</a></li><li><a href="https://www.jenkins.io/sigs/">Special Interest Groups</a></li><li><a href="https://twitter.com/jenkinsci">Twitter</a></li><li><a href="https://reddit.com/r/jenkinsci">Reddit</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Other</h5><ul class="other"><li><a href="https://www.jenkins.io/conduct/">Code of Conduct</a></li><li><a href="https://www.jenkins.io/press/">Press information</a></li><li><a href="https://www.jenkins.io/merchandise/">Merchandise</a></li><li><a href="https://www.jenkins.io/artwork/">Artwork</a></li><li><a href="https://www.jenkins.io/awards/">Awards</a></li></ul></div></div></div></div></div></div></div></footer><script>
   $(function(){
     var $body = $(document.body);
     $(".nav-link.dropdown-toggle").on("mousedown", function(){

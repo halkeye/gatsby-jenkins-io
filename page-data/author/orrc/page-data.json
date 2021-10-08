@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/author/orrc",
-    "result": {"data":{"author":{"avatar":null,"blog":"https://chris.orr.me.uk/","github":"orrc","html":"<div class=\"paragraph\">\n<p>Chris has been hanging around the Jenkins project since 2008, working on\nplugins, helping out folk on IRC, and speaking to people at conferences about\nJenkins.  He maintains several Android-related plugins, and contributes to a few\nothers.</p>\n</div>","id":"orrc.adoc","irc":null,"linkedin":null,"name":"Christopher Orr","slug":"author/orrc","twitter":"orrc"},"allBlog":{"edges":[]}},"pageContext":{"author":"orrc.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

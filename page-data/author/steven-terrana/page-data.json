@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/author/steven-terrana",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"steven-terrana","html":"","id":"steven-terrana.adoc","irc":null,"linkedin":null,"name":"Steven Terrana","slug":"author/steven-terrana","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"steven-terrana.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

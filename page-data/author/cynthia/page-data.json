@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/author/cynthia",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"anyangocynthia","html":"","id":"cynthia.adoc","irc":null,"linkedin":null,"name":"Cynthia Anyango","slug":"author/cynthia","twitter":"annyanngo"},"allBlog":{"edges":[]}},"pageContext":{"author":"cynthia.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

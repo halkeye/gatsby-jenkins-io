@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/author/shenyu_zheng",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"cizezsy","html":"<div class=\"paragraph\">\n<p>Shenyu comes from China. He is a third year student now, and his major is\nComputer Science and technology. He has participated in GSoC 2018 for\n<a href=\"https://jenkins.io/projects/gsoc/2018/code-coverage-api-plugin/\">Code Coverage API Plugin</a></p>\n</div>","id":"shenyu_zheng.adoc","irc":"cizezsy","linkedin":null,"name":"Shenyu Zheng","slug":"author/shenyu_zheng","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"shenyu_zheng.adoc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

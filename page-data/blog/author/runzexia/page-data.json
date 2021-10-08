@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/author/runzexia",
+    "result": {"data":{"author":{"avatar":{"childImageSharp":null},"blog":null,"github":"runzexia","html":"<div class=\"paragraph\">\n<p>Runze Xia is interested in cloud native and DevOps. Jenkins contributor.</p>\n</div>","id":"runzexia","irc":null,"linkedin":null,"name":"夏润泽(RunZe Xia)","slug":"blog/author/runzexia","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"runzexia","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}
