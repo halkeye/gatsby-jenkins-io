@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-blog-list-template-js",
     "path": "/blog/author/udara28",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"udara28","html":"","id":"udara28","irc":"udara28","linkedin":null,"name":"Udara De Silva","slug":"blog/author/udara28","twitter":"udarapiumal"},"allBlog":{"edges":[]}},"pageContext":{"author":"udara28","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"udara28","html":"","id":"udara28","irc":"udara28","linkedin":null,"name":"Udara De Silva","slug":"/blog/author/udara28","twitter":"udarapiumal"},"allBlog":{"edges":[]}},"pageContext":{"author":"udara28","limit":8,"skip":0,"numPages":1,"currentPage":1}},
     "staticQueryHashes": ["3649515864"]}

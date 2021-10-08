@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-blog-list-template-js",
     "path": "/blog/author/waveywaves",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"waveywaves","html":"<div class=\"paragraph\">\n<p>We all live in a big ol' build, deploy world.</p>\n</div>","id":"waveywaves","irc":null,"linkedin":null,"name":"Vibhav Bobade","slug":"blog/author/waveywaves","twitter":"BobadeVibhav"},"allBlog":{"edges":[]}},"pageContext":{"author":"waveywaves","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"waveywaves","html":"<div class=\"paragraph\">\n<p>We all live in a big ol' build, deploy world.</p>\n</div>","id":"waveywaves","irc":null,"linkedin":null,"name":"Vibhav Bobade","slug":"/blog/author/waveywaves","twitter":"BobadeVibhav"},"allBlog":{"edges":[]}},"pageContext":{"author":"waveywaves","limit":8,"skip":0,"numPages":1,"currentPage":1}},
     "staticQueryHashes": ["3649515864"]}

@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-blog-list-template-js",
     "path": "/blog/author/robpickerill",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"robpickerill","html":"","id":"robpickerill","irc":null,"linkedin":null,"name":"Rob Pickerill","slug":"blog/author/robpickerill","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"robpickerill","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"robpickerill","html":"","id":"robpickerill","irc":null,"linkedin":null,"name":"Rob Pickerill","slug":"/blog/author/robpickerill","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"robpickerill","limit":8,"skip":0,"numPages":1,"currentPage":1}},
     "staticQueryHashes": ["3649515864"]}

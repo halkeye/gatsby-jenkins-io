@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-blog-list-template-js",
     "path": "/blog/author/zhaoying818",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"zhaoying818","html":"<div class=\"paragraph\">\n<p>ZhaoYing is a contributor of the Jenkins China community.</p>\n</div>","id":"zhaoying818","irc":null,"linkedin":null,"name":"ZhaoYing","slug":"blog/author/zhaoying818","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"zhaoying818","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"zhaoying818","html":"<div class=\"paragraph\">\n<p>ZhaoYing is a contributor of the Jenkins China community.</p>\n</div>","id":"zhaoying818","irc":null,"linkedin":null,"name":"ZhaoYing","slug":"/blog/author/zhaoying818","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"zhaoying818","limit":8,"skip":0,"numPages":1,"currentPage":1}},
     "staticQueryHashes": ["3649515864"]}

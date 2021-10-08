@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-blog-list-template-js",
     "path": "/blog/author/jonbrohauge",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"jonbrohauge","html":"<div class=\"paragraph\">\n<p>Jon is an avid Jenkins user for quite a some years, and has begun contributing to some of the Jenkins plugins. He advocates for the use of Agile, DevOps, and Continuous Whatever, where ever it makes sense.</p>\n</div>","id":"jonbrohauge","irc":null,"linkedin":null,"name":"Jon Brohauge","slug":"blog/author/jonbrohauge","twitter":"brohauge"},"allBlog":{"edges":[]}},"pageContext":{"author":"jonbrohauge","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"jonbrohauge","html":"<div class=\"paragraph\">\n<p>Jon is an avid Jenkins user for quite a some years, and has begun contributing to some of the Jenkins plugins. He advocates for the use of Agile, DevOps, and Continuous Whatever, where ever it makes sense.</p>\n</div>","id":"jonbrohauge","irc":null,"linkedin":null,"name":"Jon Brohauge","slug":"/blog/author/jonbrohauge","twitter":"brohauge"},"allBlog":{"edges":[]}},"pageContext":{"author":"jonbrohauge","limit":8,"skip":0,"numPages":1,"currentPage":1}},
     "staticQueryHashes": ["3649515864"]}

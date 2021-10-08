@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-blog-list-template-js",
     "path": "/blog/author/kzantow",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"kzantow","html":"","id":"kzantow","irc":null,"linkedin":null,"name":"Keith Zantow","slug":"blog/author/kzantow","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"kzantow","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"kzantow","html":"","id":"kzantow","irc":null,"linkedin":null,"name":"Keith Zantow","slug":"/blog/author/kzantow","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"kzantow","limit":8,"skip":0,"numPages":1,"currentPage":1}},
     "staticQueryHashes": ["3649515864"]}

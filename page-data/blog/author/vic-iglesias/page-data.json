@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-blog-list-template-js",
     "path": "/blog/author/vic-iglesias",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"viglesiasce","html":"","id":"vic-iglesias","irc":null,"linkedin":null,"name":"Vic Iglesias","slug":"blog/author/vic-iglesias","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"vic-iglesias","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"viglesiasce","html":"","id":"vic-iglesias","irc":null,"linkedin":null,"name":"Vic Iglesias","slug":"/blog/author/vic-iglesias","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"vic-iglesias","limit":8,"skip":0,"numPages":1,"currentPage":1}},
     "staticQueryHashes": ["3649515864"]}

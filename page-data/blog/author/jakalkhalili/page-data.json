@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-blog-list-template-js",
     "path": "/blog/author/jakalkhalili",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"jakalkhalili","html":"<div class=\"paragraph\">\n<p>Software Engineer at VirtusLab, working in area of cloud-native technologies.</p>\n</div>\n<div class=\"paragraph\">\n<p>Maintainer of Jenkins Kubernetes Operator.</p>\n</div>","id":"jakalkhalili","irc":null,"linkedin":null,"name":"Jakub Al-Khalili","slug":"blog/author/jakalkhalili","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"jakalkhalili","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"jakalkhalili","html":"<div class=\"paragraph\">\n<p>Software Engineer at VirtusLab, working in area of cloud-native technologies.</p>\n</div>\n<div class=\"paragraph\">\n<p>Maintainer of Jenkins Kubernetes Operator.</p>\n</div>","id":"jakalkhalili","irc":null,"linkedin":null,"name":"Jakub Al-Khalili","slug":"/blog/author/jakalkhalili","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"jakalkhalili","limit":8,"skip":0,"numPages":1,"currentPage":1}},
     "staticQueryHashes": ["3649515864"]}
