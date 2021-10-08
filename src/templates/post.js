@@ -6,7 +6,7 @@ import TagList from '../components/TagList';
 import TwitterShareButton from '../components/TwitterShareButton';
 import Discourse from '../components/Discourse';
 import Author from '../components/Author';
-import { reactJoin } from '../utils';
+import AuthorList from '../components/AuthorList';
 
 const Authors = ({ authors, blogroll }) => (
   <div id="about-the-author">
@@ -46,7 +46,7 @@ const Post = ({ data, pageContext }) => {
                     {' '}
                     by
                     {' '}
-                    {reactJoin(authors.map((a) => <Link key={a.slug} to={a.slug}>{a.name}</Link>), ', ')}
+                    <AuthorList authors={authors} />
                   </span>
                   <TagList tags={tags || []} />
                 </div>

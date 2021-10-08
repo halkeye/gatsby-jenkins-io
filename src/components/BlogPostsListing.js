@@ -3,8 +3,9 @@ import { Link } from 'gatsby';
 
 import TagList from './TagList';
 import Pagination from './Pagination';
+import AuthorList from './AuthorList';
 
-import { reactJoin, SHORT_MONTH_NAMES } from '../utils';
+import { SHORT_MONTH_NAMES } from '../utils';
 
 const Post = ({
   slug, date, title, strippedHtml, authors, tags,
@@ -32,7 +33,7 @@ const Post = ({
         </p>
       </Link>
       <div className="attrs">
-        {reactJoin(authors.map((a) => <Link key={a.slug} to={a.slug}>{a.name}</Link>), ', ')}
+        <AuthorList authors={authors} />
         <TagList tags={tags || []} />
       </div>
     </li>
