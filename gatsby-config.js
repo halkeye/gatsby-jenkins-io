@@ -153,7 +153,7 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
   mapping: {
-    'Blog.authors': 'Author.name',
+    'Blog.authors': 'Author.id',
     'Blog.opengraph.image': 'File.absolutePath',
     'Author.avatar': 'File.absolutePath',
   },
