@@ -7,7 +7,6 @@ export const AuthorFragment = graphql`
       childImageSharp {
         gatsbyImageData(width: 128)
       }
-      publicURL
     }
     blog
     github
