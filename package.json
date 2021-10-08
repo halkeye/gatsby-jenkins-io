@@ -11,6 +11,7 @@
     "gatsby": "^3.13.1",
     "gatsby-core-utils": "^2.14.0",
     "gatsby-plugin-canonical-urls": "^3.14.0",
+    "gatsby-plugin-extract-schema": "^0.2.0",
     "gatsby-plugin-image": "^1.13.0",
     "gatsby-plugin-manifest": "^3.13.0",
     "gatsby-plugin-node-fields": "^3.1.0",

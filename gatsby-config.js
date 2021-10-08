@@ -142,12 +142,18 @@ module.exports = {
         icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: 'gatsby-plugin-extract-schema',
+      options: {
+        dest: `${__dirname}/schema.graphql`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
   mapping: {
-    'Blog.authors': 'Author',
+    'Blog.authors': 'Author.name',
     'Blog.opengraph.image': 'File.absolutePath',
     'Author.avatar': 'File.absolutePath',
   },

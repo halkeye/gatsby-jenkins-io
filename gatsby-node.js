@@ -20,7 +20,7 @@ const avatars = fs.readdirSync(avatarBaseDir)
 const dateFromFilename = (parent) => {
   const date = new Date(Date.parse(parent.name.substring(0, 10).replace(/-$/g, '')));
   if (!date || Number.isNaN(date.getTime())) {
-    console.log(parent);
+    console.log('no date', parent);
     return null; // parent.relativeDirectory + parent.name
   }
   return date;
@@ -58,7 +58,6 @@ const createAllSimplePages = async ({ graphql, actions }) => {
   if (allResults.errors) {
     throw allResults.errors;
   }
-  console.log('simplepages', JSON.stringify(allResults, null, 4));
   return Promise.all(allResults.data.allSimplePage.edges.map((edge) => createPage({
     path: edge.node.slug,
     component: slash(path.resolve('./src/templates/simplepage.js')),
@@ -279,10 +278,10 @@ exports.onCreateNode = async ({
     if (parent.sourceInstanceName === 'author') {
       const authorNode = {
         ...frontmatter,
-        id: parent.relativePath,
+        id: parent.name,
         parent: node.id,
         html: node.html,
-        slug: path.join('author', parent.relativeDirectory, cleanName(parent.name)),
+        slug: path.join('blog', 'author', parent.relativeDirectory, cleanName(parent.name)),
         avatar: avatars[parent.name.toLowerCase()],
         internal: {
           type: 'Author',
@@ -380,6 +379,33 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(`
     type Blog implements Node {
       strippedHtml: String @strippedHtml
+    }
+
+    type Author implements Node {
+      id: ID!
+      name: String
+      github: String
+      html: String
+      slug: String
+      avatar: File
+      twitter: String
+      linkedin: String
+      irc: String
+      blog: String
+    }
+
+    type SimplePage implements Node {
+      id: ID!
+      parent: Node
+      layout: String
+      title: String
+      html: String
+      slug: String
+      section: String
+      description: String
+      uneditable: Boolean
+      project: String
+      kind: String
     }
   `);
 };
