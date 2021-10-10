@@ -34,6 +34,7 @@ module.exports = {
     titleTemplate: '%s | Jenkins',
     image: 'https://jenkins.io/images/logo-title-opengraph.png',
     twitterUsername: '@JenkinsCI',
+    buildDate: new Date(),
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -65,8 +66,15 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'author',
+        name: 'authors',
         path: `${__dirname}/content/_data/authors`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'events',
+        path: `${__dirname}/content/_data/events`,
       },
     },
     {
@@ -156,6 +164,7 @@ module.exports = {
     'Blog.authors': 'Author.id',
     'Blog.opengraph.image': 'File.absolutePath',
     'Author.avatar': 'File.absolutePath',
+    'SupportersYaml.fields.logo': 'File.relativePath',
   },
 };
 

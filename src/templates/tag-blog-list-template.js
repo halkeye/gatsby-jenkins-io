@@ -10,10 +10,11 @@ const BlogPage = ({ pageContext, data }) => (
       <div id="block-block-15" className="block block-block even blog-posts">
         <h3 className="title">Recent Blog Posts</h3>
       </div>
-      <BlogPosts pageContext={pageContext} data={data} prefix={`/node/tags/${pageContext.tag}`} />
+      <BlogPosts pageContext={pageContext} blogs={data.allBlogs.edges} prefix={`/node/tags/${pageContext.tag}`} />
     </div>
   </Layout>
 );
+BlogPage.displayName = 'TagBlogListTemplate';
 
 export default BlogPage;
 
@@ -27,15 +28,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          date
-          id
-          slug
-          strippedHtml
-          title
-          tags
-          authors {
-            ...AuthorFragment
-          }
+          ...BlogListFragment
         }
       }
     }

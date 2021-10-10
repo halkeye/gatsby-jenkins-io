@@ -41,8 +41,8 @@ const Post = ({
 };
 Post.displayName = 'Post';
 
-const BlogPosts = ({ prefix, pageContext, data: { allBlog: { edges } } }) => {
-  if (!edges) {
+const BlogPosts = ({ prefix, pageContext, blogs }) => {
+  if (!blogs || blogs.length === 0) {
     return null;
   }
   return (
@@ -50,11 +50,11 @@ const BlogPosts = ({ prefix, pageContext, data: { allBlog: { edges } } }) => {
       <div className="content blog-posts">
         <div className="item-list">
           <ul className="ji-blog-list ji-item-list">
-            {edges.map(({ node: post }) => <Post key={post.id} {...post} />)}
+            {blogs.map(({ node: post }) => <Post key={post.id} {...post} />)}
           </ul>
         </div>
       </div>
-      <Pagination prefix={prefix} currentPage={pageContext.currentPage} numPages={pageContext.numPages} />
+      {pageContext && <Pagination prefix={prefix} currentPage={pageContext.currentPage} numPages={pageContext.numPages} />}
     </>
   );
 };

@@ -9,6 +9,7 @@ const requireEsm = require('esm')(module);
 const { stripHtml } = requireEsm('string-strip-html');
 const path = require('path');
 const fs = require('fs');
+const https = require('https');
 const { slash } = require('gatsby-core-utils');
 
 const avatarBaseDir = path.resolve(path.join('.', 'content', 'images', 'avatars'));
@@ -240,7 +241,9 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.onCreateNode = async ({
   node, actions, getNode, createNodeId, createContentDigest, reporter,
 }) => {
-  const { createNode, createParentChildLink, createRedirect } = actions;
+  const {
+    createNode, createParentChildLink, createRedirect, createNodeField,
+  } = actions;
   if (node.internal.type === 'File') {
     if (node.sourceInstanceName === 'images') {
       const dir = path.join(__dirname, 'public', 'images', node.relativeDirectory);
@@ -249,11 +252,20 @@ exports.onCreateNode = async ({
     }
   }
 
+  if (node.internal.type === 'SupportersYaml') {
+    if (node.logo) {
+      createNodeField({
+        name: 'logo',
+        node,
+        value: `sponsors/${node.logo}`,
+      });
+    }
+  }
   if (node.internal.type === 'Asciidoc') {
     const parent = getNode(node.parent);
     const frontmatter = Object.entries(node.frontmatter || {}).reduce((prev, [key, value]) => ({ ...prev, [key.replace(/^:/, '').trim()]: value }), {});
     if (parent.name === 'index') {
-      console.log('ignoring', parent.absolutePath, node);
+      console.log('ignoring', parent.absolutePath, frontmatter);
       // TODO - maybe do something with this eventually?
       return;
     }
@@ -275,7 +287,7 @@ exports.onCreateNode = async ({
       });
       return;
     }
-    if (parent.sourceInstanceName === 'author') {
+    if (parent.sourceInstanceName === 'authors') {
       const authorNode = {
         ...frontmatter,
         id: parent.name,
@@ -289,6 +301,39 @@ exports.onCreateNode = async ({
       };
       authorNode.internal.contentDigest = createContentDigest(authorNode);
       createParentChildLink({ parent: node, child: await createNode(authorNode) });
+      return;
+    }
+    if (parent.sourceInstanceName === 'events') {
+      for (const field of ['date', 'title', 'link']) {
+        if (!frontmatter[field]) {
+          reporter.panic(new Error(`No '${field}' specified: ${parent.name}`));
+        }
+      }
+      const eventNode = {
+        ...frontmatter,
+        id: parent.name,
+        parent: node.id,
+        html: node.html,
+        slug: path.join(parent.relativeDirectory, cleanName(parent.name)), // FIXME
+        internal: {
+          // FIXME - if event is over, it moves to expired events?
+          type: 'Event',
+        },
+      };
+
+      // confirm dates are good
+      for (const field of ['date', 'endDate']) {
+        if (eventNode[field]) {
+          const parsedDate = new Date(Date.parse(eventNode[field]));
+          if (!parsedDate || Number.isNaN(parsedDate.getTime())) {
+            reporter.panic(new Error(`Bad iso ${field} for: ${parent.name}`));
+          }
+          eventNode[field] = parsedDate;
+        }
+      }
+
+      eventNode.internal.contentDigest = createContentDigest(eventNode);
+      createParentChildLink({ parent: node, child: await createNode(eventNode) });
       return;
     }
     if (frontmatter.layout === 'simplepage') {
@@ -342,7 +387,7 @@ exports.onCreateNode = async ({
       }
 
       if (!blogNode.authors) {
-        console.log(frontmatter);
+        // console.log(frontmatter);
         reporter.warn(`${parent.name} is authorless`);
         blogNode.authors = [];
       }
@@ -352,20 +397,40 @@ exports.onCreateNode = async ({
       }
       blogNode.internal.contentDigest = createContentDigest(blogNode);
       createParentChildLink({ parent: node, child: await createNode(blogNode) });
-      return;
     }
+    /*
     console.log({
       absolutePath: parent.absolutePath,
       relativeDirectory: parent.relativeDirectory,
       frontmatter,
     });
+    */
     // console.log(parent, node);
     // process.exit(1);
   }
 };
 
-exports.createSchemaCustomization = ({ actions }) => {
+exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createFieldExtension, createTypes } = actions;
+  const { buildObjectType } = schema;
+  createTypes([
+    buildObjectType({
+      name: 'Event',
+      interfaces: ['Node'],
+      fields: {
+        hasEnded: {
+          type: 'Boolean!',
+          resolve: (source) => {
+            if (!source.endDate) {
+              // if it has no end date, then it starts as soon as start date is hit
+              return new Date(source.date) <= new Date();
+            }
+            return new Date(source.endDate) <= new Date();
+          },
+        },
+      },
+    }),
+  ]);
   createFieldExtension({
     name: 'strippedHtml',
     extend(/* options, prevFieldConfig */) {
@@ -408,6 +473,25 @@ exports.createSchemaCustomization = ({ actions }) => {
       kind: String
     }
   `);
+};
+
+exports.onPreBootstrap = async () => {
+  const download = function (url, dest) {
+    return new Promise((resolve, reject) => {
+      const file = fs.createWriteStream(dest);
+      https.get(url, (response) => {
+        response.pipe(file);
+        file.on('finish', () => {
+          file.close(resolve); // close() is async, call cb after close completes.
+        });
+      }).on('error', (err) => { // Handle errors
+        fs.unlink(dest); // Delete the file async. (But we don't check the result)
+        reject(err);
+      });
+    });
+  };
+
+  await download('https://raw.githubusercontent.com/cdfoundation/artwork/main/cdf/icon/color/cdf-icon-color.svg', './src/images/cdf.svg');
 };
 
 /*

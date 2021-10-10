@@ -2,7 +2,7 @@ import * as React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import BlogPosts from '../components/BlogPostsListing';
+import BlogPostsListing from '../components/BlogPostsListing';
 
 const BlogPage = ({ pageContext, data }) => (
   <Layout>
@@ -10,10 +10,11 @@ const BlogPage = ({ pageContext, data }) => (
       <div id="block-block-15" className="block block-block even blog-posts">
         <h3 className="title">Recent Blog Posts</h3>
       </div>
-      <BlogPosts pageContext={pageContext} data={data} prefix="/blog" />
+      <BlogPostsListing pageContext={pageContext} blogs={data.allBlogs.edges} prefix="/blog" />
     </div>
   </Layout>
 );
+BlogPage.displayName = 'BlogPage';
 
 export default BlogPage;
 
@@ -26,15 +27,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          date
-          id
-          slug
-          strippedHtml
-          title
-          tags
-          authors {
-            ...AuthorFragment
-          }
+          ...BlogListFragment
         }
       }
     }

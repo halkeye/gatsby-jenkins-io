@@ -18,4 +18,38 @@ export const AuthorFragment = graphql`
     slug
     twitter
   }
+  fragment EventFragment on Event {
+    id
+    date
+    endDate
+    external
+    html
+    link
+    location
+    title
+  }
+  fragment BlogFragement on Blog {
+    html
+    id
+    title
+    date
+    slug
+    links {
+      discourse
+    }
+    authors {
+      ...AuthorFragment
+    }
+  }
+  fragment BlogListFragment on Blog {
+    date
+    id
+    slug
+    strippedHtml
+    title
+    tags
+    authors {
+      ...AuthorFragment
+    }
+  }
 `;

@@ -68,17 +68,7 @@ export default Post;
 export const pageQuery = graphql`
   query($id: String!) {
     blog(id: { eq: $id }) {
-      html
-      id
-      title
-      date
-      slug
-      links {
-        discourse
-      }
-      authors {
-        ...AuthorFragment
-      }
+      ...BlogListFragment
     }
   }
 `;
