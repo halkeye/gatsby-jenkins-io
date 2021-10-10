@@ -16,7 +16,7 @@ const avatarBaseDir = path.resolve(path.join('.', 'content', 'images', 'avatars'
 const avatars = fs.readdirSync(avatarBaseDir)
   .filter((file) => !file.startsWith('.'))
   // fancy code that converts an array (of files) to map of filename => full path
-  .reduce((prev, curr) => ({ ...prev, [path.parse(curr).name.toLowerCase()]: path.resolve(path.join(avatarBaseDir, curr)) }), {});
+  .reduce((prev, curr) => ({ ...prev, [path.parse(curr).name.toLowerCase()]: `avatars/${curr}` }), {});
 
 const dateFromFilename = (parent) => {
   const date = new Date(Date.parse(parent.name.substring(0, 10).replace(/-$/g, '')));
@@ -448,11 +448,10 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
 
     type Author implements Node {
       id: ID!
-      name: String
+      name: String!
       github: String
-      html: String
-      slug: String
-      avatar: File
+      html: String!
+      slug: String!
       twitter: String
       linkedin: String
       irc: String
