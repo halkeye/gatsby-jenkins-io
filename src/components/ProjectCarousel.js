@@ -22,7 +22,7 @@ const Slide = ({
         {_image && <GatsbyImage image={getImage(_image._src)} role="presentation" alt="" />}
       </div>
       <div className="col-md-12 col-lg-4 order-last order-lg-first">
-        <LinkWrapper to={_href} style={{ fontSize: '16px', color: '#fff', textDecoration: 'none !important' }}>
+        <LinkWrapper to={_href} style={{ fontSize: '16px', color: '#fff', textDecoration: 'none' }}>
           <h2>{_title}</h2>
           <div dangerouslySetInnerHTML={{ __html: _intro }} />
         </LinkWrapper>
@@ -38,7 +38,7 @@ const ProjectCarousel = ({ slides, background, backgroundImage }) => (
   <div style={{
     background: `${background || '#4799d6'}`,
     backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'inherit',
-    backgroundSize: 'cover !important',
+    backgroundSize: 'cover',
   }}
   >
     <Carousel

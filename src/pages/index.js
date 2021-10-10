@@ -10,18 +10,11 @@ import Events from '../components/Events';
 import BlogPostsListing from '../components/BlogPostsListing';
 import ProjectCarousel from '../components/ProjectCarousel';
 
-/*
-layout: default
-title: Jenkins
-blogrollup: true
-homepage: true
-*/
-
 const IndexPage = ({ data }) => (
   <Layout>
     <Seo title="Jenkins" />
     <DownloadBanner />
-    <ProjectCarousel background="#000000" backgroundImage="/images/cdf/cdf-background-wide.jpg" slides={data.allSlidesYaml.edges.map((edge) => edge.node)} />
+    <ProjectCarousel background="#000000" backgroundImage={data.carouselBG.publicURL} slides={data.allSlidesYaml.edges.map((edge) => edge.node)} />
 
     <div className="segment" id="feature-list-segment">
       <div className="container">
@@ -171,6 +164,9 @@ export default IndexPage;
 
 export const pageQuery = graphql`
 query IndexPage {
+  carouselBG: file(relativePath: {eq: "cdf/cdf-background-wide.jpg"}) {
+    publicURL
+  }
   bigSupporters: allSupportersYaml(filter: {big: {eq: true}}) {
     edges {
       node {
