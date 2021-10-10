@@ -75,6 +75,7 @@ module.exports = {
       options: {
         name: 'events',
         path: `${__dirname}/content/_data/events`,
+        ignore: ['**/2020-01-30-fosdem.adoc'],
       },
     },
     {
