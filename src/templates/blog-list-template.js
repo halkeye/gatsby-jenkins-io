@@ -10,7 +10,7 @@ const BlogPage = ({ pageContext, data }) => (
       <div id="block-block-15" className="block block-block even blog-posts">
         <h3 className="title">Recent Blog Posts</h3>
       </div>
-      <BlogPostsListing pageContext={pageContext} blogs={data.allBlogs.edges} prefix="/blog" />
+      <BlogPostsListing pageContext={pageContext} blogs={data.allBlog.edges} prefix="/blog" />
     </div>
   </Layout>
 );

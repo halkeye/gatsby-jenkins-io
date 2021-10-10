@@ -11,7 +11,7 @@ const BlogPage = ({ pageContext, data }) => (
       <Author key={data.author.id} blogroll={false} {...data.author} />
     </div>
     <div className="container">
-      <BlogPosts pageContext={pageContext} blogs={data.allBlogs.edges} prefix={data.author.slug} />
+      <BlogPosts pageContext={pageContext} blogs={data.allBlog.edges} prefix={data.author.slug} />
     </div>
   </Layout>
 );

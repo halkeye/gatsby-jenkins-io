@@ -164,7 +164,7 @@ module.exports = {
   mapping: {
     'Blog.authors': 'Author.id',
     'Blog.opengraph.image': 'File.absolutePath',
-    'Author.avatar': 'File.absolutePath',
+    'Author.avatar': 'File.relativePath',
     'SupportersYaml.fields.logo': 'File.relativePath',
   },
 };

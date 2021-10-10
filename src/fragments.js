@@ -28,7 +28,7 @@ export const AuthorFragment = graphql`
     location
     title
   }
-  fragment BlogFragement on Blog {
+  fragment BlogFragment on Blog {
     html
     id
     title
