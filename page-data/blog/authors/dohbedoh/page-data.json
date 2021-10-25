@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/authors/dohbedoh",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"dohbedoh","html":"<div class=\"paragraph\">\n<p>Systems/Software Engineer</p>\n</div>","id":"dohbedoh","irc":null,"linkedin":"allan-burdajewicz-0122452b","name":"Allan Burdajewicz","slug":"/blog/authors/dohbedoh","twitter":"Dohbedoh"},"allBlog":{"edges":[]}},"pageContext":{"author":"dohbedoh","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

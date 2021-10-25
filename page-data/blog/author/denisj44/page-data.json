@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/blog/author/denisj44",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"denisj44","html":"","id":"denisj44","irc":null,"linkedin":null,"name":"Denis Joubert","slug":"/blog/author/denisj44","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"denisj44","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

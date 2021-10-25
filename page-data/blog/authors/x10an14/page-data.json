@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/authors/x10an14",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"x10an14","html":"","id":"x10an14","irc":null,"linkedin":null,"name":"Christian Chavez","slug":"/blog/authors/x10an14","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"x10an14","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

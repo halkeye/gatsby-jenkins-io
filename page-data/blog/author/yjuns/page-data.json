@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/blog/author/yjuns",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"yJunS","html":"<div class=\"paragraph\">\n<p>yJunS is one of the contributor managers of the Jenkins China community.</p>\n</div>","id":"yJunS","irc":null,"linkedin":null,"name":"史彦军(yJunS)","slug":"/blog/author/yjuns","twitter":"yJun_S"},"allBlog":{"edges":[]}},"pageContext":{"author":"yJunS","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

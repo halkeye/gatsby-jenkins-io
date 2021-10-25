@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/authors/dchwalisz",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"dcfsc","html":"","id":"dchwalisz","irc":null,"linkedin":null,"name":"David Chwalisz","slug":"/blog/authors/dchwalisz","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"dchwalisz","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/authors/rodrigc",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"rodrigc","html":"","id":"rodrigc","irc":null,"linkedin":null,"name":"Craig Rodrigues","slug":"/blog/authors/rodrigc","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"rodrigc","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

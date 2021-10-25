@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/blog/author/mramonleon",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"MRamonLeon","html":"","id":"mramonleon","irc":null,"linkedin":null,"name":"Ramon Leon","slug":"/blog/author/mramonleon","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"mramonleon","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-blog-list-template-js",
+    "path": "/blog/authors/darthholi",
+    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"Darthholi","html":"","id":"darthholi","irc":null,"linkedin":null,"name":"Martin Holeček","slug":"/blog/authors/darthholi","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"darthholi","limit":8,"skip":0,"numPages":1,"currentPage":1}},
+    "staticQueryHashes": ["3649515864"]}

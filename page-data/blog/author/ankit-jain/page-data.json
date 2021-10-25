@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/blog/author/ankit-jain",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"ankitjain28may","html":"","id":"ankit-jain","irc":null,"linkedin":null,"name":"Ankit Jain","slug":"/blog/author/ankit-jain","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"ankit-jain","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

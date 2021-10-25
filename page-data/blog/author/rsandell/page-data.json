@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/blog/author/rsandell",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"rsandell","html":"","id":"rsandell","irc":null,"linkedin":null,"name":"Robert Sandell","slug":"/blog/author/rsandell","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"rsandell","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}

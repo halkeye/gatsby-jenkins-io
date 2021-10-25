@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-blog-list-template-js",
-    "path": "/blog/author/arnab1896",
-    "result": {"data":{"author":{"avatar":null,"blog":null,"github":"arnab1896","html":"","id":"arnab1896","irc":null,"linkedin":null,"name":"Arnab Banerjee","slug":"/blog/author/arnab1896","twitter":null},"allBlog":{"edges":[]}},"pageContext":{"author":"arnab1896","limit":8,"skip":0,"numPages":1,"currentPage":1}},
-    "staticQueryHashes": ["3649515864"]}
