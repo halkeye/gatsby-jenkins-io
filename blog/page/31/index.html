@@ -545,31 +545,7 @@ beyond “just writing plugins”, taking even bigger steps to make users
 productive.  This is a little bit like how I watched Eclipse evolve from just a
 Java IDE to an umbrella of projects.
 
-Exciting times!<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/kohsuke">Kohsuke Kawaguchi</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkins-x">jenkins-x</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/evergreen">evergreen</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/03/19/password-audit/"><div class="header"><div class="date"><div class="month">March</div><div class="day">19</div></div><h5 class="title">Jenkins community account password audit</h5></div><p class="teaser">Last year, news of compromised passwords being used for accounts able to distribute NPM packages made the rounds.
-
-Their system looks similar to how publishing of plugins works in the Jenkins project:
-
-Accounts are protected by passwords chosen by users.
-
-Individual contributors have permission to release the components they maintain.
-
-The components they release are used by millions of developers around the world to deliver their software.
-
-In other words, weak passwords are a problem for us just as much as for NPM, and what happened to them could happen to us.
-
-To address this problem, the Jenkins security and infra teams have recently collaborated on a password audit.
-The audit covered all accounts with permissions to upload plugins and components, and on accounts with other levels of privileged infrastructure access.
-We ran brute force tools on salted password hashes of those accounts looking for &quot;weak&quot; passwords — passwords present in a set of publicly available password lists we chose for this audit.
-
-We checked the password of every qualifying account for every unsafe password rather than trying to match them to any previous password leaks&#x27; email/password pairs.
-Users with weak account passwords were notified via email a few weeks ago and were asked to change their password to something stronger.
-
-We performed the same checks over the previous weekend, but this time we only checked the passwords of accounts whose passwords were deemed weak during our first check.
-We then invalidated the password of any account whose password was still not considered &quot;strong&quot; (i.e. their password was unchanged or had been changed to another weak password).
-Users of those accounts will need to request a password reset before signing in again.
-
-We plan to implement further safeguards, including improving the account management app at https://accounts.jenkins.io to reject weak passwords.
-If you’re interested in helping the security team make Jenkins more secure, let us know on the jenkinsci-dev mailing list, or request to join the security team.<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/daniel-beck">Daniel Beck</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/security">security</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/community">community</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/03/19/introducing-jenkins-x/"><div class="header"><div class="date"><div class="month">March</div><div class="day">19</div></div><h5 class="title">Introducing Jenkins X: a CI/CD solution for modern cloud applications on Kubernetes</h5></div><p class="teaser">We are excited to share and invite the community to join us on a project we’ve been thinking about over the last few months called Jenkins X which extends the Jenkins ecosystem to solve the problem of automating CI/CD in the cloud.
+Exciting times!<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/kohsuke">Kohsuke Kawaguchi</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkins-x">jenkins-x</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/evergreen">evergreen</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/03/19/introducing-jenkins-x/"><div class="header"><div class="date"><div class="month">March</div><div class="day">19</div></div><h5 class="title">Introducing Jenkins X: a CI/CD solution for modern cloud applications on Kubernetes</h5></div><p class="teaser">We are excited to share and invite the community to join us on a project we’ve been thinking about over the last few months called Jenkins X which extends the Jenkins ecosystem to solve the problem of automating CI/CD in the cloud.
 
 Background
 
@@ -768,7 +744,31 @@ Jenkins X website
 
 Getting Started Guide
 
-Demos<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/jstrachan">James Strachan</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkins-x">jenkins-x</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/kubernetes">kubernetes</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/pipeline">pipeline</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/03/15/jep-200-lts/"><div class="header"><div class="date"><div class="month">March</div><div class="day">15</div></div><h5 class="title">Security hardening: Jenkins LTS 2.107.1 switches XStream / Remoting blacklists to whitelists (JEP-200)</h5></div><p class="teaser">This is a post about a major change in Jenkins, which is available starting
+Demos<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/jstrachan">James Strachan</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkins-x">jenkins-x</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/kubernetes">kubernetes</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/pipeline">pipeline</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/03/19/password-audit/"><div class="header"><div class="date"><div class="month">March</div><div class="day">19</div></div><h5 class="title">Jenkins community account password audit</h5></div><p class="teaser">Last year, news of compromised passwords being used for accounts able to distribute NPM packages made the rounds.
+
+Their system looks similar to how publishing of plugins works in the Jenkins project:
+
+Accounts are protected by passwords chosen by users.
+
+Individual contributors have permission to release the components they maintain.
+
+The components they release are used by millions of developers around the world to deliver their software.
+
+In other words, weak passwords are a problem for us just as much as for NPM, and what happened to them could happen to us.
+
+To address this problem, the Jenkins security and infra teams have recently collaborated on a password audit.
+The audit covered all accounts with permissions to upload plugins and components, and on accounts with other levels of privileged infrastructure access.
+We ran brute force tools on salted password hashes of those accounts looking for &quot;weak&quot; passwords — passwords present in a set of publicly available password lists we chose for this audit.
+
+We checked the password of every qualifying account for every unsafe password rather than trying to match them to any previous password leaks&#x27; email/password pairs.
+Users with weak account passwords were notified via email a few weeks ago and were asked to change their password to something stronger.
+
+We performed the same checks over the previous weekend, but this time we only checked the passwords of accounts whose passwords were deemed weak during our first check.
+We then invalidated the password of any account whose password was still not considered &quot;strong&quot; (i.e. their password was unchanged or had been changed to another weak password).
+Users of those accounts will need to request a password reset before signing in again.
+
+We plan to implement further safeguards, including improving the account management app at https://accounts.jenkins.io to reject weak passwords.
+If you’re interested in helping the security team make Jenkins more secure, let us know on the jenkinsci-dev mailing list, or request to join the security team.<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/daniel-beck">Daniel Beck</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/security">security</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/community">community</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2018/03/15/jep-200-lts/"><div class="header"><div class="date"><div class="month">March</div><div class="day">15</div></div><h5 class="title">Security hardening: Jenkins LTS 2.107.1 switches XStream / Remoting blacklists to whitelists (JEP-200)</h5></div><p class="teaser">This is a post about a major change in Jenkins, which is available starting
 from Jenkins 2.102 and Jenkins LTS 2.107.1.
 This is a change with a serious risk of regressions in plugins.
 If you are a Jenkins administrator, please read this blogpost and

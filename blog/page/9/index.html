@@ -288,70 +288,7 @@ Demo
 
 Feedback channel
 
-Gitter Channel Link.<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/sladyn98">Sladyn Nunes</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/service">service</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/distribution">distribution</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/cloud-native">cloud-native</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/packaging">packaging</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/platform-sig">platform-sig</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/27/repository-signing-keys-changing/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">27</div></div><h5 class="title">Jenkins 2.235.3: New Linux Repository Signing Keys</h5></div><p class="teaser">The Jenkins core release automation project has been delivering Jenkins weekly releases since Jenkins 2.232, April 16, 2020.
-The Linux repositories that deliver the weekly release were updated with new GPG keys with the release of Jenkins 2.232.
-
-Beginning with Jenkins LTS release 2.235.3, stable repositories will be signed with the same GPG keys that sign the weekly repositories.
-Administrators of Linux systems must install the new signing keys on their Linux servers before installing Jenkins 2.235.3.
-
-Debian/Ubuntu
-
-Update Debian compatible operating systems (Debian, Ubuntu, Linux Mint Debian Edition, etc.) with the command:
-
-Debian/Ubuntu
-
-# wget -qO - https://pkg.jenkins.io/debian-stable/jenkins.io.key | apt-key add -
-
-Red Hat/CentOS
-
-Update Red Hat compatible operating systems (Red Hat Enterprise Linux, CentOS, Fedora, Oracle Linux, Scientific Linux, etc.) with the command:
-
-Red Hat/CentOS
-
-# rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
-
-Frequently Asked Questions
-
-What if I don’t update the repository signing key?
-
-Updates will be blocked by the operating system package manager (apt, yum, dnf) on operating systems that have not installed the new repository signing key.
-Sample messages from the operating system may look like:
-
-Debian/Ubuntu
-
-Reading package lists... Done
-W: GPG error: https://pkg.jenkins.io/debian-stable binary/ Release:
-    The following signatures couldn&#x27;t be verified because the public key is not available:
-        NO_PUBKEY FCEF32E745F2C3D5
-E: The repository &#x27;https://pkg.jenkins.io/debian-stable binary/ Release&#x27; is not signed.
-N: Updating from such a repository can&#x27;t be done securely, and is therefore disabled by default.
-N: See apt-secure(8) manpage for repository creation and user configuration details.
-
-Red Hat/CentOS
-
-Downloading packages:
-warning: /var/cache/yum/x86_64/7/jenkins/packages/jenkins-2.235.3-1.1.noarch.rpm:
-    Header V4 RSA/SHA512 Signature, key ID 45f2c3d5: NOKEY
-Public key for jenkins-2.235.3-1.1.noarch.rpm is not installed
-
-Why is the repository signing key being updated?
-
-The original repository GPG signing key is owned by Kohsuke Kawaguchi.
-Rather than require that Kohsuke disclose his personal GPG signing key, the core release automation project has used a new repository signing key.
-The updated GPG repository signing key is used in the weekly repositories and the stable repositories.
-
-Which operating systems are affected?
-
-Operating systems that use Debian package management (apt) and operating systems that use Red Hat package management (yum and dnf) need the new repository signing key.
-
-Other operating systems like Windows, macOS, FreeBSD, OpenBSD, Solaris, and OpenIndiana are not affected.
-
-Are there other signing changes?
-
-Yes, there are other signing changes, though they do not need specific action from users.
-
-The jenkins.war file is signed with a new code signing certificate.
-The new code signing certificate has been used on weekly releases since April 2020.<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/markewaite">Mark Waite</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/announcement">announcement</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/linux">linux</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/platform">platform</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/27/machine-learning-plugin-coding-phase2/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">27</div></div><h5 class="title">Machine Learning Plugin project - Coding Phase 2 blog post</h5></div><p class="teaser">Welcome back folks!
+Gitter Channel Link.<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/sladyn98">Sladyn Nunes</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/service">service</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/distribution">distribution</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/cloud-native">cloud-native</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/packaging">packaging</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/platform-sig">platform-sig</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/27/machine-learning-plugin-coding-phase2/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">27</div></div><h5 class="title">Machine Learning Plugin project - Coding Phase 2 blog post</h5></div><p class="teaser">Welcome back folks!
 
 This blog post is about my coding phase 2 in Jenkins Machine Learning Plugin for this GSoC 2020.
 After successfully passing the evaluation and demo in the phase 1, our team went ahead for facing the challenges in phase 2.
@@ -468,7 +405,70 @@ Github
 
 Project page
 
-Design document<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/loghijiaha">Loghi Perinpanayagam</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/machinelearning">machinelearning</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/datascience">datascience</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/communitybonding">communitybonding</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/24/external-fingerprint-storage-phase-2/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">24</div></div><h5 class="title">External Fingerprint Storage Phase-2 Updates</h5></div><p class="teaser">As another great phase for the
+Design document<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/loghijiaha">Loghi Perinpanayagam</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/machinelearning">machinelearning</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/datascience">datascience</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/communitybonding">communitybonding</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/27/repository-signing-keys-changing/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">27</div></div><h5 class="title">Jenkins 2.235.3: New Linux Repository Signing Keys</h5></div><p class="teaser">The Jenkins core release automation project has been delivering Jenkins weekly releases since Jenkins 2.232, April 16, 2020.
+The Linux repositories that deliver the weekly release were updated with new GPG keys with the release of Jenkins 2.232.
+
+Beginning with Jenkins LTS release 2.235.3, stable repositories will be signed with the same GPG keys that sign the weekly repositories.
+Administrators of Linux systems must install the new signing keys on their Linux servers before installing Jenkins 2.235.3.
+
+Debian/Ubuntu
+
+Update Debian compatible operating systems (Debian, Ubuntu, Linux Mint Debian Edition, etc.) with the command:
+
+Debian/Ubuntu
+
+# wget -qO - https://pkg.jenkins.io/debian-stable/jenkins.io.key | apt-key add -
+
+Red Hat/CentOS
+
+Update Red Hat compatible operating systems (Red Hat Enterprise Linux, CentOS, Fedora, Oracle Linux, Scientific Linux, etc.) with the command:
+
+Red Hat/CentOS
+
+# rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+Frequently Asked Questions
+
+What if I don’t update the repository signing key?
+
+Updates will be blocked by the operating system package manager (apt, yum, dnf) on operating systems that have not installed the new repository signing key.
+Sample messages from the operating system may look like:
+
+Debian/Ubuntu
+
+Reading package lists... Done
+W: GPG error: https://pkg.jenkins.io/debian-stable binary/ Release:
+    The following signatures couldn&#x27;t be verified because the public key is not available:
+        NO_PUBKEY FCEF32E745F2C3D5
+E: The repository &#x27;https://pkg.jenkins.io/debian-stable binary/ Release&#x27; is not signed.
+N: Updating from such a repository can&#x27;t be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+
+Red Hat/CentOS
+
+Downloading packages:
+warning: /var/cache/yum/x86_64/7/jenkins/packages/jenkins-2.235.3-1.1.noarch.rpm:
+    Header V4 RSA/SHA512 Signature, key ID 45f2c3d5: NOKEY
+Public key for jenkins-2.235.3-1.1.noarch.rpm is not installed
+
+Why is the repository signing key being updated?
+
+The original repository GPG signing key is owned by Kohsuke Kawaguchi.
+Rather than require that Kohsuke disclose his personal GPG signing key, the core release automation project has used a new repository signing key.
+The updated GPG repository signing key is used in the weekly repositories and the stable repositories.
+
+Which operating systems are affected?
+
+Operating systems that use Debian package management (apt) and operating systems that use Red Hat package management (yum and dnf) need the new repository signing key.
+
+Other operating systems like Windows, macOS, FreeBSD, OpenBSD, Solaris, and OpenIndiana are not affected.
+
+Are there other signing changes?
+
+Yes, there are other signing changes, though they do not need specific action from users.
+
+The jenkins.war file is signed with a new code signing certificate.
+The new code signing certificate has been used on weekly releases since April 2020.<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/markewaite">Mark Waite</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/announcement">announcement</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/linux">linux</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/platform">platform</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/24/external-fingerprint-storage-phase-2/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day">24</div></div><h5 class="title">External Fingerprint Storage Phase-2 Updates</h5></div><p class="teaser">As another great phase for the
 External Fingerprint Storage Project
 comes to an end, we summarise the work done during this phase in this blog post.
 It was an exciting and fruitful journey, just like the previous phase, and offered some great learning experience.

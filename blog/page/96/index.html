@@ -235,63 +235,47 @@ The largest challenge of Continuous Blog is time. As it stands the majority of c
 
 This can be easily fixed by simply adding more contributors to the blog, I’ll post more on how to write for Continuous Blog in another post.
 
-All said and done, I am looking forward to another month of writing and following the Hudson community. I’m grateful for all those who’ve asked questions, been interviewed, wrote content and participated in discussion in the comments. For those of you in the Bay Area, I do hope you come out for the meet-up in mid-March, for the rest of you, I’ll catch you on IRC :)<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/rtyler">R. Tyler Croy</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/core">core</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2010/03/08/meet-up-and-hack-alongside-kohsuke-and-co/"><div class="header"><div class="date"><div class="month">March</div><div class="day"> 8</div></div><h5 class="title">Meet-up and Hack alongside Kohsuke and Co.</h5></div><p class="teaser">Ever wanted to pick the brains of multiple Hudson developers and users, all at the same time? Feel like finally meeting Kohsuke in person? Now’s your chance!
+All said and done, I am looking forward to another month of writing and following the Hudson community. I’m grateful for all those who’ve asked questions, been interviewed, wrote content and participated in discussion in the comments. For those of you in the Bay Area, I do hope you come out for the meet-up in mid-March, for the rest of you, I’ll catch you on IRC :)<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/rtyler">R. Tyler Croy</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/core">core</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2010/03/08/hudson-1-349-released/"><div class="header"><div class="date"><div class="month">March</div><div class="day"> 8</div></div><h5 class="title">Hudson 1.349 Released</h5></div><p class="teaser">Last Friday, March 5th, Hudson 1.349 was pushed out into the wild with an even split of bug fixes and enhancements. Included in this release is Alan Harder’s (a.k.a mindless) old data monitor code, discussed previously in the post &quot; Call for Testers: The older the better.&quot; Included in this release were further updates to the japanese and german localizations of Hudson; if you’re interested in helping localize Hudson into more languages you can join the effort via the Internationalization page on the wiki.
 
-We’re hosting our second-ever Bay Area Hudson Hackathon/Meetup on March 19th and 20th. That’s nearly two whole days of Hudson!
+Now for the breakdown of the 1.349 release:
 
-Day One (Mar. 19)
+Bug fixes
 
-The first day of the hackathon/meetup is aimed primarily at those working with Hudson’s core, or are building on top of Hudson (plugins, etc).
+Fix deserialization problem with fields containing double underscore. ( issue 5768)
 
-Start: 10 a.m.
+Fix deserialization problem for Exception objects where the XML has bad/old data. ( issue 5769)
 
-End: 5 p.m.
+Fix serialization problem with empty CopyOnWriteMap.Tree. ( issue 5776)
 
-Location: Oracle Santa Clara campus in the &quot;library&quot; conference room of SCA7 &quot;Mansion&quot; building.
+Fixed a bug that can cause 404 in the form validation check.
 
-There will a number of community and corporate Hudson hackers joining us on Friday, so bring everything you’ll need to get some grade A hacking done with Kohsuke, Andrew Bayer, Alan Harder and your fellow plugin hackers.
+Enhancements
 
-Day Two (Mar. 20)
+Remote build result submission shouldn’t hang forever even if Hudson goes down.
 
-I’m tentatively calling this the main event, which will be hosted at the delightful Hacker Dojo in Mountain View. The &quot;main event&quot; will carry over the hackathon from the day before at Oracle, into a full blown community hackathon and meet-up. This is for Hudson hackers and users alike!
+Added a monitor for old or unreadable data in XML files and a manage screen to assist in updating files to the current data format and/or removing unreadable data from plugins that are no longer active. &quot;Manage Hudson&quot; page will show a link if any old/unreadable data was detected.
 
-Start: 10 a.m.
+Added a mechanism to bundle init.groovy inside the war for OEM. ( report)
 
-End: 6 p.m.
+Added an extension point to annotate console output. ( issue 2137)
 
-Location: Hacker Dojo (Savanna room)
+Contributors
 
-As I’ve pointed out before, Hudson’s getting a lot of attention in other developer circles such as the Python, Ruby, Cocoa communities. As such, I’m hoping to get a lot of folks interested in using Hudson to come to Hacker Dojo where we (already being Hudson users) can help get them up to speed with all the great things Hudson can do.
+Hudson 1.349 contains 43 commits from 6 contributors, due to the merging in of Alan Harder’s old-data-monitor branch the commit count is a bit off from the amount of code change that actually went out in 1.349.
 
-If you’re interested please RSVP:
+abayer
 
-Via the hackathon page on the wiki
+kohsuke
 
-Via Facebook for day one and day two
+mindless
 
-How you can help
+sogabe
 
-While I casually refer to myself as a &quot;PR intern&quot; for Kohsuke, I’m technically a busy software engineer, meaning I’m grateful for all the help I can get.
+swiest
 
-Get the word out
+wyukawa
 
-The best way to help get the word out is to talk about Hudson and the meetup, this includes:
-
-Link to this post on Twitter
-
-Ping any user groups you are a member of in the area
-
-Blog about it
-
-Let your co-workers know about it
-
-Attend!
-
-Volunteer to help setup/teardown
-
-Hosting the Saturday event at Hacker Dojo does carry some responsibilities with it. We will need some extra hands to make sure everybody has power, refreshments are chilled, lunch is ordered and delivered, and of course, cleaning up after we leave. If you’re in a generous mood, or in a real need for some karma, sign up to help on the bottom of the wiki page
-
-I am hoping Oracle and some other heavy users/contributors will kick in a few bucks for lunch and drinks on Saturday, if you think your company can help us out, feel free to ping me directly at tyler at linux.com.<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/rtyler">R. Tyler Croy</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/feedback">feedback</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/meetup">meetup</a></li></ul></div></li></ul></div></div><div><nav><ul class="pagination"><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/95">«</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog">1</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/2">2</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/3">3</a></li><li class="page item disabled"><div class="page-link">...</div></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/94">94</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/95">95</a></li><li class="page-item active"><a aria-current="page" class="page-link" href="/gatsby-jenkins-io/blog/page/96">96</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/97">97</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/98">98</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/99">99</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/100">100</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/97">»</a></li></ul></nav></div></div></div><script src="https://www.jenkins.io/assets/bower/anchor-js/anchor.min.js"></script><script src="https://www.jenkins.io/assets/bower/tether/js/tether.min.js"></script><script src="https://www.jenkins.io/assets/bower/bootstrap/js/bootstrap.min.js"></script><footer id="footer"><div class="container"><div class="row"><div class="col-md-4"><div class="license-box"><div id="creativecommons"><a href="https://creativecommons.org/licenses/by-sa/4.0/"><p><img alt="Creative Commons Attribution-ShareAlike license" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png"/></p></a><p>The content driving this site is licensed under the Creative Commons Attribution-ShareAlike 4.0 license.</p></div></div></div><div class="links col-md-8"><div class="container"><div class="row"><div class="area col-md-3"><div class="div-mar"><h5>Resources</h5><ul class="resources"><li><a href="https://www.jenkins.io/download/">Downloads</a></li><li><a href="https://www.jenkins.io/node/">Blog</a></li><li><a href="https://www.jenkins.io/doc/">Documentation</a></li><li><a href="https://plugins.jenkins.io/">Plugins</a></li><li><a href="https://www.jenkins.io/security/">Security</a></li><li><a href="https://www.jenkins.io/participate/">Contributing</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Project</h5><ul class="project"><li><a href="https://www.jenkins.io/project/">Structure and governance</a></li><li><a href="https://issues.jenkins.io">Issue tracker</a></li><li><a href="https://www.jenkins.io/project/roadmap/">Roadmap</a></li><li><a href="https://github.com/jenkinsci">GitHub</a></li><li><a href="https://ci.jenkins.io">Jenkins on Jenkins</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Community</h5><ul class="community"><li><a href="https://www.jenkins.io/events/">Events</a></li><li><a href="https://www.jenkins.io/mailing-lists/">Mailing lists</a></li><li><a href="https://www.jenkins.io/chat/">Chats</a></li><li><a href="https://www.jenkins.io/sigs/">Special Interest Groups</a></li><li><a href="https://twitter.com/jenkinsci">Twitter</a></li><li><a href="https://reddit.com/r/jenkinsci">Reddit</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Other</h5><ul class="other"><li><a href="https://www.jenkins.io/conduct/">Code of Conduct</a></li><li><a href="https://www.jenkins.io/press/">Press information</a></li><li><a href="https://www.jenkins.io/merchandise/">Merchandise</a></li><li><a href="https://www.jenkins.io/artwork/">Artwork</a></li><li><a href="https://www.jenkins.io/awards/">Awards</a></li></ul></div></div></div></div></div></div></div></footer><script>
+As usual, you can go grab the latest .war file straight from hudson-ci.org or if you’re using a native package, use your package manager to upgrade.<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/rtyler">R. Tyler Croy</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/development">development</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/feedback">feedback</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/just for fun">just for fun</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/links">links</a></li></ul></div></li></ul></div></div><div><nav><ul class="pagination"><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/95">«</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog">1</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/2">2</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/3">3</a></li><li class="page item disabled"><div class="page-link">...</div></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/94">94</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/95">95</a></li><li class="page-item active"><a aria-current="page" class="page-link" href="/gatsby-jenkins-io/blog/page/96">96</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/97">97</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/98">98</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/99">99</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/100">100</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/97">»</a></li></ul></nav></div></div></div><script src="https://www.jenkins.io/assets/bower/anchor-js/anchor.min.js"></script><script src="https://www.jenkins.io/assets/bower/tether/js/tether.min.js"></script><script src="https://www.jenkins.io/assets/bower/bootstrap/js/bootstrap.min.js"></script><footer id="footer"><div class="container"><div class="row"><div class="col-md-4"><div class="license-box"><div id="creativecommons"><a href="https://creativecommons.org/licenses/by-sa/4.0/"><p><img alt="Creative Commons Attribution-ShareAlike license" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png"/></p></a><p>The content driving this site is licensed under the Creative Commons Attribution-ShareAlike 4.0 license.</p></div></div></div><div class="links col-md-8"><div class="container"><div class="row"><div class="area col-md-3"><div class="div-mar"><h5>Resources</h5><ul class="resources"><li><a href="https://www.jenkins.io/download/">Downloads</a></li><li><a href="https://www.jenkins.io/node/">Blog</a></li><li><a href="https://www.jenkins.io/doc/">Documentation</a></li><li><a href="https://plugins.jenkins.io/">Plugins</a></li><li><a href="https://www.jenkins.io/security/">Security</a></li><li><a href="https://www.jenkins.io/participate/">Contributing</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Project</h5><ul class="project"><li><a href="https://www.jenkins.io/project/">Structure and governance</a></li><li><a href="https://issues.jenkins.io">Issue tracker</a></li><li><a href="https://www.jenkins.io/project/roadmap/">Roadmap</a></li><li><a href="https://github.com/jenkinsci">GitHub</a></li><li><a href="https://ci.jenkins.io">Jenkins on Jenkins</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Community</h5><ul class="community"><li><a href="https://www.jenkins.io/events/">Events</a></li><li><a href="https://www.jenkins.io/mailing-lists/">Mailing lists</a></li><li><a href="https://www.jenkins.io/chat/">Chats</a></li><li><a href="https://www.jenkins.io/sigs/">Special Interest Groups</a></li><li><a href="https://twitter.com/jenkinsci">Twitter</a></li><li><a href="https://reddit.com/r/jenkinsci">Reddit</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Other</h5><ul class="other"><li><a href="https://www.jenkins.io/conduct/">Code of Conduct</a></li><li><a href="https://www.jenkins.io/press/">Press information</a></li><li><a href="https://www.jenkins.io/merchandise/">Merchandise</a></li><li><a href="https://www.jenkins.io/artwork/">Artwork</a></li><li><a href="https://www.jenkins.io/awards/">Awards</a></li></ul></div></div></div></div></div></div></div></footer><script>
   $(function(){
     var $body = $(document.body);
     $(".nav-link.dropdown-toggle").on("mousedown", function(){
