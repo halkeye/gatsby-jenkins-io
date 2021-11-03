@@ -97,7 +97,6 @@ module.exports = {
         ignore: [
           '**/doc/developer/tutorial/index.adoc', // broken files for now
           '**/_config',
-          '**/_data',
           '**/_ext',
           '**/_layouts',
           '**/_partials',
