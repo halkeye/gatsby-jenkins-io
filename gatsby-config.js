@@ -160,6 +160,7 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    'gatsby-plugin-meta-redirect', // needs to be last apparently
   ],
   mapping: {
     'Blog.authors': 'Author.id',

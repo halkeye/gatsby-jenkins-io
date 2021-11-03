@@ -265,24 +265,28 @@ exports.onCreateNode = async ({
     const parent = getNode(node.parent);
     const frontmatter = Object.entries(node.frontmatter || {}).reduce((prev, [key, value]) => ({ ...prev, [key.replace(/^:/, '').trim()]: value }), {});
     if (parent.name === 'index') {
-      console.log('ignoring', parent.absolutePath, frontmatter);
+      // console.log('ignoring', parent.absolutePath, frontmatter);
       // TODO - maybe do something with this eventually?
       return;
     }
+    if (frontmatter?.layout === 'refresh' && frontmatter?.refresh_to_post_id) {
+      frontmatter.layout = 'redirect';
+      frontmatter.redirect_url = frontmatter.refresh_to_post_id;
+    }
     if (frontmatter?.layout === 'redirect' && frontmatter?.redirect_url) {
+      let fromPath = path.join('', parent.relativeDirectory, parent.name);
+      if (fromPath.startsWith('blog/')) {
+        fromPath = path.join('', parent.relativeDirectory, parent.name.replace(/^\d+-\d+-\d+-/, ''));
+      }
       // FIXME - drop blog
-      createRedirect({
-        fromPath: path.join('/blog', parent.relativeDirectory.replace(/^\/blog/, ''), parent.name.replace(/^\d+-\d+-\d+-/, '')),
+      console.log('createRedirect', {
+        fromPath,
         toPath: frontmatter.redirect_url,
         isPermanent: true,
       });
-      return;
-    }
-    if (frontmatter?.layout === 'refresh' && frontmatter?.refresh_to_post_id) {
-      // FIXME - drop blog
       createRedirect({
-        fromPath: path.join('/blog', parent.relativeDirectory.replace(/^\/blog/, ''), parent.name.replace(/^\d+-\d+-\d+-/, '')),
-        toPath: frontmatter.refresh_to_post_id,
+        fromPath,
+        toPath: frontmatter.redirect_url,
         isPermanent: true,
       });
       return;
@@ -470,6 +474,30 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       uneditable: Boolean
       project: String
       kind: String
+    }
+
+    type AsciidocFrontmatterLinks {
+      discourse: String
+    }
+
+    type AsciidocFrontmatterCoreLts {
+      previous: String
+      fixed: String
+    }
+
+    type AsciidocFrontmatterCoreWeekly {
+      previous: String
+      fixed: String
+    }
+    type AsciidocFrontmatterProperties {
+      since: String
+    }
+
+    type AsciidocFrontmatterIssuesPlugins {
+      name: String
+      title: String
+      fixed: String
+      previous: String
     }
   `);
 };
