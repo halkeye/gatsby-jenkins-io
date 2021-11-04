@@ -132,94 +132,7 @@ $ ssh -p 2222 -o StrictHostKeyChecking=no localhost replay-pipeline cd/master -s
 Using the replay-pipeline CLI command (in this example via
 SSH)
 you can prepare, test, and commit changes to your Pipeline script code without
-copying anything to or from a browser. That is all for now. Enjoy!<span class="more"></span></p></a><div class="attrs"><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkins2">jenkins2</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/pipeline">pipeline</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2016/04/07/jenkins-community-survey-results-blog/"><div class="header"><div class="date"><div class="month">April</div><div class="day"> 7</div></div><h5 class="title">Jenkins Community Survey Results</h5></div><p class="teaser">This is a guest post by Brian
-Dawson at CloudBees, where he works as a DevOps Evangelist responsible for
-developing and sharing continuous delivery and DevOps best practices. He also
-serves as the CloudBees Product Marketing Manager for Jenkins.
-
-Last fall CloudBees asked attendees at the Jenkins User Conference – US West
-(JUC), and other in the Jenkins community to take a survey.  Almost 250 people
-did – and thanks to their input, we have results which provided interesting
-insights into how Jenkins is being used.
-
-Back in 2012, at the time of the last community survey, 83% of respondents felt
-that Jenkins was mission-critical. By 2015, the percentage saying that
-Jenkins was mission-critical was 92%. Additionally, echoing the
-importance of Jenkins, 89% of respondents said their use of Jenkins had
-increased over the last year, while 11% said it had stayed the same. 0%
-said that it had decreased.
-
-The trend in the industry over the last couple of years has been to adopt
-continuous delivery (CD), thus pushing automation further down the pipeline –
-from development all the way into production.  Jenkins being an automation
-engine applicable to any phase of the software delivery lifecycle, is readily
-supporting this trend. Jenkins&#x27; extensible architecture and unparalleled plugin
-ecosystem enables integration with and orchestration of practically any tool in
-any phase of software delivery.
-
-The trend towards adoption of CD is clearly reflected amongst the community: 59%
-of respondents are using Jenkins for continuous integration (CI), but an
-additional 30% have extended CI into CD and are manually deploying code to
-production.  Finally, 11% are practicing continuous deployment – they have
-extended CI to CD and are deploying code automatically into production.
-
-Another trend tied to the adoption of CD and DevOps is the frequent deployment
-of incremental releases to production. 26% of those respondents using continuous
-delivery practices are deploying code at least once per day.  Another 37% are
-deploying code at least once per week.
-
-In keeping with the move to CD, 30% of survey takers are already using the
-relatively new Pipeline plugin to automate their
-software delivery pipelines.  Of those not using the Pipeline plugin, 79% plan
-to adopt it in the next 12 months.
-
-Survey respondents are also using Jenkins for many different activities.  97% of
-survey takers use it for &quot;build&quot; – no surprise, since that is where Jenkins got
-its start - but 58% now also use it for their deployment.
-
-When the 2012 community survey was conducted, container technology was not as
-well understood as it is today,  and many didn’t know what a “Docker” was. A
-short four years later, 96% of survey respondents who use Linux containers are
-using Docker.  Container technology has seen impressive adoption and arguably is
-revolutionizing the way application infrastructure is delivered.  When coupled
-with Jenkins as an automation engine, containers help accelerate software
-delivery by providing rapid access to lightweight environments.  The Jenkins
-community has recognized and embraced the power of containers by
-providing plugins for Docker and Kubernetes.
-
-The Jenkins improvements which survey respondents desired the most were
-quality/timely bug fixes, a better UI and more documentation/examples.
-Interestingly, Jenkins 2.0 - which is just about to officially launch,
-provides UI improvements and the new Jenkins.io website
-provides improved, centralized documentation.
-
-Finally, the respondents favorite Star Wars character was R2-D2, followed by
-Obi-Wan and Darth Vader. Yoda and Han Solo also got a fair amount of votes. The
-votes for Jar-Jar Binks and Jabba the Hutt left us puzzled. Notably, BB-8 had a
-write-in vote despite the fact the new Star Wars movie hadn’t been released yet.
-
-As to where the community is headed, our prediction is that by the next Jenkins Community Survey:
-
-More Jenkins users will have transitioned from just continuous
-integration to continuous delivery with some evening practicing continuous
-deployment
-
-Pipeline plugin adoption and improvements will continue, leading to
-pipeline-as-code becoming an essential solution for automating the software
-(and infrastructure) delivery process
-
-There will be a significant increase in use of the Docker plugin to support
-elastic Jenkins infrastructure and continuous delivery of containers using
-software development best practices
-
-BB-8 will be the next favorite Star Wars character! &lt;3&lt;/p&gt;
-
-See you at Jenkins World, September 13-15, in Santa Clara, California!
-Register now for the largest Jenkins event on the planet in 2016 – and get the Early Bird discount. The Call for Papers is still open – so submit a talk and share your knowledge with the community about Jenkins.
-
-2015 Community Survey Results (PDF)
-
-State of Jenkins Infographic (PDF)<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/bvdawson">Brian Dawson</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/continuousdelivery">continuousdelivery</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/pipeline">pipeline</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/docker">docker</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2016/04/07/pipeline-for-runs-on-hardware/"><div class="header"><div class="date"><div class="month">April</div><div class="day"> 7</div></div><h5 class="title">Automating test runs on hardware with Pipeline as Code</h5></div><p class="teaser">In addition to Jenkins development, during last 8 years I’ve been involved into continuous integration for hardware and embedded projects.
+copying anything to or from a browser. That is all for now. Enjoy!<span class="more"></span></p></a><div class="attrs"><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkins2">jenkins2</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/pipeline">pipeline</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2016/04/07/pipeline-for-runs-on-hardware/"><div class="header"><div class="date"><div class="month">April</div><div class="day"> 7</div></div><h5 class="title">Automating test runs on hardware with Pipeline as Code</h5></div><p class="teaser">In addition to Jenkins development, during last 8 years I’ve been involved into continuous integration for hardware and embedded projects.
 At JUC2015/London
 I have conducted a talk about common automation challenges in the area.
 
@@ -499,7 +412,94 @@ Jenkins 2.0 and Pipeline as code overview
 
 Pipeline Tutorial
 
-Pipeline Examples<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/oleg_nenashev">Oleg Nenashev</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkins2">jenkins2</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/pipeline">pipeline</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/embedded">embedded</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2015/12/21/december-jam-world-tour-toulouse-france/"><div class="header"><div class="date"><div class="month">Dec</div><div class="day">21</div></div><h5 class="title">December JAM World Tour: Toulouse, France</h5></div><p class="teaser">On December 15, the Toulouse
+Pipeline Examples<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/oleg_nenashev">Oleg Nenashev</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkins2">jenkins2</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/pipeline">pipeline</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/embedded">embedded</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2016/04/07/jenkins-community-survey-results-blog/"><div class="header"><div class="date"><div class="month">April</div><div class="day"> 7</div></div><h5 class="title">Jenkins Community Survey Results</h5></div><p class="teaser">This is a guest post by Brian
+Dawson at CloudBees, where he works as a DevOps Evangelist responsible for
+developing and sharing continuous delivery and DevOps best practices. He also
+serves as the CloudBees Product Marketing Manager for Jenkins.
+
+Last fall CloudBees asked attendees at the Jenkins User Conference – US West
+(JUC), and other in the Jenkins community to take a survey.  Almost 250 people
+did – and thanks to their input, we have results which provided interesting
+insights into how Jenkins is being used.
+
+Back in 2012, at the time of the last community survey, 83% of respondents felt
+that Jenkins was mission-critical. By 2015, the percentage saying that
+Jenkins was mission-critical was 92%. Additionally, echoing the
+importance of Jenkins, 89% of respondents said their use of Jenkins had
+increased over the last year, while 11% said it had stayed the same. 0%
+said that it had decreased.
+
+The trend in the industry over the last couple of years has been to adopt
+continuous delivery (CD), thus pushing automation further down the pipeline –
+from development all the way into production.  Jenkins being an automation
+engine applicable to any phase of the software delivery lifecycle, is readily
+supporting this trend. Jenkins&#x27; extensible architecture and unparalleled plugin
+ecosystem enables integration with and orchestration of practically any tool in
+any phase of software delivery.
+
+The trend towards adoption of CD is clearly reflected amongst the community: 59%
+of respondents are using Jenkins for continuous integration (CI), but an
+additional 30% have extended CI into CD and are manually deploying code to
+production.  Finally, 11% are practicing continuous deployment – they have
+extended CI to CD and are deploying code automatically into production.
+
+Another trend tied to the adoption of CD and DevOps is the frequent deployment
+of incremental releases to production. 26% of those respondents using continuous
+delivery practices are deploying code at least once per day.  Another 37% are
+deploying code at least once per week.
+
+In keeping with the move to CD, 30% of survey takers are already using the
+relatively new Pipeline plugin to automate their
+software delivery pipelines.  Of those not using the Pipeline plugin, 79% plan
+to adopt it in the next 12 months.
+
+Survey respondents are also using Jenkins for many different activities.  97% of
+survey takers use it for &quot;build&quot; – no surprise, since that is where Jenkins got
+its start - but 58% now also use it for their deployment.
+
+When the 2012 community survey was conducted, container technology was not as
+well understood as it is today,  and many didn’t know what a “Docker” was. A
+short four years later, 96% of survey respondents who use Linux containers are
+using Docker.  Container technology has seen impressive adoption and arguably is
+revolutionizing the way application infrastructure is delivered.  When coupled
+with Jenkins as an automation engine, containers help accelerate software
+delivery by providing rapid access to lightweight environments.  The Jenkins
+community has recognized and embraced the power of containers by
+providing plugins for Docker and Kubernetes.
+
+The Jenkins improvements which survey respondents desired the most were
+quality/timely bug fixes, a better UI and more documentation/examples.
+Interestingly, Jenkins 2.0 - which is just about to officially launch,
+provides UI improvements and the new Jenkins.io website
+provides improved, centralized documentation.
+
+Finally, the respondents favorite Star Wars character was R2-D2, followed by
+Obi-Wan and Darth Vader. Yoda and Han Solo also got a fair amount of votes. The
+votes for Jar-Jar Binks and Jabba the Hutt left us puzzled. Notably, BB-8 had a
+write-in vote despite the fact the new Star Wars movie hadn’t been released yet.
+
+As to where the community is headed, our prediction is that by the next Jenkins Community Survey:
+
+More Jenkins users will have transitioned from just continuous
+integration to continuous delivery with some evening practicing continuous
+deployment
+
+Pipeline plugin adoption and improvements will continue, leading to
+pipeline-as-code becoming an essential solution for automating the software
+(and infrastructure) delivery process
+
+There will be a significant increase in use of the Docker plugin to support
+elastic Jenkins infrastructure and continuous delivery of containers using
+software development best practices
+
+BB-8 will be the next favorite Star Wars character! &lt;3&lt;/p&gt;
+
+See you at Jenkins World, September 13-15, in Santa Clara, California!
+Register now for the largest Jenkins event on the planet in 2016 – and get the Early Bird discount. The Call for Papers is still open – so submit a talk and share your knowledge with the community about Jenkins.
+
+2015 Community Survey Results (PDF)
+
+State of Jenkins Infographic (PDF)<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/bvdawson">Brian Dawson</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/continuousdelivery">continuousdelivery</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/pipeline">pipeline</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/docker">docker</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2015/12/21/december-jam-world-tour-toulouse-france/"><div class="header"><div class="date"><div class="month">Dec</div><div class="day">21</div></div><h5 class="title">December JAM World Tour: Toulouse, France</h5></div><p class="teaser">On December 15, the Toulouse
 JAM
 was co-hosted with the Toulouse
 JUG and Toulouse
