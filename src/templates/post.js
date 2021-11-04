@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { graphql, Link } from 'gatsby';
 
-import Layout from '../components/layout';
+import SimplePageLayout from '../layout/SimplePageLayout';
 import TagList from '../components/TagList';
 import TwitterShareButton from '../components/TwitterShareButton';
 import Discourse from '../components/Discourse';
@@ -24,7 +24,7 @@ const Post = ({ data, pageContext }) => {
     title, date, authors, html, tags, slug, links,
   } = data.blog;
   return (
-    <Layout>
+    <SimplePageLayout>
       <div className="container blog-post">
         <div className="row">
           <div className="col"><Link to={pageContext.previous}>Prev</Link></div>
@@ -58,7 +58,7 @@ const Post = ({ data, pageContext }) => {
           </div>
         </div>
       </div>
-    </Layout>
+    </SimplePageLayout>
   );
 };
 Post.displayName = 'Post';

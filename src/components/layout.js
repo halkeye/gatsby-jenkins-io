@@ -339,15 +339,8 @@ const Layout = ({ children }) => {
           </ul>
         </div>
       </nav>
-      <div className="pt-4">
-
-&nbsp;
-      </div>
-      <div id="grid-box">
-        <br />
-        <br />
-        {children}
-      </div>
+      <div className="pt-4">&nbsp;</div>
+      {children}
       <script src="https://www.jenkins.io/assets/bower/anchor-js/anchor.min.js" dangerouslySetInnerHTML={{ __html: [] }} />
       <script src="https://www.jenkins.io/assets/bower/tether/js/tether.min.js" dangerouslySetInnerHTML={{ __html: [] }} />
       <script src="https://www.jenkins.io/assets/bower/bootstrap/js/bootstrap.min.js" dangerouslySetInnerHTML={{ __html: [] }} />

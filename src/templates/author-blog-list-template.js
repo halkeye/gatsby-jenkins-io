@@ -1,19 +1,19 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/layout';
+import SimplePageLayout from '../layout/SimplePageLayout';
 import BlogPosts from '../components/BlogPostsListing';
 import Author from '../components/Author';
 
 const BlogPage = ({ pageContext, data }) => (
-  <Layout>
+  <SimplePageLayout>
     <div className="container">
       <Author key={data.author.id} blogroll={false} {...data.author} />
     </div>
     <div className="container">
       <BlogPosts pageContext={pageContext} blogs={data.allBlog.edges} prefix={data.author.slug} />
     </div>
-  </Layout>
+  </SimplePageLayout>
 );
 BlogPage.displayName = 'BlogPage';
 

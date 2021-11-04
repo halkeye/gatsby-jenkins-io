@@ -1,18 +1,13 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/layout';
+import SimplePageLayout from '../layout/SimplePageLayout';
 import BlogPostsListing from '../components/BlogPostsListing';
 
 const BlogPage = ({ pageContext, data }) => (
-  <Layout>
-    <div className="container">
-      <div id="block-block-15" className="block block-block even blog-posts">
-        <h3 className="title">Recent Blog Posts</h3>
-      </div>
-      <BlogPostsListing pageContext={pageContext} blogs={data.allBlog.edges} prefix="/blog" />
-    </div>
-  </Layout>
+  <SimplePageLayout title="Recent Blog Posts">
+    <BlogPostsListing pageContext={pageContext} blogs={data.allBlog.edges} prefix="/blog" />
+  </SimplePageLayout>
 );
 BlogPage.displayName = 'BlogPage';
 

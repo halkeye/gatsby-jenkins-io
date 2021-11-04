@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 import Seo from '../components/seo';
 
 const NotFoundPage = () => (
-  <Layout notitle title="404: Not Found">
+  <Layout title="404: Not Found">
     <Seo title="404: Not found" />
     <div className="errorcontainer" style={{ textAlign: 'center', margin: '30px' }}>
       <StaticImage src="../../jenkins.io/content/images/fire-jenkins.svg.png" alt="jenkins on fire logo" />
