@@ -334,29 +334,6 @@ exports.onCreateNode = async ({
       createParentChildLink({ parent: node, child: await createNode(eventNode) });
       return;
     }
-    if (frontmatter.layout === 'simplepage') {
-      const simplePageNode = {
-        ...frontmatter,
-        id: parent.relativePath,
-        parent: node.id,
-        html: node.html,
-        slug: path.join(parent.relativeDirectory, cleanName(parent.name)),
-        internal: {
-          type: 'SimplePage',
-        },
-      };
-      simplePageNode.internal.contentDigest = createContentDigest(simplePageNode);
-      createParentChildLink({ parent: node, child: await createNode(simplePageNode) });
-      return;
-    }
-    // probably isn't needed, but just in case for non blog/author
-    // const slug = createFilePath({ node, getNode });
-    // createNodeField({
-    //  name: 'slug',
-    //  node,
-    //  value: slug,
-    // });
-    //
     if (frontmatter.layout === 'post' && parent.relativeDirectory.startsWith('blog/')) {
       const date = dateFromFilename(parent);
       const blogNode = {
@@ -395,14 +372,36 @@ exports.onCreateNode = async ({
       }
       blogNode.internal.contentDigest = createContentDigest(blogNode);
       createParentChildLink({ parent: node, child: await createNode(blogNode) });
+      return;
     }
-    /*
-    console.log({
+    if (frontmatter.layout === 'simplepage') {
+      const simplePageNode = {
+        ...frontmatter,
+        id: parent.relativePath,
+        parent: node.id,
+        html: node.html,
+        slug: path.join(parent.relativeDirectory, cleanName(parent.name)),
+        internal: {
+          type: 'SimplePage',
+        },
+      };
+      simplePageNode.internal.contentDigest = createContentDigest(simplePageNode);
+      createParentChildLink({ parent: node, child: await createNode(simplePageNode) });
+      return;
+    }
+    // probably isn't needed, but just in case for non blog/author
+    // const slug = createFilePath({ node, getNode });
+    // createNodeField({
+    //  name: 'slug',
+    //  node,
+    //  value: slug,
+    // });
+    //
+    console.log('unimplemented', {
       absolutePath: parent.absolutePath,
       relativeDirectory: parent.relativeDirectory,
       frontmatter,
     });
-    */
     // console.log(parent, node);
     // process.exit(1);
   }
