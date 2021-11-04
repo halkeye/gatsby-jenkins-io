@@ -6,17 +6,17 @@
  */
 const requireEsm = require('esm')(module);
 
-const { stripHtml } = requireEsm('string-strip-html');
+const {stripHtml} = requireEsm('string-strip-html');
 const path = require('path');
 const fs = require('fs');
 const https = require('https');
-const { slash } = require('gatsby-core-utils');
+const {slash} = require('gatsby-core-utils');
 
 const avatarBaseDir = path.resolve(path.join('.', 'content', 'images', 'avatars'));
 const avatars = fs.readdirSync(avatarBaseDir)
   .filter((file) => !file.startsWith('.'))
   // fancy code that converts an array (of files) to map of filename => full path
-  .reduce((prev, curr) => ({ ...prev, [path.parse(curr).name.toLowerCase()]: `avatars/${curr}` }), {});
+  .reduce((prev, curr) => ({...prev, [path.parse(curr).name.toLowerCase()]: `avatars/${curr}`}), {});
 
 const dateFromFilename = (parent) => {
   const date = new Date(Date.parse(parent.name.substring(0, 10).replace(/-$/g, '')));
@@ -42,8 +42,8 @@ const datedFileSlug = (date, name) => {
 
 const cleanName = (name) => name.toLowerCase().replace(/\.html$/, '').replace(/^index$/, '');
 
-const createAllSimplePages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+const createAllSimplePages = async ({graphql, actions}) => {
+  const {createPage} = actions;
   const allResults = await graphql(`
     {
       allSimplePage {
@@ -68,8 +68,8 @@ const createAllSimplePages = async ({ graphql, actions }) => {
   })));
 };
 
-const createAllBlogPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+const createAllBlogPages = async ({graphql, actions}) => {
+  const {createPage} = actions;
   const allBlogResults = await graphql(`
     {
       allBlog(
@@ -90,7 +90,7 @@ const createAllBlogPages = async ({ graphql, actions }) => {
     const posts = allBlogResults.data.allBlog.edges;
     const postsPerPage = 8;
     const numPages = Math.ceil(posts.length / postsPerPage);
-    await Promise.all(Array.from({ length: numPages }).map((_, i) => createPage({
+    await Promise.all(Array.from({length: numPages}).map((_, i) => createPage({
       path: i === 0 ? '/blog' : `/blog/page/${i + 1}`,
       component: path.resolve('./src/templates/blog-list-template.js'),
       context: {
@@ -103,13 +103,13 @@ const createAllBlogPages = async ({ graphql, actions }) => {
   }
 };
 
-const createAllAuthorPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+const createAllAuthorPages = async ({graphql, actions}) => {
+  const {createPage} = actions;
   const eachAuthorResults = await graphql('{ allAuthor { edges { node { id, slug } } } }');
   if (eachAuthorResults.errors) {
     throw eachAuthorResults.errors;
   }
-  for (const { node: author } of eachAuthorResults.data.allAuthor.edges) {
+  for (const {node: author} of eachAuthorResults.data.allAuthor.edges) {
     const allBlogResults = await graphql(`
       {
         allBlog(
@@ -131,7 +131,7 @@ const createAllAuthorPages = async ({ graphql, actions }) => {
     const posts = allBlogResults.data.allBlog.edges;
     const postsPerPage = 8;
     const numPages = Math.ceil(posts.length / postsPerPage) || 1;
-    await Promise.all(Array.from({ length: numPages }).map((_, i) => createPage({
+    await Promise.all(Array.from({length: numPages}).map((_, i) => createPage({
       path: i === 0 ? author.slug : `${author.slug}/page/${i + 1}`,
       component: path.resolve('./src/templates/author-blog-list-template.js'),
       context: {
@@ -145,8 +145,8 @@ const createAllAuthorPages = async ({ graphql, actions }) => {
   }
 };
 
-const createAllTagPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+const createAllTagPages = async ({graphql, actions}) => {
+  const {createPage} = actions;
   const eachTagsResults = await graphql('{ tags: allBlog { distinct(field: tags) } }');
 
   if (eachTagsResults.errors) {
@@ -171,7 +171,7 @@ const createAllTagPages = async ({ graphql, actions }) => {
     const postsPerPage = 8;
     const numPages = Math.ceil(posts.length / postsPerPage);
     const slug = `/node/tags/${tag}`;
-    Promise.all((Array.from({ length: numPages }) || [0]).map((_, i) => createPage({
+    Promise.all((Array.from({length: numPages}) || [0]).map((_, i) => createPage({
       path: i === 0 ? slug : `${slug}/page/${i + 1}`,
       component: path.resolve('./src/templates/tag-blog-list-template.js'),
       context: {
@@ -185,8 +185,8 @@ const createAllTagPages = async ({ graphql, actions }) => {
   }
 };
 
-const createIndividualBlogPosts = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+const createIndividualBlogPosts = async ({graphql, actions}) => {
+  const {createPage} = actions;
   const individualPostResults = await graphql(`
   {
     allBlog(
@@ -228,13 +228,13 @@ const createIndividualBlogPosts = async ({ graphql, actions }) => {
 // called after the Gatsby bootstrap is finished so you have
 // access to any information necessary to programmatically
 // create pages.
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({graphql, actions}) => {
   await Promise.all([
-    createAllSimplePages({ graphql, actions }),
-    createAllBlogPages({ graphql, actions }),
-    createAllAuthorPages({ graphql, actions }),
-    createIndividualBlogPosts({ graphql, actions }),
-    createAllTagPages({ graphql, actions }),
+    createAllSimplePages({graphql, actions}),
+    createAllBlogPages({graphql, actions}),
+    createAllAuthorPages({graphql, actions}),
+    createIndividualBlogPosts({graphql, actions}),
+    createAllTagPages({graphql, actions}),
   ]);
 };
 
@@ -247,7 +247,7 @@ exports.onCreateNode = async ({
   if (node.internal.type === 'File') {
     if (node.sourceInstanceName === 'images') {
       const dir = path.join(__dirname, 'public', 'images', node.relativeDirectory);
-      await fs.promises.mkdir(dir, { recursive: true });
+      await fs.promises.mkdir(dir, {recursive: true});
       await fs.promises.copyFile(node.absolutePath, path.join(dir, node.base));
     }
   }
@@ -263,7 +263,7 @@ exports.onCreateNode = async ({
   }
   if (node.internal.type === 'Asciidoc') {
     const parent = getNode(node.parent);
-    const frontmatter = Object.entries(node.frontmatter || {}).reduce((prev, [key, value]) => ({ ...prev, [key.replace(/^:/, '').trim()]: value }), {});
+    const frontmatter = Object.entries(node.frontmatter || {}).reduce((prev, [key, value]) => ({...prev, [key.replace(/^:/, '').trim()]: value}), {});
     if (parent.name === 'index') {
       // console.log('ignoring', parent.absolutePath, frontmatter);
       // TODO - maybe do something with this eventually?
@@ -299,7 +299,7 @@ exports.onCreateNode = async ({
         },
       };
       authorNode.internal.contentDigest = createContentDigest(authorNode);
-      createParentChildLink({ parent: node, child: await createNode(authorNode) });
+      createParentChildLink({parent: node, child: await createNode(authorNode)});
       return;
     }
     if (parent.sourceInstanceName === 'events') {
@@ -332,7 +332,7 @@ exports.onCreateNode = async ({
       }
 
       eventNode.internal.contentDigest = createContentDigest(eventNode);
-      createParentChildLink({ parent: node, child: await createNode(eventNode) });
+      createParentChildLink({parent: node, child: await createNode(eventNode)});
       return;
     }
     if (frontmatter.layout === 'post' && parent.relativeDirectory.startsWith('blog/')) {
@@ -356,7 +356,7 @@ exports.onCreateNode = async ({
         delete blogNode.author;
       }
       // some default values for links
-      blogNode.links = { discourse: '', ...(blogNode.links || {}) };
+      blogNode.links = {discourse: '', ...(blogNode.links || {})};
       // it needs to be the same type
       if (blogNode.links.discourse === true) {
         blogNode.links.discourse = '*';
@@ -372,7 +372,7 @@ exports.onCreateNode = async ({
         blogNode.opengraph.image = path.normalize(blogNode.opengraph.image.replace(/^\/images\//, `${path.resolve('./content/images/')}/`));
       }
       blogNode.internal.contentDigest = createContentDigest(blogNode);
-      createParentChildLink({ parent: node, child: await createNode(blogNode) });
+      createParentChildLink({parent: node, child: await createNode(blogNode)});
       return;
     }
     if (frontmatter.layout === 'simplepage') {
@@ -387,7 +387,7 @@ exports.onCreateNode = async ({
         },
       };
       simplePageNode.internal.contentDigest = createContentDigest(simplePageNode);
-      createParentChildLink({ parent: node, child: await createNode(simplePageNode) });
+      createParentChildLink({parent: node, child: await createNode(simplePageNode)});
       return;
     }
     // probably isn't needed, but just in case for non blog/author
@@ -408,9 +408,9 @@ exports.onCreateNode = async ({
   }
 };
 
-exports.createSchemaCustomization = ({ actions, schema }) => {
-  const { createFieldExtension, createTypes } = actions;
-  const { buildObjectType } = schema;
+exports.createSchemaCustomization = ({actions, schema}) => {
+  const {createFieldExtension, createTypes} = actions;
+  const {buildObjectType} = schema;
   createTypes([
     buildObjectType({
       name: 'Event',
