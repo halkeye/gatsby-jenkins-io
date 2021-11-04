@@ -275,8 +275,9 @@ exports.onCreateNode = async ({
     }
     if (frontmatter?.layout === 'redirect' && frontmatter?.redirect_url) {
       let fromPath = path.join('', parent.relativeDirectory, parent.name);
-      if (fromPath.startsWith('blog/')) {
-        fromPath = path.join('', parent.relativeDirectory, parent.name.replace(/^\d+-\d+-\d+-/, ''));
+      if (parent.relativeDirectory.startsWith('blog/')) {
+        const date = dateFromFilename(parent);
+        fromPath = path.join('/blog', datedFileSlug(date, parent.name)).trim()
       }
       createRedirect({
         fromPath,
