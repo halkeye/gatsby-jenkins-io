@@ -278,12 +278,6 @@ exports.onCreateNode = async ({
       if (fromPath.startsWith('blog/')) {
         fromPath = path.join('', parent.relativeDirectory, parent.name.replace(/^\d+-\d+-\d+-/, ''));
       }
-      // FIXME - drop blog
-      console.log('createRedirect', {
-        fromPath,
-        toPath: frontmatter.redirect_url,
-        isPermanent: true,
-      });
       createRedirect({
         fromPath,
         toPath: frontmatter.redirect_url,
@@ -493,7 +487,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       since: String
     }
 
-    type AsciidocFrontmatterIssuesPlugins {
+    type AsciidocFrontmatterIssuesPlugins @dontInfer {
       name: String
       title: String
       fixed: String

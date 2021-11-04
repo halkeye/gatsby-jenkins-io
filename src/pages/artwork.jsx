@@ -1,7 +1,8 @@
 /* Please add new logo meta-data to content/images/logos and content/_data/logo */
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import SimplePageLayout from '../layout/SimplePageLayout';
 import Seo from '../components/seo';
 
 const ArtworkCredit = ({ url, credit }) => {
@@ -25,8 +26,35 @@ const ArtworkCredit = ({ url, credit }) => {
 };
 ArtworkCredit.displayName = 'ArtworkCredit';
 
+const Artwork = ({ logo }) => (
+  <div className="col-12 col-md-6 col-lg-4">
+    <div className="text-center">
+      <h3>{logo.name}</h3>
+      <a href={logo.url} target="_blank" rel="noreferrer noopener">
+        <GatsbyImage className="logo-thumb" image={getImage(logo.url)} alt={logo.name} />
+      </a>
+      <p>
+        <ArtworkCredit credit={logo.credit} url={logo.credit_url} />
+        {logo.source && (
+        <>
+          <br />
+          <a href={logo.source_url} target="_blank" rel="noreferrer noopener">{logo.source}</a>
+        </>
+        )}
+        {logo.vector && (
+        <>
+          <br />
+          <small><a href={logo.vector.publicURL} target="_blank" rel="noreferrer noopener">SVG Format</a></small>
+        </>
+        )}
+      </p>
+    </div>
+  </div>
+);
+Artwork.displayName = 'Artwork';
+
 const ArtworkPage = ({ data }) => (
-  <Layout notitle title="Jenkins Artwork">
+  <SimplePageLayout title="Jenkins Artwork">
     <Seo title="Jenkins Artwork" />
 
     <div className="container">
@@ -71,31 +99,7 @@ const ArtworkPage = ({ data }) => (
     <hr />
     <div className="container">
       <div className="row">
-        {data.allLogoYaml.edges.map(({ node: logo }) => (
-          <div className="col-12 col-md-6 col-lg-4">
-            <div className="text-center">
-              <h3>{logo.name}</h3>
-              <a href={logo.url} target="_blank" rel="noreferrer noopener">
-                <img className="logo-thumb" src={logo.url_256 || logo.vector} alt={logo.name} />
-              </a>
-              <p>
-                <ArtworkCredit credit={logo.credit} url={logo.credit_url} />
-                {logo.source && (
-                  <>
-                    <br />
-                    <a href={logo.source_url} target="_blank" rel="noreferrer noopener">{logo.source}</a>
-                  </>
-                )}
-                {logo.vector && (
-                  <>
-                    <br />
-                    <small><a href={logo.vector} target="_blank" rel="noreferrer noopener">SVG Format</a></small>
-                  </>
-                )}
-              </p>
-            </div>
-          </div>
-        ))}
+        {data.allLogoYaml.edges.map(({ node: logo }) => <Artwork key={logo.id} logo={logo} />)}
       </div>
     </div>
     <hr />
@@ -142,7 +146,7 @@ const ArtworkPage = ({ data }) => (
         </div>
       </div>
     </div>
-  </Layout>
+  </SimplePageLayout>
 );
 ArtworkPage.displayName = 'ArtworkPage';
 
@@ -152,15 +156,24 @@ query ArtworkPageQuery {
   allLogoYaml {
     edges {
       node {
-        url
-        url_256
+        url {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(
+              height: 150
+              layout: CONSTRAINED
+            )
+          }
+        }
         source_url
         source
         name
         id
         credit_url
         credit
-        vector
+        vector {
+          publicURL
+        }
       }
     }
   }

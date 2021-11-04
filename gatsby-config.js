@@ -166,6 +166,9 @@ module.exports = {
     'Blog.opengraph.image': 'File.absolutePath',
     'Author.avatar': 'File.relativePath',
     'SupportersYaml.fields.logo': 'File.relativePath',
+    'AwardsYaml.image': 'File.relativePath',
+    'LogoYaml.url': 'File.relativePath',
+    'LogoYaml.vector': 'File.relativePath',
   },
 };
 
