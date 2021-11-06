@@ -431,17 +431,53 @@ exports.createSchemaCustomization = ({actions, schema}) => {
   ]);
   createFieldExtension({
     name: 'strippedHtml',
-    extend(/* options, prevFieldConfig */) {
+    args: {
+      field: 'String',
+    },
+    extend(options/*, prevFieldConfig */) {
       return {
         resolve(source) {
-          return stripHtml(source.html).result;
+          const field = options.field || 'html';
+          return stripHtml(source[field]).result;
+        },
+      };
+    },
+  });
+  createFieldExtension({
+    name: 'machineVersion',
+    description: 'returns machine sortable version',
+    args: {
+      field: 'String',
+    },
+    extend(options/*, prevFieldConfig*/) {
+      const padArrayEnd = (arr, len, padding) => {
+        return arr.concat(Array(len - arr.length).fill(padding));
+      }
+      return {
+        resolve(source) {
+          const value = source[options.field || 'verison'].toString()
+          // make sure the version has 3 parts and 5 length (just in case)
+          // so 1.2.3 and 1.2 sort right
+          // 2.29 => 00002_00029_00000
+          // 2.290 => 00002_00290_00000
+          return padArrayEnd(value.split('.'), 3, 0).map(val => val.toString().padStart(5, "0")).join("_");
         },
       };
     },
   });
   createTypes(`
     type Blog implements Node {
-      strippedHtml: String @strippedHtml
+      strippedHtml: String @strippedHtml(field: "html")
+    }
+
+    type WeeklyYaml implements Node {
+      version: String!
+      machineVersion: String @machineVersion(field: "version")
+    }
+
+    type LtsYaml implements Node {
+      lts_predecessor: String
+      lts_baseline: String
     }
 
     type Author implements Node {
