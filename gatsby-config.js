@@ -42,6 +42,13 @@ module.exports = {
     buildDate: new Date(),
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-schema-snapshot`,
+      options: {
+        path: `schema.gql`,
+        update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT,
+      },
+    },
     'gatsby-plugin-react-helmet',
     /*
     {
@@ -224,9 +231,12 @@ module.exports = {
         dest: `${__dirname}/schema.graphql`,
       },
     },
+    `gatsby-plugin-perf-budgets`,
+    `gatsby-plugin-webpack-bundle-analyser-v2`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    // '@vtex/gatsby-plugin-nginx',
     'gatsby-plugin-meta-redirect', // needs to be last apparently
   ],
   mapping: {

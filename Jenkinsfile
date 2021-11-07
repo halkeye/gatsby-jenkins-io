@@ -50,6 +50,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm run build -- --prefix-paths'
+        archiveArtifacts allowEmptyArchive: true, artifacts: './public/_report.html', followSymlinks: false
       }
     }
 
