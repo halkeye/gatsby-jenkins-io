@@ -573,7 +573,7 @@ exports.onPostBuild = async ({graphql}) => {
   await fs.promises.writeFile(path.join('public', 'changelog-stable', 'badge.json'), JSON.stringify({
     "schemaVersion": 1,
     "label": "Jenkins LTS",
-    "message": data.data.allLtsYaml.edges.node.version,
+    "message": data.data.allLtsYaml.edges[0].node.version,
     "color": "blue",
     "cacheSeconds": 300
   }))
