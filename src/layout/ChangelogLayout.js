@@ -6,7 +6,7 @@ import ChangelogChanges from '../components/ChangelogChanges'
 
 import '../../content/css/changelog.css';
 
-const ChangelogLayout = ({children, showRatings, releases, ...props}) => {
+const ChangelogLayout = ({children, showRatings, releases, prependChildren, ...props}) => {
   const [ratings, setRatings] = React.useState({})
   const [ratingLastNeedTime, setRatingsNeedRefresh] = React.useState(0)
   if (showRatings) {
@@ -36,6 +36,7 @@ const ChangelogLayout = ({children, showRatings, releases, ...props}) => {
           </ul>
         </div>
       </div>
+      {prependChildren && children}
       <div className="ratings">
         {releases.map(({node: release}) => {
           return (
@@ -56,7 +57,7 @@ const ChangelogLayout = ({children, showRatings, releases, ...props}) => {
           )
         })}
       </div>
-      {children}
+      {!prependChildren && children}
     </SimplePageLayout>
   )
 };
