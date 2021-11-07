@@ -769,78 +769,7 @@ the Seed plugin itself
 
 JUC London, June 2015
 
-BruJUG Brussels, March 2016<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/dcoraboeuf">Damien Coraboeuf</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkins">jenkins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/scalability">scalability</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/dsl">dsl</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2016/06/14/gsoc-jenkins-support-core-plugin-improvements/"><div class="header"><div class="date"><div class="month">Jun</div><div class="day">14</div></div><h5 class="title">GSoC Project Intro: Support Core Plugin Improvements</h5></div><p class="teaser">About me
-
-I am Minudika Malshan, an undergraduate student in Computer Science and Engineering from University of Moratuwa, Sri Lanka.
-
-As a person who is passionate in open source software development and seeking for new knowledge and experience, I am willing to give my contribution for this project.
-
-LinkedIn | Twitter
-
-Abstract
-
-The Support-Core Plugin provides the basic infrastructure for generating &quot;bundles&quot; of support information with Jenkins.
-There are two kinds of bundles.
-
-Automatic bundles: Bundles which are generated and get saved in $JENKINS_HOME/support once per hour starting 15 seconds after Jenkins starts the plugin.
-The automatic bundles are retained using an exponential aging strategy. Therefore it’s possible to have a bunch of them over the entire lifetime after the plugin installing the plugin.
-
-On demand bundles: These bundles are generated from the root &quot;Support&quot; action.
-
-However current support-core plugin is not much user friendly. The object of this project is to make it more user friendly by adding some features which make a sophisticated environment for the user who use support plugin.
-
-In this project scope, there are three features and improvements we are going to consider.
-
-Ease the bundles management by the administrator ( JENKINS-33090)
-
-Adding an option to anonymize customer labels (strings created by the user such as name of a job, folder, view, agent, and template etc). ( JENKINS-33091)
-
-Allowing user to create an issue and submit a bundle into the OSS tracker using the support-core plugin. ( JENKINS-21670)
-
-Arnaud Héritier and Steven Christou are guiding me through the project as my mentors.
-
-Tasks and Deliverables
-
-Ease the bundles management by the administrator.
-
-Under this task, the following functions are going to be implemented.
-
-Listing bundles stored on the jenkins instance with their details.
-
-Allowing user to download each bundle.
-
-Allowing user to delete each bundle or all bundles.
-
-Allowing user to browse the content of each bundle.
-
-Automatically purging old bundles.
-
-Enabling user to create an issue and submit a bundle into the OSS tracker
-
-When a Jenkins user sees an issue, he/she commonly contacts his support contacts (Jenkins instance admins) and then Jenkins admins troubleshoot the issue.
-The objective of this task is to implement a feature which enables the user to report an issue to a admin through support core plugin.
-
-When creating bundles to attach with the ticket, it is important to protect the privacy of the user who creates the ticket. When considering doing that, anonymizing user created labels (texts) comes to the front.
-
-Adding  an option to anonymize customer labels
-
-The following functions will be implemented under this taks.
-
-Creating randomized tokens for labels created by users.
-
-Producing a mapping for those labels.
-
-Substituting encoded labels into all the files included in the support bundle.
-
-When creating randomized tokens, it would be much useful and effective if we can create those tokens in a way they make sense to humans. (i.e. readable to humans). For that, I am hoping to use a suitable java library to create human friendly random tokens. One of such libraries is wordnet-random-name.
-
-However in order to substitute randomized tokens, all files included in the bundle should be read. This can become inefficient when bundle consists of large number of files.  Therefore it’s important to follow an optimized method for this task.
-
-References
-
-Initial proposal of the project
-
-Project repository<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/minudika">Minudika Malshan</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/core">core</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugin">plugin</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/support-core">support-core</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2016/06/14/jenkins-world-agenda/"><div class="header"><div class="date"><div class="month">Jun</div><div class="day">14</div></div><h5 class="title">Jenkins World Agenda is Live!</h5></div><p class="teaser">Join us in Santa Clara, California on September 13-15, 2016!
+BruJUG Brussels, March 2016<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/dcoraboeuf">Damien Coraboeuf</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkins">jenkins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/scalability">scalability</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/dsl">dsl</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2016/06/14/jenkins-world-agenda/"><div class="header"><div class="date"><div class="month">Jun</div><div class="day">14</div></div><h5 class="title">Jenkins World Agenda is Live!</h5></div><p class="teaser">Join us in Santa Clara, California on September 13-15, 2016!
 
 We are excited to announce the Jenkins
 World agenda is now live. There will be 50+ sessions, keynotes, training,
@@ -920,7 +849,78 @@ Become an online JAM member
 
 Be a JAM speaker or sponsor. Let us know jenkinsci-jam@googlegroups.com
 
-Become a Jenkins project contributor<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/alyssat">Alyssa Tong</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/event">event</a></li></ul></div></li></ul></div></div><div><nav><ul class="pagination"><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/49">«</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog">1</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/2">2</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/3">3</a></li><li class="page item disabled"><div class="page-link">...</div></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/48">48</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/49">49</a></li><li class="page-item active"><a aria-current="page" class="page-link" href="/gatsby-jenkins-io/blog/page/50">50</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/51">51</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/52">52</a></li><li class="page item disabled"><div class="page-link">...</div></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/98">98</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/99">99</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/100">100</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/51">»</a></li></ul></nav></div></div></div><script src="https://www.jenkins.io/assets/bower/anchor-js/anchor.min.js"></script><script src="https://www.jenkins.io/assets/bower/tether/js/tether.min.js"></script><script src="https://www.jenkins.io/assets/bower/bootstrap/js/bootstrap.min.js"></script><footer id="footer"><div class="container"><div class="row"><div class="col-md-4"><div class="license-box"><div id="creativecommons"><a href="https://creativecommons.org/licenses/by-sa/4.0/"><p><img alt="Creative Commons Attribution-ShareAlike license" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png"/></p></a><p>The content driving this site is licensed under the Creative Commons Attribution-ShareAlike 4.0 license.</p></div></div></div><div class="links col-md-8"><div class="container"><div class="row"><div class="area col-md-3"><div class="div-mar"><h5>Resources</h5><ul class="resources"><li><a href="https://www.jenkins.io/download/">Downloads</a></li><li><a href="https://www.jenkins.io/node/">Blog</a></li><li><a href="https://www.jenkins.io/doc/">Documentation</a></li><li><a href="https://plugins.jenkins.io/">Plugins</a></li><li><a href="https://www.jenkins.io/security/">Security</a></li><li><a href="https://www.jenkins.io/participate/">Contributing</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Project</h5><ul class="project"><li><a href="https://www.jenkins.io/project/">Structure and governance</a></li><li><a href="https://issues.jenkins.io">Issue tracker</a></li><li><a href="https://www.jenkins.io/project/roadmap/">Roadmap</a></li><li><a href="https://github.com/jenkinsci">GitHub</a></li><li><a href="https://ci.jenkins.io">Jenkins on Jenkins</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Community</h5><ul class="community"><li><a href="https://www.jenkins.io/events/">Events</a></li><li><a href="https://www.jenkins.io/mailing-lists/">Mailing lists</a></li><li><a href="https://www.jenkins.io/chat/">Chats</a></li><li><a href="https://www.jenkins.io/sigs/">Special Interest Groups</a></li><li><a href="https://twitter.com/jenkinsci">Twitter</a></li><li><a href="https://reddit.com/r/jenkinsci">Reddit</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Other</h5><ul class="other"><li><a href="https://www.jenkins.io/conduct/">Code of Conduct</a></li><li><a href="https://www.jenkins.io/press/">Press information</a></li><li><a href="https://www.jenkins.io/merchandise/">Merchandise</a></li><li><a href="https://www.jenkins.io/artwork/">Artwork</a></li><li><a href="https://www.jenkins.io/awards/">Awards</a></li></ul></div></div></div></div></div></div></div></footer><script>
+Become a Jenkins project contributor<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/alyssat">Alyssa Tong</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/event">event</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2016/06/14/gsoc-jenkins-support-core-plugin-improvements/"><div class="header"><div class="date"><div class="month">Jun</div><div class="day">14</div></div><h5 class="title">GSoC Project Intro: Support Core Plugin Improvements</h5></div><p class="teaser">About me
+
+I am Minudika Malshan, an undergraduate student in Computer Science and Engineering from University of Moratuwa, Sri Lanka.
+
+As a person who is passionate in open source software development and seeking for new knowledge and experience, I am willing to give my contribution for this project.
+
+LinkedIn | Twitter
+
+Abstract
+
+The Support-Core Plugin provides the basic infrastructure for generating &quot;bundles&quot; of support information with Jenkins.
+There are two kinds of bundles.
+
+Automatic bundles: Bundles which are generated and get saved in $JENKINS_HOME/support once per hour starting 15 seconds after Jenkins starts the plugin.
+The automatic bundles are retained using an exponential aging strategy. Therefore it’s possible to have a bunch of them over the entire lifetime after the plugin installing the plugin.
+
+On demand bundles: These bundles are generated from the root &quot;Support&quot; action.
+
+However current support-core plugin is not much user friendly. The object of this project is to make it more user friendly by adding some features which make a sophisticated environment for the user who use support plugin.
+
+In this project scope, there are three features and improvements we are going to consider.
+
+Ease the bundles management by the administrator ( JENKINS-33090)
+
+Adding an option to anonymize customer labels (strings created by the user such as name of a job, folder, view, agent, and template etc). ( JENKINS-33091)
+
+Allowing user to create an issue and submit a bundle into the OSS tracker using the support-core plugin. ( JENKINS-21670)
+
+Arnaud Héritier and Steven Christou are guiding me through the project as my mentors.
+
+Tasks and Deliverables
+
+Ease the bundles management by the administrator.
+
+Under this task, the following functions are going to be implemented.
+
+Listing bundles stored on the jenkins instance with their details.
+
+Allowing user to download each bundle.
+
+Allowing user to delete each bundle or all bundles.
+
+Allowing user to browse the content of each bundle.
+
+Automatically purging old bundles.
+
+Enabling user to create an issue and submit a bundle into the OSS tracker
+
+When a Jenkins user sees an issue, he/she commonly contacts his support contacts (Jenkins instance admins) and then Jenkins admins troubleshoot the issue.
+The objective of this task is to implement a feature which enables the user to report an issue to a admin through support core plugin.
+
+When creating bundles to attach with the ticket, it is important to protect the privacy of the user who creates the ticket. When considering doing that, anonymizing user created labels (texts) comes to the front.
+
+Adding  an option to anonymize customer labels
+
+The following functions will be implemented under this taks.
+
+Creating randomized tokens for labels created by users.
+
+Producing a mapping for those labels.
+
+Substituting encoded labels into all the files included in the support bundle.
+
+When creating randomized tokens, it would be much useful and effective if we can create those tokens in a way they make sense to humans. (i.e. readable to humans). For that, I am hoping to use a suitable java library to create human friendly random tokens. One of such libraries is wordnet-random-name.
+
+However in order to substitute randomized tokens, all files included in the bundle should be read. This can become inefficient when bundle consists of large number of files.  Therefore it’s important to follow an optimized method for this task.
+
+References
+
+Initial proposal of the project
+
+Project repository<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/minudika">Minudika Malshan</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/core">core</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugin">plugin</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/support-core">support-core</a></li></ul></div></li></ul></div></div><div><nav><ul class="pagination"><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/49">«</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog">1</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/2">2</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/3">3</a></li><li class="page item disabled"><div class="page-link">...</div></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/48">48</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/49">49</a></li><li class="page-item active"><a aria-current="page" class="page-link" href="/gatsby-jenkins-io/blog/page/50">50</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/51">51</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/52">52</a></li><li class="page item disabled"><div class="page-link">...</div></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/98">98</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/99">99</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/100">100</a></li><li class="page-item "><a class="page-link" href="/gatsby-jenkins-io/blog/page/51">»</a></li></ul></nav></div></div></div><script src="https://www.jenkins.io/assets/bower/anchor-js/anchor.min.js"></script><script src="https://www.jenkins.io/assets/bower/tether/js/tether.min.js"></script><script src="https://www.jenkins.io/assets/bower/bootstrap/js/bootstrap.min.js"></script><footer id="footer"><div class="container"><div class="row"><div class="col-md-4"><div class="license-box"><div id="creativecommons"><a href="https://creativecommons.org/licenses/by-sa/4.0/"><p><img alt="Creative Commons Attribution-ShareAlike license" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png"/></p></a><p>The content driving this site is licensed under the Creative Commons Attribution-ShareAlike 4.0 license.</p></div></div></div><div class="links col-md-8"><div class="container"><div class="row"><div class="area col-md-3"><div class="div-mar"><h5>Resources</h5><ul class="resources"><li><a href="https://www.jenkins.io/download/">Downloads</a></li><li><a href="https://www.jenkins.io/node/">Blog</a></li><li><a href="https://www.jenkins.io/doc/">Documentation</a></li><li><a href="https://plugins.jenkins.io/">Plugins</a></li><li><a href="https://www.jenkins.io/security/">Security</a></li><li><a href="https://www.jenkins.io/participate/">Contributing</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Project</h5><ul class="project"><li><a href="https://www.jenkins.io/project/">Structure and governance</a></li><li><a href="https://issues.jenkins.io">Issue tracker</a></li><li><a href="https://www.jenkins.io/project/roadmap/">Roadmap</a></li><li><a href="https://github.com/jenkinsci">GitHub</a></li><li><a href="https://ci.jenkins.io">Jenkins on Jenkins</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Community</h5><ul class="community"><li><a href="https://www.jenkins.io/events/">Events</a></li><li><a href="https://www.jenkins.io/mailing-lists/">Mailing lists</a></li><li><a href="https://www.jenkins.io/chat/">Chats</a></li><li><a href="https://www.jenkins.io/sigs/">Special Interest Groups</a></li><li><a href="https://twitter.com/jenkinsci">Twitter</a></li><li><a href="https://reddit.com/r/jenkinsci">Reddit</a></li></ul></div></div><div class="area col-md-3"><div class="div-mar"><h5>Other</h5><ul class="other"><li><a href="https://www.jenkins.io/conduct/">Code of Conduct</a></li><li><a href="https://www.jenkins.io/press/">Press information</a></li><li><a href="https://www.jenkins.io/merchandise/">Merchandise</a></li><li><a href="https://www.jenkins.io/artwork/">Artwork</a></li><li><a href="https://www.jenkins.io/awards/">Awards</a></li></ul></div></div></div></div></div></div></div></footer><script>
   $(function(){
     var $body = $(document.body);
     $(".nav-link.dropdown-toggle").on("mousedown", function(){

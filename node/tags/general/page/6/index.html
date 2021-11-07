@@ -62,27 +62,7 @@ To support this effort, CloudBees has announced that they will be sponsoring the
 +
 +
 
-To kick this off, the first Jenkins Area Meetup (JAM) is in the San Jose CloudBees office on Sept 23. We are shooting to have a JAM everything 3rd Wednesday of every month to consistently bring the community together.<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/hinman">Hannah Inman</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/general">general</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/cia">cia</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/meetup">meetup</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkinsci">jenkinsci</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2015/08/31/plugin-spotlight-version-column-plugin/"><div class="header"><div class="date"><div class="month">Aug</div><div class="day">31</div></div><h5 class="title">Plugin Spotlight: Version Column Plugin</h5></div><p class="teaser">Most Jenkins controllers with a distributed build configuration will leverage nodes that run a agent.jar to start an agent. Regardless of whether the agent.jar is launched through a Java Web Start or SSH launcher, the jar will be copied from https://yourserver:port/jnlpJars/agent.jar to the build node. Keeping this jar up to date ensures that it picks up the newest features in a more recent release, such as the self-restart feature to keep agent JVMs “clean” and to automatically reconnect to their controller. Additionally, newer versions of this component may fix bugs or implement newer protocol versions with various improvements.
-
-What is the Version Column Plugin?
-
-Launch methods designed to pull the latest agent.jar are not always reliable and some launch methods don’t even try to update the agent.jar. Therefore it can be useful to see what agent.jar version is running on a given build node and take offline any nodes which fails to update to the latest version of the jar.
-
-The Version Column Plugin allows Jenkins controllers to do just this, adding a new column to the “Manage Nodes” view and a new option for version enforcement on the node configuration screen.
-
-Getting started
-
-After installing the Version Column Plugin, navigate to the list of nodes in your Jenkins instance by clicking Build Executor Status in the executors widget below the side panel on the Jenkins home page.
-
-If the plugin installed successfully, you will see a new column simply called “Version”. This column displays the version of the agent.jar that each build node is using.
-
-This column is simply displaying the versions, so enforcement of agent.jar versions will need to be configured elsewhere. To activate this, click on the “Configure” link in the node manager’s left-hand menu.
-
-You will then see a set of options for agents. To activate version enforcement, check the “Version” box and apply your changes.
-
-When you update Jenkins, there’s a chance it’ll come with a new version of agent.jar. Now if the agent.jar on a particular agent doesn’t get updated automatically, the controller will take it offline and show a warning next to the out-of-date agent version number:
-
-The Version Column Plugin is available for download in the Jenkins plugin manager or from its wiki page.<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/daniel-beck">Daniel Beck</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/general">general</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2015/08/31/juc-speaker-blog-series-laurette-cisneros-juc-u-s-west/"><div class="header"><div class="date"><div class="month">Aug</div><div class="day">31</div></div><h5 class="title">JUC Speaker Blog Series: Laurette Cisneros, JUC U.S. West</h5></div><p class="teaser">+
+To kick this off, the first Jenkins Area Meetup (JAM) is in the San Jose CloudBees office on Sept 23. We are shooting to have a JAM everything 3rd Wednesday of every month to consistently bring the community together.<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/hinman">Hannah Inman</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/general">general</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/cia">cia</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/meetup">meetup</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkinsci">jenkinsci</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2015/08/31/juc-speaker-blog-series-laurette-cisneros-juc-u-s-west/"><div class="header"><div class="date"><div class="month">Aug</div><div class="day">31</div></div><h5 class="title">JUC Speaker Blog Series: Laurette Cisneros, JUC U.S. West</h5></div><p class="teaser">+
 image:https://jenkins-ci.org/sites/default/files/images/Jenkins_Butler_0.png[image,width=114,height=128] +
 
 +
@@ -131,7 +111,27 @@ Thank you to our sponsors for the 2015 Jenkins User Conference World Tour:
 +
 
 +
-image:https://jenkins-ci.org/sites/default/files/images/sponsors-06032015-02_0.png[image,width=598,height=579] +<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/hinman">Hannah Inman</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/general">general</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkinsci">jenkinsci</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2015/08/28/juc-speaker-blog-series-jamie-omeara-juc-u-s-west/"><div class="header"><div class="date"><div class="month">Aug</div><div class="day">28</div></div><h5 class="title">JUC Speaker Blog Series: Jamie O&#x27;Meara, JUC U.S. West</h5></div><p class="teaser">+
+image:https://jenkins-ci.org/sites/default/files/images/sponsors-06032015-02_0.png[image,width=598,height=579] +<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/hinman">Hannah Inman</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/general">general</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/jenkinsci">jenkinsci</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2015/08/31/plugin-spotlight-version-column-plugin/"><div class="header"><div class="date"><div class="month">Aug</div><div class="day">31</div></div><h5 class="title">Plugin Spotlight: Version Column Plugin</h5></div><p class="teaser">Most Jenkins controllers with a distributed build configuration will leverage nodes that run a agent.jar to start an agent. Regardless of whether the agent.jar is launched through a Java Web Start or SSH launcher, the jar will be copied from https://yourserver:port/jnlpJars/agent.jar to the build node. Keeping this jar up to date ensures that it picks up the newest features in a more recent release, such as the self-restart feature to keep agent JVMs “clean” and to automatically reconnect to their controller. Additionally, newer versions of this component may fix bugs or implement newer protocol versions with various improvements.
+
+What is the Version Column Plugin?
+
+Launch methods designed to pull the latest agent.jar are not always reliable and some launch methods don’t even try to update the agent.jar. Therefore it can be useful to see what agent.jar version is running on a given build node and take offline any nodes which fails to update to the latest version of the jar.
+
+The Version Column Plugin allows Jenkins controllers to do just this, adding a new column to the “Manage Nodes” view and a new option for version enforcement on the node configuration screen.
+
+Getting started
+
+After installing the Version Column Plugin, navigate to the list of nodes in your Jenkins instance by clicking Build Executor Status in the executors widget below the side panel on the Jenkins home page.
+
+If the plugin installed successfully, you will see a new column simply called “Version”. This column displays the version of the agent.jar that each build node is using.
+
+This column is simply displaying the versions, so enforcement of agent.jar versions will need to be configured elsewhere. To activate this, click on the “Configure” link in the node manager’s left-hand menu.
+
+You will then see a set of options for agents. To activate version enforcement, check the “Version” box and apply your changes.
+
+When you update Jenkins, there’s a chance it’ll come with a new version of agent.jar. Now if the agent.jar on a particular agent doesn’t get updated automatically, the controller will take it offline and show a warning next to the out-of-date agent version number:
+
+The Version Column Plugin is available for download in the Jenkins plugin manager or from its wiki page.<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/daniel-beck">Daniel Beck</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/general">general</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2015/08/28/juc-speaker-blog-series-jamie-omeara-juc-u-s-west/"><div class="header"><div class="date"><div class="month">Aug</div><div class="day">28</div></div><h5 class="title">JUC Speaker Blog Series: Jamie O&#x27;Meara, JUC U.S. West</h5></div><p class="teaser">+
 image:https://jenkins-ci.org/sites/default/files/images/Jenkins_Butler_0.png[image,width=114,height=128] +
 
 +

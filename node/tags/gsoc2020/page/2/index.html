@@ -552,7 +552,84 @@ Gitter Channel
 
 Project Page
 
-Phase 1 Blog Post<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/stellargo">Sumit Sarin</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/fingerprint">fingerprint</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/cloud-native">cloud-native</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/external-storage">external-storage</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/redis">redis</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/09/github-checks-api-plugin-coding-phase-1/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day"> 9</div></div><h5 class="title">GitHub Checks API Plugin Project - Coding Phase 1</h5></div><p class="teaser">This blog post is about our coding phase 1 progress on GSoC project: GitHub Checks API Plugin.
+Phase 1 Blog Post<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/stellargo">Sumit Sarin</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/fingerprint">fingerprint</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/cloud-native">cloud-native</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/external-storage">external-storage</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/redis">redis</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/09/git-performance-improvement-phase1/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day"> 9</div></div><h5 class="title">Git Plugin Performance Improvement: Phase-1</h5></div><p class="teaser">Git Plugin Performance Improvement is a Google Summer of Code 2020 project.
+It aims to improve the performance of the git plugin, which provides fundamental git functionalities.
+
+Internally, the plugin provides these functionalities using two implementations: command line git and JGit (pure java implementation).
+
+CLI git is the default implementation for the plugin, a user can switch to JGit if needed
+
+The project is divided into two parallel stages:
+
+Stage 1 : Create benchmarks which evaluate the execution time of a git operation provided by CLI git and JGit using JMH, a micro benchmarking test harness.
+
+Stage 2 : Implement the insights gained from the analysis into the plugin to improve the overall performance of the plugin.
+
+The project also aims to fix any existing performance bottlenecks within the plugin as well.
+
+Benchmarks
+
+The benchmarks are written using JMH. It was introduced in a GSoC 2019 project to Jenkins.
+
+JMH is provided within the plugin through the Jenkins Unit Test Harness POM dependency.
+
+The JMH benchmarks are created and run within the git client plugin
+
+During phase-1, we have created benchmarks for two operations: &quot;git fetch&quot; and &quot;git ls-remote&quot;
+
+Results and Analysis
+
+The benchmark analysis for git fetch:
+
+Git fetch results
+
+The performance of git fetch (average execution time/op) is strongly correlated to the size of a repository
+
+There exists an inflection point on the scale of repository size after which the nature of JGit performance changes (it starts to degrade)
+
+After running multiple benchmarks, it is safe to say that for a large sized repository CLI-git would be a better choice of implementation.
+
+We can use this insight to implement a feature which avoids JGit when it comes to large repositories.
+
+Please refer to PR-521 for an elaborate explanation on these results
+
+Note: Repository size means du -h .git
+
+Fixing redundant fetch issue
+
+The git plugin performs two fetch operations instead of one while performing a fresh checkout of a remote git repository.
+
+To fix this issue, we had to safely remove the second fetch keeping multiple use-cases in mind. The fix itself was not difficult to code, but to do that safely without breaking any existing use-case was a challenging task.
+
+Further Plan
+
+After consolidating a benchmarking strategy during Phase 1, the next steps will be:
+
+Provide functionality to the git plugin, which enables it to estimate the size of the repository without cloning it.
+
+Broaden the scope of benchmarking strategy
+
+Consider parameters like number of branches, references and commit history to find a relation with the performance of a git operation
+
+The git plugin depends on other plugins like Credentials which might require benchmarking the plugin itself and the effects of these external dependencies on the plugin’s performance
+
+Focus on other use-cases of the plugin
+
+For phase-1, I focused on the checkout step and the operations involved with it
+
+For the next phase, the focus will shift to other areas like Multibranch pipelines or Organisation Folders
+
+How can you help?
+
+If you have reached this far of the blog, you might be interested in the project.
+
+To help, you can
+
+Review the benchmarks in the benchmarks module
+
+Analyse the benchmarks results available on ci.jenkins.io [soon]
+
+Come visit our Gitter channel: https://gitter.im/jenkinsci/git-plugin<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/rishabhbudhouliya">Rishabh Budhouliya</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/git">git</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/platform-sig">platform-sig</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/performance">performance</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/09/github-checks-api-plugin-coding-phase-1/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day"> 9</div></div><h5 class="title">GitHub Checks API Plugin Project - Coding Phase 1</h5></div><p class="teaser">This blog post is about our coding phase 1 progress on GSoC project: GitHub Checks API Plugin.
 
 The GitHub Checks API is a highly customized way to integrate CI tools to make reports for pull-requests (PRs).
 It allows users to see CI reports on GitHub pages directly.
@@ -647,84 +724,7 @@ References
 
 GitHub Doc: Creating CI tests with the Checks API
 
-Warnings Next Generation Plugin: Source Code View<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/xiongkezhi">Kezhi Xiong</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/github">github</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/api">api</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/09/git-performance-improvement-phase1/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day"> 9</div></div><h5 class="title">Git Plugin Performance Improvement: Phase-1</h5></div><p class="teaser">Git Plugin Performance Improvement is a Google Summer of Code 2020 project.
-It aims to improve the performance of the git plugin, which provides fundamental git functionalities.
-
-Internally, the plugin provides these functionalities using two implementations: command line git and JGit (pure java implementation).
-
-CLI git is the default implementation for the plugin, a user can switch to JGit if needed
-
-The project is divided into two parallel stages:
-
-Stage 1 : Create benchmarks which evaluate the execution time of a git operation provided by CLI git and JGit using JMH, a micro benchmarking test harness.
-
-Stage 2 : Implement the insights gained from the analysis into the plugin to improve the overall performance of the plugin.
-
-The project also aims to fix any existing performance bottlenecks within the plugin as well.
-
-Benchmarks
-
-The benchmarks are written using JMH. It was introduced in a GSoC 2019 project to Jenkins.
-
-JMH is provided within the plugin through the Jenkins Unit Test Harness POM dependency.
-
-The JMH benchmarks are created and run within the git client plugin
-
-During phase-1, we have created benchmarks for two operations: &quot;git fetch&quot; and &quot;git ls-remote&quot;
-
-Results and Analysis
-
-The benchmark analysis for git fetch:
-
-Git fetch results
-
-The performance of git fetch (average execution time/op) is strongly correlated to the size of a repository
-
-There exists an inflection point on the scale of repository size after which the nature of JGit performance changes (it starts to degrade)
-
-After running multiple benchmarks, it is safe to say that for a large sized repository CLI-git would be a better choice of implementation.
-
-We can use this insight to implement a feature which avoids JGit when it comes to large repositories.
-
-Please refer to PR-521 for an elaborate explanation on these results
-
-Note: Repository size means du -h .git
-
-Fixing redundant fetch issue
-
-The git plugin performs two fetch operations instead of one while performing a fresh checkout of a remote git repository.
-
-To fix this issue, we had to safely remove the second fetch keeping multiple use-cases in mind. The fix itself was not difficult to code, but to do that safely without breaking any existing use-case was a challenging task.
-
-Further Plan
-
-After consolidating a benchmarking strategy during Phase 1, the next steps will be:
-
-Provide functionality to the git plugin, which enables it to estimate the size of the repository without cloning it.
-
-Broaden the scope of benchmarking strategy
-
-Consider parameters like number of branches, references and commit history to find a relation with the performance of a git operation
-
-The git plugin depends on other plugins like Credentials which might require benchmarking the plugin itself and the effects of these external dependencies on the plugin’s performance
-
-Focus on other use-cases of the plugin
-
-For phase-1, I focused on the checkout step and the operations involved with it
-
-For the next phase, the focus will shift to other areas like Multibranch pipelines or Organisation Folders
-
-How can you help?
-
-If you have reached this far of the blog, you might be interested in the project.
-
-To help, you can
-
-Review the benchmarks in the benchmarks module
-
-Analyse the benchmarks results available on ci.jenkins.io [soon]
-
-Come visit our Gitter channel: https://gitter.im/jenkinsci/git-plugin<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/rishabhbudhouliya">Rishabh Budhouliya</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/git">git</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/platform-sig">platform-sig</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/performance">performance</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/08/winsw-yaml-support/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day"> 8</div></div><h5 class="title">Windows Service Wrapper : YAML Configuration Support - GSoC Phase - 01 Updates</h5></div><p class="teaser">Hello all, I am Buddhika Chathuranga from Sri Lanka and I am a final year undergraduate at the Faculty of IT, University of Moratuwa. I am participating in GSoC 2020 with Jenkins.
+Warnings Next Generation Plugin: Source Code View<span class="more"></span></p></a><div class="attrs"><a href="/gatsby-jenkins-io/blog/authors/xiongkezhi">Kezhi Xiong</a><ul class="list-inline tags"><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/github">github</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/api">api</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/plugins">plugins</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/developer">developer</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc">gsoc</a></li><li><a class="tag-link" href="/gatsby-jenkins-io/node/tags/gsoc2020">gsoc2020</a></li></ul></div></li><li class="post"><a class="body" href="/gatsby-jenkins-io/blog/2020/07/08/winsw-yaml-support/"><div class="header"><div class="date"><div class="month">Jul</div><div class="day"> 8</div></div><h5 class="title">Windows Service Wrapper : YAML Configuration Support - GSoC Phase - 01 Updates</h5></div><p class="teaser">Hello all, I am Buddhika Chathuranga from Sri Lanka and I am a final year undergraduate at the Faculty of IT, University of Moratuwa. I am participating in GSoC 2020 with Jenkins.
 I am working on the Windows Service Wrapper Project.
 So the Coding Phase 01 of GSoC 2020 is now over and this blog post describes what I have done so far.
 
