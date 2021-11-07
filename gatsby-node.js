@@ -194,11 +194,11 @@ const createIndividualBlogPosts = async ({graphql, actions}) => {
       limit: 1000
     ) {
       edges {
-        next {
-          slug
-        }
         node {
           id
+          slug
+        }
+        next {
           slug
         }
         previous {
@@ -571,7 +571,7 @@ exports.onPostBuild = async ({graphql}) => {
   await fs.promises.writeFile(path.join('public', 'changelog-stable', 'badge.json'), JSON.stringify({
     "schemaVersion": 1,
     "label": "Jenkins LTS",
-    "message": data.allLts.edges.node[0].version,
+    "message": data.allLtsYaml.edges.node[0].version,
     "color": "blue",
     "cacheSeconds": 300
   }))
