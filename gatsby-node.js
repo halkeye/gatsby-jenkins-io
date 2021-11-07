@@ -567,7 +567,7 @@ exports.onPostBuild = async ({graphql}) => {
       }
     }
   }`)
-  await fs.promises.mkdir(path.join('public', 'changelog-stable'));
+  await fs.promises.mkdir(path.join('public', 'changelog-stable'), {recursive: true});
   await fs.promises.writeFile(path.join('public', 'changelog-stable', 'badge.json'), JSON.stringify({
     "schemaVersion": 1,
     "label": "Jenkins LTS",
