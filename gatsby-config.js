@@ -164,6 +164,51 @@ module.exports = {
         `,
         feeds: [
           {
+            serialize: ({query: {site, allLtsYaml}}) => {
+              return allLtsYaml.edges.map(({node: release}) => {
+                return {
+                  title: `Jenkins ${release.version}`,
+                  link: `${site.siteMetadata.siteUrl}/changelog-stable/#${release.version}`,
+                  guid: `${site.siteMetadata.siteUrl}/changelog-stable/#${release.version}`,
+                  pubDate: new Date(release.date).toUTCString(),
+                  date: new Date(release.date).toUTCString(),
+                  description: `<ul>
+                    ${release.changes.map(change => {return `<li>${capitalize(change.type).replace(/rfe/i, 'RFE')} ${change.message}</li>`;})}
+                  </ul>`,
+                }
+              })
+            },
+            query: `
+              {
+                allLtsYaml(limit: 30, sort: {order: DESC, fields: machineVersion}) {
+                  edges {
+                    node {
+                      banner
+                      changes {
+                        message
+                        pull
+                        type
+                        references {
+                          issue
+                          pull
+                          title
+                          url
+                        }
+                      }
+                      date
+                      id
+                      version
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/changelog-stable/rss.xml",
+            title: "Jenkins LTS Changelog",
+            description: "Changelog for Jenkins LTS releases",
+            match: "^/changelog-stable/",
+          },
+          {
             serialize: ({query: {site, allWeeklyYaml}}) => {
               return allWeeklyYaml.edges.map(({node: release}) => {
                 return {

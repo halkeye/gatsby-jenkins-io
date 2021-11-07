@@ -46,6 +46,9 @@ const ChangelogLayout = ({children, showRatings, releases, prependChildren, ...p
                 {release.date && ` (${new Date(release.date).toLocaleDateString()})`}
               </h3>
               {showRatings && <ChangelogRatings ratings={ratings[release.version]} version={release.version} setRatingsNeedRefresh={setRatingsNeedRefresh} />}
+              {release.changes && release.lts_changes && release.lts_baseline && (
+                <div> <strong> {`Changes since ${release.lts_baseline}:`} </strong> </div>
+              )}
               {release.banner && <div
                 style={{margin: '10px', padding: '10px', backgroundColor: '#FFFFCE'}}
                 dangerouslySetInnerHTML={{__html: release.banner}}
@@ -53,6 +56,14 @@ const ChangelogLayout = ({children, showRatings, releases, prependChildren, ...p
               <ul className="image">
                 <ChangelogChanges changes={release.changes} />
               </ul>
+              {release.changes && release.lts_changes && (
+                <>
+                  <div><strong>{`Notable changes since ${release.lts_predecessor}:`}</strong></div>
+                  <ul className="image">
+                    <ChangelogChanges changes={release.lts_changes} />
+                  </ul>
+                </>
+              )}
             </div>
           )
         })}

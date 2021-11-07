@@ -470,6 +470,11 @@ exports.createSchemaCustomization = ({actions, schema}) => {
       strippedHtml: String @strippedHtml(field: "html")
     }
 
+    type LtsYaml implements Node {
+      version: String!
+      machineVersion: String @machineVersion(field: "version")
+    }
+
     type WeeklyYaml implements Node {
       version: String!
       machineVersion: String @machineVersion(field: "version")
@@ -550,6 +555,27 @@ exports.onPreBootstrap = async () => {
 
   await download('https://raw.githubusercontent.com/cdfoundation/artwork/main/cdf/icon/color/cdf-icon-color.svg', './src/images/cdf.svg');
 };
+
+exports.onPostBuild = async ({graphql}) => {
+  // Run the GraphQL query (from example above).
+  const data = await graphql(`{
+    allLtsYaml(limit: 1, sort: {order: DESC, fields: machineVersion}) {
+      edges {
+        node {
+          version
+        }
+      }
+    }
+  }`)
+  await fs.promises.mkdir(path.join('public', 'changelog-stable'));
+  await fs.promises.writeFile(path.join('public', 'changelog-stable', 'badge.json'), JSON.stringify({
+    "schemaVersion": 1,
+    "label": "Jenkins LTS",
+    "message": data.allLts.edges.node[0].version,
+    "color": "blue",
+    "cacheSeconds": 300
+  }))
+}
 
 /*
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
