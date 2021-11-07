@@ -116,3 +116,4 @@ yarn-error.log
 # Generate files
 schema.graphql
 src/images/cdf.svg
+junk/

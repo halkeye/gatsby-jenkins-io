@@ -1,6 +1,5 @@
 import * as React from 'react';
 import ChangelogWeatherIcon from '../components/ChangelogWeatherIcon'
-import classNames from 'classnames';
 
 const ChangelogRatings = ({version, ratings, setRatingsNeedRefresh}) => {
   if (!ratings) {
@@ -38,9 +37,9 @@ const ChangelogRatings = ({version, ratings, setRatingsNeedRefresh}) => {
   return (
     <div className="rate-outer">
       <div className="rate-offset">
-        {good} <ChangelogWeatherIcon mode='sunny' onClick={() => rate(1)} className={classNames('rate', {light: !good})} alt="sunny" title="No major issues with this release" />
-        {nolike} <ChangelogWeatherIcon mode='cloudy' onClick={() => rate(0)} className={classNames('rate', {light: !nolike})} alt="cloudy" title="I experienced notable issues" />
-        {rollback} <ChangelogWeatherIcon mode='storm' onClick={() => rate(-1)} className={classNames('rate', {light: !rollback})} alt="storm" title="I had to roll back" />
+        <ChangelogWeatherIcon count={good} mode='sunny' onClick={() => rate(1)} />
+        <ChangelogWeatherIcon count={nolike} mode='cloudy' onClick={() => rate(0)} />
+        <ChangelogWeatherIcon count={rollback} mode='storm' onClick={() => rate(-1)} />
         {Object.keys(issues).length > 0 && (
           <span className="related-issues">
             Community reported issues: {Object.entries(issues).map(([id, count]) => (<span key={id}>{`${count}×`}<a href={`https://issues.jenkins.io/browse/JENKINS-${id}`}>JENKINS-{id}</a>{' '}</span>))}
