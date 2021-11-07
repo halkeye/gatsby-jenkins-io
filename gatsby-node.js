@@ -434,7 +434,7 @@ exports.createSchemaCustomization = ({actions, schema}) => {
     args: {
       field: 'String',
     },
-    extend(options/*, prevFieldConfig */) {
+    extend(options) {
       return {
         resolve(source) {
           const field = options.field || 'html';
@@ -449,7 +449,7 @@ exports.createSchemaCustomization = ({actions, schema}) => {
     args: {
       field: 'String',
     },
-    extend(options/*, prevFieldConfig*/) {
+    extend(options) {
       const padArrayEnd = (arr, len, padding) => {
         return arr.concat(Array(len - arr.length).fill(padding));
       }
@@ -567,11 +567,13 @@ exports.onPostBuild = async ({graphql}) => {
       }
     }
   }`)
+
+  console.log('edges', data.data.allLtsYaml.edges)
   await fs.promises.mkdir(path.join('public', 'changelog-stable'), {recursive: true});
   await fs.promises.writeFile(path.join('public', 'changelog-stable', 'badge.json'), JSON.stringify({
     "schemaVersion": 1,
     "label": "Jenkins LTS",
-    "message": data.allLtsYaml.edges.node[0].version,
+    "message": data.data.allLtsYaml.edges.node.version,
     "color": "blue",
     "cacheSeconds": 300
   }))
