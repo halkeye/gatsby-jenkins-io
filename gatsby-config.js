@@ -24,6 +24,11 @@ asciidoctor.Extensions.register(function Extensions() {
   });
 });
 
+function capitalize(str) {
+  const lower = str.toLowerCase();
+  return str.charAt(0).toUpperCase() + lower.slice(1);
+}
+
 module.exports = {
   siteMetadata: {
     title: 'Jenkins',
@@ -134,8 +139,71 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-transformer-yaml',
-    // 'gatsby-transformer-haml',
     'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({query: {site, allWeeklyYaml}}) => {
+              return allWeeklyYaml.edges.map(({node: release}) => {
+                return {
+                  title: `Jenkins ${release.version}`,
+                  link: `${site.siteMetadata.siteUrl}/changelog/#${release.version}`,
+                  guid: `${site.siteMetadata.siteUrl}/changelog/#${release.version}`,
+                  pubDate: new Date(release.date).toUTCString(),
+                  date: new Date(release.date).toUTCString(),
+                  description: `<ul>
+                    ${release.changes.map(change => {return `<li>${capitalize(change.type).replace(/rfe/i, 'RFE')} ${change.message}</li>`;})}
+                  </ul>`,
+                }
+              })
+            },
+            query: `
+              {
+                allWeeklyYaml(limit: 30, sort: {order: DESC, fields: machineVersion}) {
+                  edges {
+                    node {
+                      banner
+                      changes {
+                        message
+                        pull
+                        type
+                        references {
+                          issue
+                          pull
+                          title
+                          url
+                        }
+                      }
+                      date
+                      id
+                      version
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/changelog/rss.xml",
+            title: "Jenkins Changelog",
+            description: "Changelog for Jenkins weekly releases",
+            match: "^/changelog/",
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -169,14 +237,14 @@ module.exports = {
     'AwardsYaml.image': 'File.relativePath',
     'LogoYaml.url': 'File.relativePath',
     'LogoYaml.vector': 'File.relativePath',
-  },
+  }
 };
 
 // fancy little script to take any ENV variables starting with GATSBY_CONFIG_ and
 // replace the existing export
 Object.keys(process.env).forEach((key) => {
   const PREFIX = 'GATSBY_CONFIG_';
-  if (!key.startsWith(PREFIX)) { return; }
+  if (!key.startsWith(PREFIX)) {return;}
   // take the env key, less the prefix, split by __ to get the section,
   // then lowercase, and replace _[letter] to be [upper]
   // so GATSBY_CONFIG_SITE_METADATA__URL => siteMetadata.url = value
